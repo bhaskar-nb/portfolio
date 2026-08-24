@@ -1,24 +1,22 @@
 // ---------------------------------------------------------------------------
-// SINGLE SOURCE OF TRUTH — every visible fact on the site is derived from
-// here, and every fact here comes from the resume. Update this file only.
-// Links marked TODO were not present on the resume — replace with real URLs.
+// SINGLE SOURCE OF TRUTH — visible portfolio content lives here.
 // ---------------------------------------------------------------------------
 
 export const profile = {
-  name: "Nakka Bhaskar Gangadhar",
+  name: "Bhaskar Nakka",
   role: "Data Analyst",
-  roles: ["Data Analyst", "Python Developer", "Dashboard Engineer", "SQL Developer"],
+  roles: ["Data Analyst", "BI Analyst", "Python Developer", "SQL Developer"],
   location: "Visakhapatnam, India",
   phone: "+91 9652020300",
-  email: "bn7740401@email.com",
+  email: "bn7740401@gmail.com",
   summary:
-    "Computer Science Engineering graduate with hands-on experience in SQL, Python, Excel, and Tableau through academic and internship projects. Skilled in data cleaning, exploratory data analysis, and building interactive dashboards to generate business insights.",
+    "Data Analyst with hands-on experience in SQL, Python, Excel, and Tableau. I clean and analyze data, build interactive dashboards, and turn business questions into clear, decision-ready insights.",
   links: {
-    linkedin: "https://www.linkedin.com/in/bhaskar-nakka-43a701259/", // TODO: add real LinkedIn handle
-    github: "https://github.com/", 
-    tableau: "https://public.tableau.com/app/profile/", // TODO: add real Tableau profile
+    linkedin: "https://www.linkedin.com/in/bhaskar-nakka-43a701259/",
+    github: "https://github.com/bhaskar-nb",
+    tableau: "https://public.tableau.com/app/profile/bhaskar.nakka4980",
   },
-  githubUsername: "bhaskar-nb", //
+  githubUsername: "bhaskar-nb",
 };
 
 export const skillGroups = [
@@ -85,54 +83,54 @@ export const projects = [
     title: "Sales Performance Dashboard",
     stack: ["Tableau"],
     summary:
-      "Interactive Tableau dashboard analyzing sales performance across products, categories, regions, and time using key business KPIs.",
+      "Interactive Tableau dashboard analyzing sales, profit, quantity, year-over-year performance, and product profitability.",
     features: [
-      "Dynamic visualizations for sales trends and profitability",
-      "Interactive filters by product, category, and region",
-      "KPI cards surfacing high-performing products at a glance",
+      "Year-over-year sales, profit, and quantity KPIs",
+      "Product and sub-category profitability analysis",
+      "Interactive filters for exploring performance trends",
     ],
     challenges:
-      "Consolidating multi-dimensional sales data into a single view that stays readable without overwhelming the viewer with filters.",
+      "Consolidating multiple related sales datasets into a single dashboard without making the analysis difficult to navigate.",
     learnings:
-      "Sharpened skills in KPI design, dashboard information hierarchy, and translating raw sales data into decisions.",
-    github: "https://github.com/bhaskar-nb/sales-dashboard-tableau.git", // TODO: add real repo link
-    demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/SalesDashboardProject_17823218142750/SalesDashboard", // TODO: add real Tableau Public link
+      "Improved KPI design, dashboard hierarchy, comparative analysis, and business storytelling.",
+    github: "https://github.com/bhaskar-nb/sales-dashboard",
+    demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/SalesDashboardProject_17823218142750/SalesDashboard",
   },
   {
     id: "hr-analytics-dashboard",
     title: "HR Analytics Dashboard",
-    stack: ["Tableau"],
+    stack: ["Tableau", "Python", "Pandas", "NumPy", "Faker"],
     summary:
-      "HR analytics dashboard monitoring employee demographics, attrition, departmental performance, and workforce distribution.",
+      "HR analytics dashboard exploring workforce composition, hiring, terminations, demographics, compensation, and performance using synthetic employee data.",
     features: [
-      "Attrition and headcount tracking by department",
-      "Interactive charts for workforce demographics",
-      "Filterable views built for HR reporting workflows",
+      "Workforce, hiring, and termination KPIs",
+      "Department, demographic, salary, and performance analysis",
+      "Synthetic dataset generated and prepared with Python",
     ],
     challenges:
-      "Presenting sensitive workforce metrics clearly while keeping the dashboard useful for both leadership and HR operations.",
+      "Creating realistic synthetic HR records and turning them into a clear dashboard for non-technical HR users.",
     learnings:
-      "Learned to design analytics for a non-technical audience, prioritizing clarity over chart complexity.",
-    github: "https://github.com/bhaskar-nb/HR-Dashboard.git", // TODO: add real repo link
-    demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/HRDashboard_17824941977350/HRSummary_1", // TODO: add real Tableau Public link
+      "Strengthened synthetic data generation, preparation, KPI design, and dashboard communication skills.",
+    github: "https://github.com/bhaskar-nb/hr-dashboard",
+    demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/HRDashboard_17824941977350/HRSummary_1",
   },
   {
-    id: "startup-funding-analysis",
-    title: "Startup Funding Analysis Dashboard",
+    id: "ev-adoption-dashboard",
+    title: "EV Adoption Dashboard",
     stack: ["Tableau"],
     summary:
-      "Dashboard analyzing startup funding across industries, cities, investors, and investment types using historical funding data.",
+      "Interactive analysis of electric vehicle registrations across model years, states, manufacturers, vehicle types, models, and eligibility categories.",
     features: [
-      "Trend analysis across industries and funding rounds",
-      "City and investor-level breakdowns of capital flow",
-      "Interactive visualizations highlighting leading startup ecosystems",
+      "Manufacturer and vehicle-type comparisons",
+      "State-level geographic analysis",
+      "Model-year and CAFV eligibility exploration",
     ],
     challenges:
-      "Cleaning inconsistent historical funding records before they could be meaningfully visualized.",
+      "Making geographic concentration and registration patterns easy to compare without overstating the dataset as a complete U.S. EV market view.",
     learnings:
-      "Reinforced the value of rigorous data cleaning before any dashboard work begins.",
-    github: "https://github.com/bhaskar-nb/startup-funding-dashboard.git", // TODO: add real repo link
-    demo: "#", // TODO: add real Tableau Public link
+      "Improved geographic analysis, dataset-scope communication, and interactive dashboard design.",
+    github: "https://github.com/bhaskar-nb/ev-dashboard",
+    demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/EVDashboard_17866424745700/EvDashboard",
   },
 ];
 
@@ -141,7 +139,7 @@ export const certifications = [
     title: "Deloitte Australia Data Analytics Job Simulation",
     issuer: "Forage Virtual Experience",
     year: "2026",
-    link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6PZAQE3YBSwmxWqNH_1782883293231_completion_certificate.pdf"
+    link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6PZAQE3YBSwmxWqNH_1782883293231_completion_certificate.pdf",
   },
 ];
 
@@ -162,7 +160,7 @@ export const timeline = [
   },
   {
     year: "2025",
-    title: "Deep-dived into data analytics",
+    title: "Focused on data analytics",
     detail: "Built hands-on skills in SQL, Python, Excel, and Tableau through projects.",
   },
   {
@@ -173,22 +171,22 @@ export const timeline = [
   {
     year: "2026",
     title: "Graduating & job-seeking",
-    detail: "Completing B.Tech, building a dashboard-driven project portfolio.",
+    detail: "Completing B.Tech and targeting Data Analyst / BI roles.",
   },
 ];
 
 export const achievements = [
   {
-    title: "3 end-to-end Tableau dashboards shipped",
-    detail: "Sales, HR, and startup-funding analytics projects, each covering cleaning through visualization.",
+    title: "Portfolio of business-focused analytics dashboards",
+    detail: "Built projects across sales, HR, EV adoption, disaster impact, and other domains.",
   },
   {
     title: "Deloitte Job Simulation completed",
-    detail: "Forage virtual experience program covering real-world data analytics workflows.",
+    detail: "Completed a real-world-style data analytics workflow through Forage.",
   },
   {
     title: "Multi-tool analytics stack",
-    detail: "Comfortable moving between SQL, Python, Excel, Tableau, and Power BI on the same problem.",
+    detail: "SQL, Python, Excel, Tableau, Power BI, Git, and GitHub across analytics projects.",
   },
 ];
 
