@@ -1,75 +1,64 @@
-# Nakka Bhaskar Gangadhar — Portfolio
+# Bhaskar Nakka — Data Analyst Portfolio
 
-A premium, animated data-analyst portfolio built with Next.js 14 (App Router), TypeScript,
-Tailwind CSS, and Framer Motion. The design language is a "live dashboard" — the same
-visual world as Tableau/Power BI/SQL, since that's the candidate's actual craft.
+A personal portfolio built with **Next.js, TypeScript, Tailwind CSS, and Framer Motion** to showcase data analytics projects, technical skills, and career work.
 
-## Run it
+The portfolio focuses on **SQL, Python, Tableau, Power BI, and business-focused data analysis**.
+
+## What the portfolio showcases
+
+- Data analytics and business intelligence projects
+- Interactive Tableau dashboards
+- SQL and Python analytics skills
+- Education and professional development
+- Deloitte Data Analytics Job Simulation
+- Resume and contact information
+
+## Featured projects
+
+- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — sales, profit, quantity, and profitability analysis in Tableau.
+- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — workforce, hiring, termination, compensation, and demographic analysis.
+- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — electric vehicle registration and geographic analysis.
+
+## Tech stack
+
+- **Framework:** Next.js 14 · React · TypeScript
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Analytics:** SQL · Python · Pandas · Tableau · Power BI · Excel
+- **Developer tools:** Git · GitHub · VS Code
+
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open `http://localhost:3000`.
 
-## Before you deploy — fill these in
+## Project structure
 
-Everything on the site is pulled from **`lib/data.ts`**. The resume didn't include actual
-URLs for LinkedIn, GitHub, or Tableau Public (just the word "LinkedIn" / "GitHub" as link
-text), so those are placeholders marked `// TODO`. Update:
-
-- `profile.links.linkedin`
-- `profile.links.github`
-- `profile.links.tableau`
-- `profile.githubUsername` — powers the live GitHub stats/contribution graph in the
-  "GitHub" section (uses the public `github-readme-stats` and `ghchart` APIs, no key needed)
-- Each project's `github` and `demo` URLs in the `projects` array
-
-Also:
-
-- `public/resume.pdf` currently contains the résumé you uploaded — replace it if you
-  update your résumé, filename must stay `resume.pdf` (linked from the navbar/hero).
-- `public/og-image.png` is referenced in `app/layout.tsx` metadata for social share
-  previews but isn't included — drop a 1200×630 image there (or remove the reference).
-- `app/layout.tsx` / `app/robots.ts` / `app/sitemap.ts` reference a placeholder domain
-  `https://bhaskar-portfolio.vercel.app` — swap in your real deployed URL.
-
-## Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel
+```text
+app/           Next.js routes, metadata, robots, sitemap, and global styles
+components/    Portfolio UI components
+lib/data.ts    Single source of truth for profile, skills, projects, and links
+lib/utils.ts   Shared utility helpers
+public/        Static assets such as resume and favicon
 ```
 
-Or push to GitHub and import the repo at vercel.com/new — zero config needed.
+## Before deployment
 
-## Structure
+Update the real production domain in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts` once the final Vercel URL is known.
 
-```
-app/                Routes, layout, global styles, SEO files (robots, sitemap, manifest)
-components/          All UI sections (Hero, About, Skills, Projects, Contact, ...)
-lib/data.ts          Single source of truth for all resume content
-lib/utils.ts          cn() className helper
-public/              Static assets (resume.pdf, favicon)
-```
+The portfolio expects `public/resume.pdf` to contain the current resume. The social preview uses `/og-image.png`; add that image before relying on Open Graph previews.
 
-## Notes on content
+## Contact
 
-- The resume didn't list separate work experience, so there's no fabricated "Experience"
-  timeline — real highlights (projects, the Deloitte simulation, education) are woven into
-  the About timeline, Certifications, and Achievements sections instead.
-- Skill proficiency percentages are stylistic estimates for the progress bars, not scores
-  from a test — adjust freely in `lib/data.ts`.
-- Contact form uses `mailto:` (no backend/API keys required) so it works immediately on
-  `npm run dev` and on Vercel with zero configuration. Swap in a form provider (Formspree,
-  Resend, etc.) later if you want submissions to land somewhere other than the visitor's
-  email client.
+**Bhaskar Nakka**
 
-## Design system
+Data Analyst | SQL · Python · Tableau · Power BI
 
-- Palette: near-black graphite background, teal + gold + wire-blue accents (KPI/data-viz
-  colors), styled as a "control room" dashboard.
-- Type: Space Grotesk (display), Inter (body), JetBrains Mono (data labels, stats, code).
-- Structural device: every section is built from the same "panel/widget" card used in the
-  Hero's live dashboard, so the whole site reads as one connected instrument panel.
+- GitHub: https://github.com/bhaskar-nb
+- LinkedIn: https://www.linkedin.com/in/bhaskar-nakka-43a701259/
+- Tableau Public: https://public.tableau.com/app/profile/bhaskar.nakka4980
+- Email: bn7740401@gmail.com
