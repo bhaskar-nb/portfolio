@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
 
+const siteUrl = "https://portfolio-sand-one-44.vercel.app";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://bhaskar-portfolio.vercel.app/sitemap.xml", // TODO: replace with real domain
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }
