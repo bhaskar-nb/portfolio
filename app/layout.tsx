@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://bhaskar-portfolio.vercel.app"; // TODO: replace with real deployed domain
+const siteUrl = "https://portfolio-sand-one-44.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
