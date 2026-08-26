@@ -1,42 +1,40 @@
 # Bhaskar Nakka — Data Analyst Portfolio
 
-A personal portfolio built with **Next.js, TypeScript, Tailwind CSS, and Framer Motion** to showcase data analytics projects, technical skills, and career work.
+A focused portfolio showcasing how I use **SQL, Python, Tableau, Power BI, and business-focused data analysis** to turn raw data into clear insights and useful decisions.
 
-The portfolio focuses on **SQL, Python, Tableau, Power BI, and business-focused data analysis**.
+The portfolio brings together my analytics projects, technical skills, professional development, resume, and contact information in one place.
 
-## What the portfolio showcases
+## What This Portfolio Demonstrates
 
-- Data analytics and business intelligence projects
-- Interactive Tableau dashboards
-- SQL and Python analytics skills
-- Education and professional development
-- Deloitte Data Analytics Job Simulation
-- Resume and contact information
+- **Data Analytics & BI** — practical analysis built around business questions and measurable outcomes
+- **Dashboard Development** — interactive Tableau and Power BI dashboards for KPIs, trends, and performance analysis
+- **SQL & Python** — data querying, cleaning, preparation, exploration, and analysis
+- **Business Problem Solving** — turning datasets into findings that can support better decisions
+- **Professional Development** — internship experience, education, and the Deloitte Data Analytics Job Simulation
 
-## Featured projects
+## Featured Projects
 
-- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — sales, profit, quantity, and profitability analysis in Tableau.
-- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — workforce, hiring, termination, compensation, and demographic analysis.
-- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — electric vehicle registration and geographic analysis.
+- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — analyzes sales, profit, quantity, and profitability to understand business performance.
+- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — analyzes workforce, hiring, termination, compensation, and demographic patterns for HR decision support.
+- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — explores electric vehicle registrations, manufacturers, and geographic adoption patterns.
 
-## Tech stack
+## Tech Stack
 
-- **Framework:** Next.js 14 · React · TypeScript
-- **Styling:** Tailwind CSS
-- **Animation:** Framer Motion
 - **Analytics:** SQL · Python · Pandas · Tableau · Power BI · Excel
-- **Developer tools:** Git · GitHub · VS Code
+- **Frontend:** Next.js · React · TypeScript
+- **Styling & Motion:** Tailwind CSS · Framer Motion
+- **Developer Tools:** Git · GitHub · VS Code
 
-## Run locally
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open `http://localhost:3000` in your browser.
 
-## Project structure
+## Project Structure
 
 ```text
 app/           Next.js routes, metadata, robots, sitemap, and global styles
@@ -46,16 +44,15 @@ lib/utils.ts   Shared utility helpers
 public/        Static assets such as resume and favicon
 ```
 
-## Before deployment
+## Before Deployment
 
-Update the real production domain in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts` once the final Vercel URL is known.
+Update the production domain in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts` once the final deployment URL is known.
 
-The portfolio expects `public/resume.pdf` to contain the current resume. The social preview uses `/og-image.png`; add that image before relying on Open Graph previews.
+Make sure `public/resume.pdf` contains the current resume. Add `/og-image.png` before relying on Open Graph social previews.
 
 ## Contact
 
-**Bhaskar Nakka**
-
+**Bhaskar Nakka**  
 Data Analyst | SQL · Python · Tableau · Power BI
 
 - GitHub: https://github.com/bhaskar-nb
