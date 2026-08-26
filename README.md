@@ -1,22 +1,22 @@
 # Bhaskar Nakka — Data Analyst Portfolio
 
-A focused portfolio showcasing how I use **SQL, Python, Tableau, Power BI, and business-focused data analysis** to turn raw data into clear insights and useful decisions.
+A personal portfolio built to showcase how I use **SQL, Python, Tableau, Power BI, and business-focused analysis** to turn data into clear, decision-ready insights.
 
-The portfolio brings together my analytics projects, technical skills, professional development, resume, and contact information in one place.
+The site brings together my analytics projects, technical skills, experience, resume, and professional links in one place.
 
-## What This Portfolio Demonstrates
+## What You'll Find
 
-- **Data Analytics & BI** — practical analysis built around business questions and measurable outcomes
-- **Dashboard Development** — interactive Tableau and Power BI dashboards for KPIs, trends, and performance analysis
-- **SQL & Python** — data querying, cleaning, preparation, exploration, and analysis
-- **Business Problem Solving** — turning datasets into findings that can support better decisions
-- **Professional Development** — internship experience, education, and the Deloitte Data Analytics Job Simulation
+- **Data Analytics & BI** — analysis centered on business questions, KPIs, trends, and performance
+- **Dashboard Projects** — interactive Tableau and Power BI work designed for practical decision support
+- **SQL & Python** — querying, cleaning, transforming, exploring, and analyzing data
+- **Business Problem Solving** — moving from raw datasets to findings that are useful to stakeholders
+- **Professional Profile** — internship experience, education, resume, and career-focused work
 
 ## Featured Projects
 
-- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — analyzes sales, profit, quantity, and profitability to understand business performance.
-- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — analyzes workforce, hiring, termination, compensation, and demographic patterns for HR decision support.
-- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — explores electric vehicle registrations, manufacturers, and geographic adoption patterns.
+- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — explores sales, profit, quantity, and profitability to evaluate business performance.
+- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — analyzes workforce, hiring, terminations, compensation, and employee demographics.
+- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — explores electric vehicle registrations, manufacturers, vehicle mix, and geographic adoption.
 
 ## Tech Stack
 
@@ -44,11 +44,13 @@ lib/utils.ts   Shared utility helpers
 public/        Static assets such as resume and favicon
 ```
 
-## Before Deployment
+## Deployment Checklist
 
-Update the production domain in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts` once the final deployment URL is known.
+Before the final production deployment:
 
-Make sure `public/resume.pdf` contains the current resume. Add `/og-image.png` before relying on Open Graph social previews.
+- Update the production domain in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts`.
+- Make sure `public/resume.pdf` contains the current resume.
+- Add `public/og-image.png` if social sharing previews are required.
 
 ## Contact
 
