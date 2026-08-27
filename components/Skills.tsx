@@ -32,7 +32,17 @@ const sections = [
   { id: "libraries", title: "LIBRARIES", skills: getSkills("analysis").filter((skill) => ["Pandas", "NumPy"].includes(skill)).concat(getSkills("visualization").filter((skill) => skill === "Matplotlib")), span: "lg:col-span-2" },
   { id: "database", title: "DATABASE", skills: getSkills("database"), span: "lg:col-span-2" },
   { id: "tools", title: "TOOLS", skills: getSkills("workflow").filter((skill) => ["Git", "GitHub", "VS Code"].includes(skill)), span: "lg:col-span-2" },
-  { id: "concepts", title: "CORE CONCEPTS", skills: getSkills("analysis").filter((skill) => skill === "Data Cleaning" || skill === "Exploratory Data Analysis").concat(getSkills("visualization").filter((skill) => skill === "Dashboard Development")), span: "lg:col-span-6" },
+  {
+    id: "concepts",
+    title: "CORE CONCEPTS",
+    skills: [
+      ...getSkills("analysis").filter(
+        (skill) => skill === "Data Cleaning" || skill === "Exploratory Data Analysis"
+      ),
+      ...getSkills("visualization").filter((skill) => skill === "Dashboard Development"),
+    ],
+    span: "lg:col-span-6",
+  },
 ];
 
 export default function Skills() {
