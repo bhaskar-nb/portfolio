@@ -11,33 +11,33 @@ const config: Config = {
     extend: {
       colors: {
         base: {
-          900: "#080B10",
-          800: "#0A0E14",
-          700: "#10161F",
-          600: "#161D29",
-          500: "#1E2733",
-          400: "#2A3542",
+          900: "#05080B",
+          800: "#080C11",
+          700: "#0D131A",
+          600: "#131B24",
+          500: "#1B2631",
+          400: "#2A3744",
         },
         ink: {
-          100: "#F1F5F9",
-          200: "#E8EDF3",
-          400: "#8592A3",
-          600: "#5B6675",
+          100: "#F3F6F8",
+          200: "#E5EBEF",
+          400: "#8A98A6",
+          600: "#606D79",
         },
         gold: {
-          DEFAULT: "#F2B705",
-          soft: "#F2B70522",
+          DEFAULT: "#19C3B1",
+          soft: "#19C3B122",
         },
         teal: {
-          DEFAULT: "#00C2A8",
-          soft: "#00C2A822",
+          DEFAULT: "#19C3B1",
+          soft: "#19C3B122",
         },
         wire: {
-          DEFAULT: "#3DA9FC",
-          soft: "#3DA9FC22",
+          DEFAULT: "#19C3B1",
+          soft: "#19C3B122",
         },
         rose: {
-          DEFAULT: "#FF6B6B",
+          DEFAULT: "#A7B1BC",
         },
       },
       fontFamily: {
@@ -47,9 +47,9 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-fine":
-          "linear-gradient(to right, #1E273340 1px, transparent 1px), linear-gradient(to bottom, #1E273340 1px, transparent 1px)",
+          "linear-gradient(to right, #1B263122 1px, transparent 1px), linear-gradient(to bottom, #1B263122 1px, transparent 1px)",
         "radial-fade":
-          "radial-gradient(circle at 50% 0%, rgba(61,169,252,0.12), transparent 60%)",
+          "radial-gradient(circle at 50% 0%, rgba(25,195,177,0.08), transparent 60%)",
       },
       backgroundSize: {
         grid: "40px 40px",
