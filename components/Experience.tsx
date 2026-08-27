@@ -4,14 +4,26 @@ import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 
+const experience = {
+  company: "EduExpose.in",
+  role: "Data Scientist Intern",
+  period: "Feb 2026 – Apr 2026",
+  type: "Internship",
+  bullets: [
+    "Developed and deployed ML-based predictive applications for diabetes classification and house-price estimation using Python and Streamlit.",
+    "Preprocessed datasets, handled categorical features, prepared model inputs, and evaluated model performance using standard metrics.",
+    "Built end-to-end workflows from data preparation and model training to prediction and interactive application deployment.",
+  ],
+};
+
 export default function Experience() {
   return (
     <section id="experience" className="relative py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="-- experience"
-          title="Hands-on analytics experience"
-          description="The professional experience behind the projects."
+          title="Internship experience"
+          description="Applied data preparation, machine learning, and application development in a real internship setting."
         />
 
         <motion.article
@@ -26,22 +38,24 @@ export default function Experience() {
                 <Briefcase size={20} />
               </div>
               <div>
-                <p className="mono-tag text-gold">Feb 2026 – Apr 2026</p>
-                <h3 className="mt-1 font-display text-xl text-ink-100">Data Analyst Intern</h3>
-                <p className="mt-1 text-sm text-ink-400">EduExpose</p>
+                <p className="mono-tag text-gold">{experience.period}</p>
+                <h3 className="mt-1 font-display text-xl text-ink-100">{experience.role}</h3>
+                <p className="mt-1 text-sm text-ink-400">{experience.company}</p>
               </div>
             </div>
-            <span className="rounded-full border border-base-500 px-3 py-1 font-mono text-xs text-ink-400">Internship</span>
+            <span className="rounded-full border border-base-500 px-3 py-1 font-mono text-xs text-ink-400">
+              {experience.type}
+            </span>
           </div>
 
-          <div className="mt-7 grid gap-3 md:grid-cols-3">
-            {[
-              "Worked with data analysis and reporting tasks using SQL, Python, Excel, and visualization tools.",
-              "Cleaned and explored datasets to identify trends and prepare information for analysis.",
-              "Applied analytical thinking to turn raw data into clear, usable insights.",
-            ].map((item) => (
-              <div key={item} className="rounded-xl border border-base-500/70 bg-base-600/30 p-4 text-sm text-ink-300">
-                <span className="mr-2 text-teal">▸</span>{item}
+          <div className="mt-7 space-y-3">
+            {experience.bullets.map((item) => (
+              <div
+                key={item}
+                className="rounded-xl border border-base-500/70 bg-base-600/30 p-4 text-sm leading-6 text-ink-300"
+              >
+                <span className="mr-2 text-teal">▸</span>
+                {item}
               </div>
             ))}
           </div>
