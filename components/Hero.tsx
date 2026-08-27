@@ -6,12 +6,31 @@ import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
 
 const bars = [42, 68, 35, 82, 54, 90, 61, 74, 48, 88];
+const [firstName, ...remainingName] = profile.name.split(" ");
+const lastName = remainingName.join(" ");
 
 export default function Hero() {
   return (
     <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-8 select-none font-serif leading-[0.78] tracking-[-0.045em]"
+            aria-label={profile.name}
+          >
+            <div className="font-[var(--font-bodoni-moda)] text-[4.8rem] font-bold text-ink-100 sm:text-[6.5rem] lg:text-[7.6rem]">
+              {firstName}
+            </div>
+            {lastName && (
+              <div className="name-outline -mt-1 font-[var(--font-bodoni-moda)] text-[4.2rem] font-normal sm:text-[5.9rem] lg:text-[7rem]">
+                {lastName}
+              </div>
+            )}
+          </motion.div>
+
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-500 bg-base-700/60 px-3 py-1.5 font-mono text-xs text-ink-400"><span className="dot-live" /> DATA ANALYST</motion.div>
           <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-balance text-4xl font-medium leading-[1.08] text-ink-100 sm:text-5xl lg:text-6xl">Turning data into<br />clear decisions.</motion.h1>
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="mt-5 max-w-xl text-balance text-ink-400">I’m a Data Analyst focused on SQL, Python, Excel, Tableau, and Power BI. I analyze data, build interactive dashboards, and turn business questions into clear, decision-ready insights.</motion.p>
