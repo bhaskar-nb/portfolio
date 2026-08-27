@@ -21,6 +21,11 @@
   .section-eyebrow { @apply mono-tag flex items-center gap-2 text-teal; }
   .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-mono text-sm font-medium text-base-900 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]; }
   .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-full border border-base-400 bg-base-700/50 px-6 py-3 font-mono text-sm text-ink-200 backdrop-blur-sm transition-colors duration-200 hover:border-teal/60 hover:text-teal; }
+  .name-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(243, 246, 248, 0.72);
+    text-shadow: 0 0 28px rgba(243, 246, 248, 0.04);
+  }
 }
 
 @layer utilities {
