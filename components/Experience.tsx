@@ -10,9 +10,9 @@ const experience = {
   period: "Feb 2026 – Apr 2026",
   type: "Internship",
   bullets: [
-    "Developed and deployed ML-based predictive applications for diabetes classification and house-price estimation using Python and Streamlit.",
-    "Preprocessed datasets, handled categorical features, prepared model inputs, and evaluated model performance using standard metrics.",
-    "Built end-to-end workflows from data preparation and model training to prediction and interactive application deployment.",
+    "Worked with real-world datasets to prepare data for diabetes classification and house-price prediction applications using Python and Streamlit.",
+    "Cleaned and prepared datasets, handled categorical features, prepared model inputs, and evaluated model performance using standard metrics.",
+    "Built end-to-end data workflows covering data preparation, analysis, model training, prediction, and interactive application deployment.",
   ],
 };
 
@@ -23,7 +23,7 @@ export default function Experience() {
         <SectionHeading
           eyebrow="-- experience"
           title="Internship experience"
-          description="Applied data preparation, machine learning, and application development in a real internship setting."
+          description="Hands-on experience working with data preparation, analysis, machine learning, and application development."
         />
 
         <motion.article
