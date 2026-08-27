@@ -10,38 +10,29 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="-- skills"
-          title="The stack behind the dashboards"
-          description="Grouped the way a query would group them — by table, not by buzzword."
+          title="Tools I use to do the work"
+          description="A practical analytics stack built around querying, cleaning, analysis, visualization, and version control."
         />
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, gi) => (
             <motion.div
               key={group.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: (gi % 2) * 0.08 }}
-              className="panel p-5"
+              transition={{ duration: 0.5, delay: (gi % 3) * 0.08 }}
+              className="panel p-5 transition-colors hover:border-teal/50"
             >
               <div className="mono-tag mb-5 text-wire">{group.query}</div>
-              <div className="space-y-4">
-                {group.skills.map((skill, si) => (
-                  <div key={skill.name}>
-                    <div className="mb-1.5 flex items-center justify-between text-sm">
-                      <span className="text-ink-200">{skill.name}</span>
-                      <span className="font-mono text-xs text-ink-400">{skill.level}%</span>
-                    </div>
-                    <div className="h-1.5 overflow-hidden rounded-full bg-base-600">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true, margin: "-60px" }}
-                        transition={{ duration: 0.8, delay: 0.15 + si * 0.08, ease: "easeOut" }}
-                        className="h-full rounded-full bg-gradient-to-r from-teal to-gold"
-                      />
-                    </div>
-                  </div>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-base-500 bg-base-600/40 px-3 py-1.5 text-sm text-ink-200"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>
