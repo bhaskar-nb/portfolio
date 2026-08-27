@@ -4,10 +4,10 @@
 
 @layer base {
   * { @apply border-base-500; }
-  html { scrollbar-color: #2a3542 #0a0e14; scroll-behavior: smooth; }
+  html { scrollbar-color: #2A3744 #080C11; scroll-behavior: smooth; }
   body { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  ::selection { background: rgba(242, 183, 5, 0.28); }
-  :focus-visible { outline: 2px solid #f2b705; outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: rgba(25, 195, 177, 0.22); }
+  :focus-visible { outline: 2px solid #19C3B1; outline-offset: 3px; border-radius: 4px; }
   h1, h2, h3, h4 { @apply font-display tracking-tight; }
   @media (max-width: 640px) { h1 { font-size: clamp(2.35rem, 11vw, 3.5rem); line-height: 1.02; } }
 }
