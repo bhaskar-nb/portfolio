@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="pointer-events-none absolute inset-x-8 bottom-8 h-3/4 rounded-full bg-teal/10 blur-3xl" />
           <div className="relative w-full">
             <Image
-              src="/profile.webp"
+              src="/DP image.png"
               alt={`${profile.name} - Data Analyst`}
               width={600}
               height={640}
