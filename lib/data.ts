@@ -35,10 +35,10 @@ export const additionalProjects = [
 ];
 
 export const certifications = [
-  { title: "Deloitte Australia Data Analytics Job Simulation", issuer: "Forage Virtual Experience", year: "2026", link: "/Deloitte Data Analytics Job Simulation Certificate.pdf" },
-  { title: "Tata Data Visualisation: Empowering Business with Effective Insights", issuer: "Forage Virtual Experience", year: "2026", link: "/Tata Data Analytics Job Simualation Certificate.pdf" },
-  { title: "Data Analytics Essentials", issuer: "Cisco Networking Academy", year: "2026", link: "/Data_Analytics_Essentials_certificate.pdf" },
-  { title: "Introduction to SQL", issuer: "Simplilearn", year: "2026", link: "/SQL certificate Simplilearn.pdf" },
+  { title: "Deloitte Australia Data Analytics Job Simulation", issuer: "Forage Virtual Experience", year: "2026", link: "/Deloitte Data Analytics Job Simulation Certificate.pdf", bullets: ["Analyzed factory telemetry data in Tableau", "Built an interactive machine-downtime dashboard", "Classified gender pay equality data in Excel", "Applied data analysis to support business conclusions"] },
+  { title: "Tata Data Visualisation: Empowering Business with Effective Insights", issuer: "Forage Virtual Experience", year: "2026", link: "/Tata Data Analytics Job Simualation Certificate.pdf", bullets: ["Framed business questions from a leadership perspective", "Selected appropriate visuals for analytical scenarios", "Created effective data visualizations", "Communicated insights and analysis clearly"] },
+  { title: "Data Analytics Essentials", issuer: "Cisco Networking Academy", year: "2026", link: "/Data_Analytics_Essentials_certificate.pdf", bullets: ["Built foundations in data analytics and interpretation", "Worked with Excel for organizing and analyzing data", "Used SQL to query relational data", "Applied Tableau for data visualization and presentation"] },
+  { title: "Introduction to SQL", issuer: "Simplilearn", year: "2026", link: "/SQL certificate Simplilearn.pdf", bullets: ["Learned SQL fundamentals and relational databases", "Worked with MySQL tables, relationships, and views", "Covered ER modeling and database normalization", "Practiced querying and working with structured data"] },
 ];
 
 export const education = [{ school: "Parul Institute of Engineering and Technology", degree: "B.Tech in Computer Science and Engineering", location: "Vadodara, Gujarat", period: "2022 – 2026" }];
