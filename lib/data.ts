@@ -5,7 +5,7 @@
 export const profile = {
   name: "Bhaskar Nakka",
   role: "Data Analyst",
-  roles: ["Data Analyst", "BI Analyst", "Python Developer", "SQL Developer"],
+  roles: ["Data Analyst"],
   location: "Visakhapatnam, India",
   phone: "+91 9652020300",
   email: "bn7740401@gmail.com",
