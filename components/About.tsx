@@ -8,18 +8,18 @@ import SectionHeading from "@/components/SectionHeading";
 const highlights = [
   {
     icon: Database,
-    title: "I start with the data",
-    detail: "I clean, validate, and explore data before building visuals so the analysis is based on something I can trust.",
+    title: "Strong with messy data",
+    detail: "I use SQL, Python, and Excel to clean, validate, and explore data so the numbers are reliable before I draw conclusions.",
   },
   {
     icon: Lightbulb,
-    title: "I focus on the question",
-    detail: "I look for the trend, comparison, or problem that actually matters instead of producing charts for the sake of charts.",
+    title: "Focused on what matters",
+    detail: "I look beyond the numbers to find trends, patterns, and the business story behind them — not just make charts.",
   },
   {
     icon: Target,
-    title: "I build for decisions",
-    detail: "I use SQL, Python, Excel, Tableau, and Power BI to turn analysis into clear dashboards and practical insights.",
+    title: "Built for decision-making",
+    detail: "I turn analysis into clear dashboards and practical insights with Tableau and Power BI that are easy to understand and act on.",
   },
 ];
 
@@ -29,8 +29,8 @@ export default function About() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="-- about"
-          title="I turn business questions into useful analysis"
-          description={`I'm ${profile.name}, a Data Analyst focused on SQL, Python, Excel, Tableau, and Power BI. I work with data from the cleaning and exploration stage through analysis and visualization, with the goal of finding patterns that can support better decisions.`}
+          title="I turn data into insights people can act on"
+          description={`I'm ${profile.name}, a Data Analyst who enjoys finding the story behind the numbers. I work across SQL, Python, Excel, Tableau, and Power BI — from cleaning and exploring data to building dashboards and presenting insights clearly. My focus is simple: help turn data into better business decisions.`}
         />
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
