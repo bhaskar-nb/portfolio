@@ -21,18 +21,18 @@ export default function Hero() {
             className="mb-6 select-none font-serif leading-[0.76] tracking-[-0.04em]"
             aria-label={profile.name}
           >
-            <div className="font-[var(--font-bodoni-moda)] text-[3.5rem] font-bold text-ink-100 sm:text-[5rem] lg:text-[6.2rem]">
+            <div className="font-[var(--font-bodoni-moda)] text-[3rem] font-bold text-ink-100 sm:text-[4.25rem] lg:text-[5.2rem]">
               {firstName}
             </div>
             {lastName && (
-              <div className="name-outline mt-2 font-[var(--font-bodoni-moda)] text-[3.1rem] font-normal sm:text-[4.5rem] lg:text-[5.7rem]">
+              <div className="name-outline mt-2 font-[var(--font-bodoni-moda)] text-[2.7rem] font-normal sm:text-[3.8rem] lg:text-[4.8rem]">
                 {lastName}
               </div>
             )}
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-500 bg-base-700/60 px-3 py-1.5 font-mono text-xs text-ink-400"><span className="dot-live" /> DATA ANALYST</motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-balance text-3xl font-medium leading-[1.08] text-ink-100 sm:text-4xl lg:text-5xl">Turning data into<br />clear decisions.</motion.h1>
+          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-balance text-[2.5rem] font-medium leading-[1.08] text-ink-100 sm:text-[3.25rem] lg:text-[4.25rem]">Turning data into<br />clear decisions.</motion.h1>
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="mt-5 max-w-xl text-balance text-ink-400">I’m a Data Analyst focused on SQL, Python, Excel, Tableau, and Power BI. I analyze data, build interactive dashboards, and turn business questions into clear, decision-ready insights.</motion.p>
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }} className="mt-8 flex flex-wrap items-center gap-3"><MagneticButton href="/Resume.pdf" download className="btn-primary"><Download size={15} /> Download résumé</MagneticButton><MagneticButton onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="btn-secondary">View my work</MagneticButton></motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }} className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs text-ink-400"><span>SQL</span><span>·</span><span>Python</span><span>·</span><span>Excel</span><span>·</span><span>Tableau</span><span>·</span><span>Power BI</span></motion.div>
