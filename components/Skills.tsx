@@ -5,23 +5,20 @@ import { skillGroups } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 
 const logoMap: Record<string, string> = {
-  Tableau: "tableau/tableau-original.svg",
-  "Power BI": "powerbi/powerbi-original.svg",
-  "Microsoft Excel": "excel/excel-original.svg",
-  Python: "python/python-original.svg",
-  SQL: "mysql/mysql-original.svg",
-  Pandas: "pandas/pandas-original.svg",
-  NumPy: "numpy/numpy-original.svg",
-  Matplotlib: "matplotlib/matplotlib-original.svg",
-  MySQL: "mysql/mysql-original.svg",
-  Git: "git/git-original.svg",
-  GitHub: "github/github-original.svg",
-  "VS Code": "vscode/vscode-original.svg",
-  Streamlit: "streamlit/streamlit-original.svg",
+  Tableau: "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/13.15.0/tableau.svg",
+  "Power BI": "https://cdn.simpleicons.org/powerbi",
+  "Microsoft Excel": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/13.15.0/microsoftexcel.svg",
+  Python: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+  SQL: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+  Pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
+  NumPy: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+  Matplotlib: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg",
+  MySQL: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+  Git: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+  GitHub: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+  "VS Code": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+  Streamlit: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg",
 };
-
-const logoUrl = (skill: string) =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${logoMap[skill]}`;
 
 const getSkills = (id: string) =>
   skillGroups.find((group) => group.id === id)?.skills ?? [];
@@ -78,10 +75,10 @@ export default function Skills() {
                     >
                       {icon && (
                         <img
-                          src={logoUrl(skill)}
+                          src={icon}
                           alt=""
                           aria-hidden="true"
-                          className="h-5 w-5 object-contain"
+                          className={`h-5 w-5 object-contain ${skill === "GitHub" ? "brightness-0 invert" : ""}`}
                           loading="lazy"
                         />
                       )}
