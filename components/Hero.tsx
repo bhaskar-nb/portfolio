@@ -6,8 +6,6 @@ import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
 
 const bars = [42, 68, 35, 82, 54, 90, 61, 74, 48, 88];
-const [firstName, ...remainingName] = profile.name.split(" ");
-const lastName = remainingName.join(" ");
 
 export default function Hero() {
   return (
@@ -15,8 +13,7 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-6 select-none font-serif leading-[0.76] tracking-[-0.04em]" aria-label={profile.name}>
-            <div className="font-[var(--font-bodoni-moda)] text-[3rem] font-bold text-ink-100 sm:text-[4.25rem] lg:text-[5.2rem]">{firstName}</div>
-            {lastName && <div className="name-outline mt-2 font-[var(--font-bodoni-moda)] text-[2.7rem] font-normal sm:text-[3.8rem] lg:text-[4.8rem]">{lastName}</div>}
+            <div className="whitespace-nowrap font-[var(--font-bodoni-moda)] text-[3rem] font-bold text-ink-100 sm:text-[4.25rem] lg:text-[5.2rem]">{profile.name}</div>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-500 bg-base-700/60 px-3 py-1.5 font-mono text-xs text-ink-400"><span className="dot-live" /> DATA ANALYST</motion.div>
           <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-balance text-[1.8rem] font-medium leading-[1.08] text-ink-100 sm:text-[2.15rem] lg:text-[2.5rem]">Turning data into<br />clear decisions.</motion.h1>
