@@ -44,12 +44,18 @@ lib/utils.ts   Shared utility helpers
 public/        Static assets such as resume and favicon
 ```
 
+## Resume
+
+The latest resume is available directly from the portfolio website through the **Download résumé** buttons in the Hero and Navbar.
+
+If you are running the project locally, keep the current resume in the `public/` directory using the same filename referenced by the portfolio code.
+
 ## Deployment Checklist
 
 Before the final production deployment:
 
 - Update the production domain in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts`.
-- Make sure `public/resume.pdf` contains the current resume.
+- Make sure the current resume file is present in `public/` and matches the filename used by the Hero and Navbar download links.
 - Add `public/og-image.png` if social sharing previews are required.
 
 ## Contact
