@@ -35,10 +35,10 @@ export const additionalProjects = [
 ];
 
 export const certifications = [
-  { title: "Deloitte Australia Data Analytics Job Simulation", issuer: "Forage Virtual Experience", year: "2026", link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6PZAQE3YBSwmxWqNH_1782883293231_completion_certificate.pdf" },
-  { title: "Tata Data Visualisation: Empowering Business with Effective Insights", issuer: "Forage Virtual Experience", year: "2026", link: "https://www.linkedin.com/in/bhaskar-nakka/" },
-  { title: "Data Analytics Essentials", issuer: "Cisco Networking Academy", year: "2026", link: "https://www.linkedin.com/in/bhaskar-nakka/" },
-  { title: "Introduction to SQL", issuer: "Simplilearn", year: "2026", link: "https://www.linkedin.com/in/bhaskar-nakka/" },
+  { title: "Deloitte Australia Data Analytics Job Simulation", issuer: "Forage Virtual Experience", year: "2026", link: "/Deloitte Data Analytics Job Simulation Certificate.pdf" },
+  { title: "Tata Data Visualisation: Empowering Business with Effective Insights", issuer: "Forage Virtual Experience", year: "2026", link: "/Tata Data Analytics Job Simualation Certificate.pdf" },
+  { title: "Data Analytics Essentials", issuer: "Cisco Networking Academy", year: "2026", link: "/Data_Analytics_Essentials_certificate.pdf" },
+  { title: "Introduction to SQL", issuer: "Simplilearn", year: "2026", link: "/SQL certificate Simplilearn.pdf" },
 ];
 
 export const education = [{ school: "Parul Institute of Engineering and Technology", degree: "B.Tech in Computer Science and Engineering", location: "Vadodara, Gujarat", period: "2022 – 2026" }];
