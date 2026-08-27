@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Download, Mail, Github, Linkedin, BarChart3 } from "lucide-react";
 import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
-import TypingText from "@/components/TypingText";
 
 const bars = [42, 68, 35, 82, 54, 90, 61, 74, 48, 88];
 
@@ -13,36 +12,72 @@ export default function Hero() {
     <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-500 bg-base-700/60 px-3 py-1.5 font-mono text-xs text-ink-400">
-            <span className="dot-live" /> Open to Data Analyst opportunities
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-500 bg-base-700/60 px-3 py-1.5 font-mono text-xs text-ink-400"
+          >
+            <span className="dot-live" /> DATA ANALYST
           </motion.div>
 
-          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-balance text-4xl font-medium leading-[1.08] text-ink-100 sm:text-5xl lg:text-6xl">
-            I turn data into answers.
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-balance text-4xl font-medium leading-[1.08] text-ink-100 sm:text-5xl lg:text-6xl"
+          >
+            Turning data into
+            <br />
+            clear decisions.
           </motion.h1>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-4 h-8 text-lg text-teal sm:text-xl">
-            {profile.name} · <TypingText words={profile.roles} />
-          </motion.div>
-
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="mt-5 max-w-xl text-balance text-ink-400">
-            I use SQL, Python, Excel, and Tableau to clean data, investigate business questions, and build dashboards that make the answer easier to see.
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-5 max-w-xl text-balance text-ink-400"
+          >
+            I’m a Data Analyst focused on SQL, Python, Excel, Tableau, and Power BI. I analyze data, build interactive dashboards, and turn business questions into clear, decision-ready insights.
           </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }} className="mt-8 flex flex-wrap items-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-8 flex flex-wrap items-center gap-3"
+          >
             <MagneticButton href="/resume.pdf" download className="btn-primary"><Download size={15} /> Download résumé</MagneticButton>
-            <MagneticButton onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="btn-secondary">View projects</MagneticButton>
+            <MagneticButton onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="btn-secondary">View my work</MagneticButton>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }} className="mt-8 flex items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.75 }}
+            className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs text-ink-400"
+          >
+            <span>SQL</span><span>·</span>
+            <span>Python</span><span>·</span>
+            <span>Excel</span><span>·</span>
+            <span>Tableau</span><span>·</span>
+            <span>Power BI</span>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85 }} className="mt-5 flex items-center gap-4">
             <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink-400 transition-colors hover:text-ink-100"><Github size={19} /></a>
             <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-ink-400 transition-colors hover:text-ink-100"><Linkedin size={19} /></a>
             <a href={profile.links.tableau} target="_blank" rel="noreferrer" aria-label="Tableau Public" className="text-ink-400 transition-colors hover:text-ink-100"><BarChart3 size={19} /></a>
-            <a href={`mailto:${profile.email}`} className="text-ink-400 transition-colors hover:text-ink-100"><Mail size={19} /></a>
+            <a href={`mailto:${profile.email}`} aria-label="Email" className="text-ink-400 transition-colors hover:text-ink-100"><Mail size={19} /></a>
           </motion.div>
         </div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.94, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="panel relative animate-float overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.94, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="panel relative animate-float overflow-hidden"
+        >
           <div className="panel-header">
             <span className="mono-tag flex items-center gap-2"><span className="dot-live" /> analytics_workbench.sql</span>
             <div className="flex gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-rose/70" /><span className="h-2.5 w-2.5 rounded-full bg-gold/70" /><span className="h-2.5 w-2.5 rounded-full bg-teal/70" /></div>
