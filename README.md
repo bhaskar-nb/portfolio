@@ -58,6 +58,6 @@ Before the final production deployment:
 Data Analyst | SQL · Python · Tableau · Power BI
 
 - GitHub: https://github.com/bhaskar-nb
-- LinkedIn: https://www.linkedin.com/in/bhaskar-nakka-43a701259/
+- LinkedIn: https://www.linkedin.com/in/bhaskar-nakka/
 - Tableau Public: https://public.tableau.com/app/profile/bhaskar.nakka4980
 - Email: bn7740401@gmail.com
