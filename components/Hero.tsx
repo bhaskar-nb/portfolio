@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Download, Mail, Github, Linkedin, BarChart3 } from "lucide-react";
 import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
 
-const bars = [42, 68, 35, 82, 54, 90, 61, 74, 48, 88];
 const [firstName, ...remainingName] = profile.name.split(" ");
 const lastName = remainingName.join(" ");
 
@@ -24,7 +24,21 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }} className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs text-ink-400"><span>SQL</span><span>·</span><span>Python</span><span>·</span><span>Excel</span><span>·</span><span>Tableau</span><span>·</span><span>Power BI</span></motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85 }} className="mt-5 flex items-center gap-4"><a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink-400 transition-colors hover:text-ink-100"><Github size={19} /></a><a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-ink-400 transition-colors hover:text-ink-100"><Linkedin size={19} /></a><a href={profile.links.tableau} target="_blank" rel="noreferrer" aria-label="Tableau Public" className="text-ink-400 transition-colors hover:text-ink-100"><BarChart3 size={19} /></a><a href={`mailto:${profile.email}`} aria-label="Email" className="text-ink-400 transition-colors hover:text-ink-100"><Mail size={19} /></a></motion.div>
         </div>
-        <motion.div initial={{ opacity: 0, scale: 0.94, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="panel relative animate-float overflow-hidden"><div className="panel-header"><span className="mono-tag flex items-center gap-2"><span className="dot-live" /> analytics_workbench.sql</span><div className="flex gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-rose/70" /><span className="h-2.5 w-2.5 rounded-full bg-gold/70" /><span className="h-2.5 w-2.5 rounded-full bg-teal/70" /></div></div><div className="relative space-y-5 p-5"><div className="absolute inset-x-0 top-0 h-px animate-scan bg-gradient-to-r from-transparent via-teal/50 to-transparent" /><div className="rounded-xl border border-base-500/70 bg-base-600/40 p-4 font-mono text-xs"><div className="text-ink-400">-- typical workflow</div><div className="mt-3 text-teal">01</div><div className="text-ink-200">clean → validate → explore</div><div className="mt-2 text-teal">02</div><div className="text-ink-200">query → compare → explain</div><div className="mt-2 text-teal">03</div><div className="text-ink-200">visualize → communicate</div></div><div className="rounded-xl border border-base-500/70 bg-base-600/40 p-4"><div className="mono-tag mb-3">analysis trend</div><div className="flex h-28 items-end gap-1.5">{bars.map((h, i) => <motion.div key={i} initial={{ height: 0 }} animate={{ height: `${h}%` }} transition={{ duration: 0.8, delay: 0.7 + i * 0.05, ease: "easeOut" }} className="flex-1 rounded-t-sm bg-gradient-to-t from-teal/40 to-gold/70" />)}</div></div><div className="flex items-center justify-between rounded-xl border border-base-500/70 bg-base-600/40 px-4 py-3 font-mono text-xs text-ink-400"><span>SELECT insights FROM analysis</span><span className="text-teal">READY</span></div></div></motion.div>
+
+        <motion.div initial={{ opacity: 0, scale: 0.94, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="relative mx-auto flex w-full max-w-[430px] items-end justify-center self-end overflow-hidden">
+          <div className="pointer-events-none absolute inset-x-8 bottom-8 h-3/4 rounded-full bg-teal/10 blur-3xl" />
+          <div className="relative w-full">
+            <Image
+              src="/profile.webp"
+              alt={`${profile.name} - Data Analyst`}
+              width={600}
+              height={640}
+              priority
+              className="relative z-10 mx-auto h-auto w-full object-contain drop-shadow-[0_24px_45px_rgba(0,0,0,0.45)]"
+              sizes="(max-width: 1024px) 80vw, 430px"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
