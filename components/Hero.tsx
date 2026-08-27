@@ -18,14 +18,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mb-8 select-none font-serif leading-[0.78] tracking-[-0.045em]"
+            className="mb-6 select-none font-serif leading-[0.76] tracking-[-0.04em]"
             aria-label={profile.name}
           >
-            <div className="font-[var(--font-bodoni-moda)] text-[4.8rem] font-bold text-ink-100 sm:text-[6.5rem] lg:text-[7.6rem]">
+            <div className="font-[var(--font-bodoni-moda)] text-[3.5rem] font-bold text-ink-100 sm:text-[5rem] lg:text-[6.2rem]">
               {firstName}
             </div>
             {lastName && (
-              <div className="name-outline -mt-1 font-[var(--font-bodoni-moda)] text-[4.2rem] font-normal sm:text-[5.9rem] lg:text-[7rem]">
+              <div className="name-outline -mt-0.5 font-[var(--font-bodoni-moda)] text-[3.1rem] font-normal sm:text-[4.5rem] lg:text-[5.7rem]">
                 {lastName}
               </div>
             )}
