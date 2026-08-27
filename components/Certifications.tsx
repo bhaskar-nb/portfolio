@@ -60,7 +60,7 @@ export default function Certifications() {
 
           <div className="panel p-6 lg:col-span-2">
             <div className="mono-tag mb-5 flex items-center gap-2 text-teal">
-              <ShieldCheck size={14} /> -- achievements
+              <ShieldCheck size={14} /> -- selected analysis highlights
             </div>
             <div className="space-y-5">
               {achievements.map((a, i) => (
