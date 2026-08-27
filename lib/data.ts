@@ -52,16 +52,16 @@ export const projects = [
     title: "Sales Performance Dashboard",
     stack: ["Tableau"],
     summary:
-      "Interactive Tableau dashboard analyzing sales, profit, quantity, year-over-year performance, and product profitability.",
+      "Interactive sales analysis focused on revenue, profit, quantity, year-over-year performance, and product profitability.",
     features: [
       "Year-over-year sales, profit, and quantity KPIs",
       "Product and sub-category profitability analysis",
       "Interactive filters for exploring performance trends",
     ],
     challenges:
-      "Consolidating multiple related sales datasets into a single dashboard without making the analysis difficult to navigate.",
+      "How can sales performance be compared across time and products while keeping the dashboard useful for business decision-making?",
     learnings:
-      "Improved KPI design, dashboard hierarchy, comparative analysis, and business storytelling.",
+      "Strengthened KPI design, comparative analysis, dashboard hierarchy, and business storytelling.",
     github: "https://github.com/bhaskar-nb/sales-dashboard",
     demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/SalesDashboardProject_17823218142750/SalesDashboard",
   },
@@ -70,16 +70,16 @@ export const projects = [
     title: "HR Analytics Dashboard",
     stack: ["Tableau", "Python", "Pandas", "NumPy", "Faker"],
     summary:
-      "HR analytics dashboard exploring workforce composition, hiring, terminations, demographics, compensation, and performance using synthetic employee data.",
+      "Workforce analysis covering hiring, terminations, demographics, departments, compensation, performance, and geography using synthetic employee data.",
     features: [
       "Workforce, hiring, and termination KPIs",
       "Department, demographic, salary, and performance analysis",
-      "Synthetic dataset generated and prepared with Python",
+      "Synthetic employee dataset generated and prepared with Python",
     ],
     challenges:
-      "Creating realistic synthetic HR records and turning them into a clear dashboard for non-technical HR users.",
+      "How can workforce composition, hiring, attrition, and compensation patterns be presented clearly to HR stakeholders?",
     learnings:
-      "Strengthened synthetic data generation, preparation, KPI design, and dashboard communication skills.",
+      "Strengthened synthetic data generation, preparation, KPI design, and dashboard communication.",
     github: "https://github.com/bhaskar-nb/hr-dashboard",
     demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/HRDashboard_17824941977350/HRSummary_1",
   },
@@ -88,18 +88,36 @@ export const projects = [
     title: "EV Adoption Dashboard",
     stack: ["Tableau"],
     summary:
-      "Interactive analysis of electric vehicle registrations across model years, states, manufacturers, vehicle types, models, and eligibility categories.",
+      "Analysis of electric vehicle registrations across model years, states, manufacturers, vehicle types, models, and eligibility categories.",
     features: [
       "Manufacturer and vehicle-type comparisons",
       "State-level geographic analysis",
       "Model-year and CAFV eligibility exploration",
     ],
     challenges:
-      "Making geographic concentration and registration patterns easy to compare without overstating the dataset as a complete U.S. EV market view.",
+      "How do EV registrations vary by geography, manufacturer, vehicle type, and model year within the available dataset?",
     learnings:
       "Improved geographic analysis, dataset-scope communication, and interactive dashboard design.",
     github: "https://github.com/bhaskar-nb/ev-dashboard",
     demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/EVDashboard_17866424745700/EvDashboard",
+  },
+  {
+    id: "amazon-prime-content-intelligence",
+    title: "Amazon Prime Content Intelligence Dashboard",
+    stack: ["Tableau"],
+    summary:
+      "Catalog analysis exploring movies versus TV shows, genres, ratings, release trends, countries, and content composition.",
+    features: [
+      "Movies versus TV shows comparison",
+      "Genre, rating, country, and release-year analysis",
+      "Interactive views for exploring catalog composition",
+    ],
+    challenges:
+      "How can a large streaming catalog be broken into useful patterns across content type, genre, ratings, geography, and release trends?",
+    learnings:
+      "Strengthened categorical analysis, trend analysis, geographic breakdowns, and dashboard storytelling.",
+    github: "https://github.com/bhaskar-nb/amazon-prime-dashboard",
+    demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980",
   },
 ];
 
