@@ -21,59 +21,28 @@ export const profile = {
 
 export const skillGroups = [
   {
-    id: "languages",
-    label: "Languages",
-    query: "SELECT * FROM languages",
-    skills: [
-      { name: "Python", level: 85 },
-      { name: "SQL", level: 88 },
-    ],
-  },
-  {
-    id: "libraries",
-    label: "Libraries",
-    query: "SELECT * FROM libraries",
-    skills: [
-      { name: "Pandas", level: 80 },
-      { name: "NumPy", level: 75 },
-      { name: "Matplotlib", level: 78 },
-    ],
+    id: "analysis",
+    label: "Analytics",
+    query: "SELECT skill FROM analytics",
+    skills: ["SQL", "Python", "Pandas", "NumPy", "Data Cleaning", "Exploratory Data Analysis"],
   },
   {
     id: "visualization",
     label: "Visualization",
-    query: "SELECT * FROM visualization",
-    skills: [
-      { name: "Tableau", level: 90 },
-      { name: "Power BI", level: 78 },
-      { name: "Microsoft Excel", level: 85 },
-    ],
+    query: "SELECT tool FROM visualization",
+    skills: ["Tableau", "Power BI", "Microsoft Excel", "Matplotlib", "Dashboard Development"],
   },
   {
     id: "database",
     label: "Database",
-    query: "SELECT * FROM database",
-    skills: [{ name: "MySQL", level: 80 }],
+    query: "SELECT tool FROM database",
+    skills: ["MySQL"],
   },
   {
-    id: "tools",
-    label: "Tools",
-    query: "SELECT * FROM tools",
-    skills: [
-      { name: "Git", level: 82 },
-      { name: "GitHub", level: 82 },
-      { name: "VS Code", level: 88 },
-    ],
-  },
-  {
-    id: "core",
-    label: "Core Concepts",
-    query: "SELECT * FROM core_concepts",
-    skills: [
-      { name: "Data Cleaning", level: 85 },
-      { name: "Exploratory Data Analysis", level: 85 },
-      { name: "Dashboard Development", level: 88 },
-    ],
+    id: "workflow",
+    label: "Workflow & Tools",
+    query: "SELECT tool FROM workflow_tools",
+    skills: ["Git", "GitHub", "VS Code", "Streamlit"],
   },
 ];
 
@@ -193,6 +162,7 @@ export const achievements = [
 export const nav = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "certifications", label: "Certifications" },
