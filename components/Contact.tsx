@@ -38,7 +38,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="-- contact"
           title="Have a Data Analyst opportunity?"
-          description="I'm currently open to Data Analyst and BI opportunities. If you have a role, project, or collaboration in mind, I'd be glad to hear from you."
+          description="I am currently open to Data Analyst and BI opportunities. If you have a role, project, or collaboration in mind, I would be glad to hear from you."
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
@@ -68,7 +68,7 @@ export default function Contact() {
           <motion.form onSubmit={handleSubmit} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: 0.1 }} className="panel space-y-4 p-6 lg:col-span-3">
             <div>
               <h3 className="font-display text-lg text-ink-100">Start a conversation</h3>
-              <p className="mt-1 text-sm text-ink-400">Tell me what you're hiring for or what you'd like to build.</p>
+              <p className="mt-1 text-sm text-ink-400">Tell me what you are hiring for or what you would like to build.</p>
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div><label className="mono-tag mb-2 block" htmlFor="name">Name</label><input id="name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full rounded-lg border border-base-500 bg-base-800/60 px-3.5 py-2.5 text-sm text-ink-100 outline-none transition-colors focus:border-teal" placeholder="Your name" /></div>
