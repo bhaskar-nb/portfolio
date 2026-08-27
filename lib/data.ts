@@ -10,7 +10,7 @@ export const profile = {
   phone: "+91 9652020300",
   email: "bn7740401@gmail.com",
   summary: "Data Analyst with hands-on experience in SQL, Python, Excel, and Tableau. I clean and analyze data, build interactive dashboards, and turn business questions into clear, decision-ready insights.",
-  links: { linkedin: "https://www.linkedin.com/in/bhaskar-nakka-43a701259/", github: "https://github.com/bhaskar-nb", tableau: "https://public.tableau.com/app/profile/bhaskar.nakka4980" },
+  links: { linkedin: "https://www.linkedin.com/in/bhaskar-nakka/", github: "https://github.com/bhaskar-nb", tableau: "https://public.tableau.com/app/profile/bhaskar.nakka4980" },
   githubUsername: "bhaskar-nb",
 };
 
@@ -36,9 +36,9 @@ export const additionalProjects = [
 
 export const certifications = [
   { title: "Deloitte Australia Data Analytics Job Simulation", issuer: "Forage Virtual Experience", year: "2026", link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6PZAQE3YBSwmxWqNH_1782883293231_completion_certificate.pdf" },
-  { title: "Tata Data Visualisation: Empowering Business with Effective Insights", issuer: "Forage Virtual Experience", year: "2026", link: "#" },
-  { title: "Data Analytics Essentials", issuer: "Cisco Networking Academy", year: "2026", link: "#" },
-  { title: "Introduction to SQL", issuer: "Simplilearn", year: "2026", link: "#" },
+  { title: "Tata Data Visualisation: Empowering Business with Effective Insights", issuer: "Forage Virtual Experience", year: "2026", link: "https://www.linkedin.com/in/bhaskar-nakka/" },
+  { title: "Data Analytics Essentials", issuer: "Cisco Networking Academy", year: "2026", link: "https://www.linkedin.com/in/bhaskar-nakka/" },
+  { title: "Introduction to SQL", issuer: "Simplilearn", year: "2026", link: "https://www.linkedin.com/in/bhaskar-nakka/" },
 ];
 
 export const education = [{ school: "Parul Institute of Engineering and Technology", degree: "B.Tech in Computer Science and Engineering", location: "Vadodara, Gujarat", period: "2022 – 2026" }];
@@ -49,9 +49,9 @@ export const timeline = [
   { year: "2026", title: "Graduating & job-seeking", detail: "Completing B.Tech and targeting Data Analyst / BI roles." },
 ];
 export const achievements = [
-  { title: "Portfolio of business-focused analytics dashboards", detail: "Built projects across sales, HR, EV adoption, disaster impact, and other domains." },
-  { title: "Deloitte Job Simulation completed", detail: "Completed a real-world-style data analytics workflow through Forage." },
-  { title: "Multi-tool analytics stack", detail: "SQL, Python, Excel, Tableau, Power BI, Git, and GitHub across analytics projects." },
+  { title: "20.6% sales growth identified", detail: "Sales Performance Dashboard analysis found 20.6% year-over-year sales growth and 43.7% profit growth." },
+  { title: "150,413 EV records analyzed", detail: "Built an EV analysis dashboard covering model year, state, manufacturer, vehicle type, model, and CAFV eligibility." },
+  { title: "15,090 disaster events analyzed", detail: "Built a Global Disaster Analysis dashboard covering disaster type, country, time, human impact, and economic damage." },
 ];
 export const nav = [
   { id: "home", label: "Home" }, { id: "about", label: "About" }, { id: "experience", label: "Experience" }, { id: "skills", label: "Skills" }, { id: "projects", label: "Projects" }, { id: "certifications", label: "Certifications" }, { id: "education", label: "Education" }, { id: "contact", label: "Contact" },
