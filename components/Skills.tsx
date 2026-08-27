@@ -19,8 +19,8 @@ export default function Skills() {
               <div className="mono-tag mb-5 text-wire">{group.query}</div>
               <div className="space-y-3">
                 {group.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between rounded-lg border border-base-500/60 bg-base-600/30 px-3 py-2">
-                    <span className="text-sm text-ink-200">{skill.name}</span>
+                  <div key={skill} className="flex items-center justify-between rounded-lg border border-base-500/60 bg-base-600/30 px-3 py-2">
+                    <span className="text-sm text-ink-200">{skill}</span>
                     <span className="mono-tag text-teal">skill</span>
                   </div>
                 ))}
