@@ -5,9 +5,9 @@ import { skillGroups } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 
 const logoMap: Record<string, string> = {
-  Tableau: "https://cdn.simpleicons.org/tableau/E97627",
-  "Power BI": "https://cdn.simpleicons.org/powerbi/F2C811",
-  "Microsoft Excel": "https://cdn.simpleicons.org/microsoftexcel/217346",
+  Tableau: "https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/tableau.svg",
+  "Power BI": "https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/powerbi.svg",
+  "Microsoft Excel": "https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/microsoftexcel.svg",
   Python: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
   SQL: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
   Pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
