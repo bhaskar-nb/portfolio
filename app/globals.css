@@ -3,85 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-base-500;
-  }
-  html {
-    scrollbar-color: #2a3542 #0a0e14;
-  }
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-  ::selection {
-    background: rgba(242, 183, 5, 0.28);
-  }
-  :focus-visible {
-    outline: 2px solid #f2b705;
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-  h1, h2, h3, h4 {
-    @apply font-display tracking-tight;
-  }
+  * { @apply border-base-500; }
+  html { scrollbar-color: #2a3542 #0a0e14; scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background: rgba(242, 183, 5, 0.28); }
+  :focus-visible { outline: 2px solid #f2b705; outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+  @media (max-width: 640px) { h1 { font-size: clamp(2.35rem, 11vw, 3.5rem); line-height: 1.02; } }
 }
 
 @layer components {
-  /* Dashboard "widget" card — the recurring structural device across the site */
-  .panel {
-    @apply relative rounded-2xl border border-base-500/80 bg-base-700/60 backdrop-blur-sm shadow-panel;
-  }
-
-  .panel-header {
-    @apply flex items-center justify-between border-b border-base-500/70 px-5 py-3;
-  }
-
-  .mono-tag {
-    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400;
-  }
-
-  .dot-live {
-    @apply relative inline-flex h-2 w-2 rounded-full bg-teal;
-  }
-  .dot-live::before {
-    content: "";
-    @apply absolute inset-0 rounded-full bg-teal animate-ping;
-  }
-
-  .section-eyebrow {
-    @apply mono-tag flex items-center gap-2 text-teal;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-mono text-sm font-medium text-base-900 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98];
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-full border border-base-400 bg-base-700/50 px-6 py-3 font-mono text-sm text-ink-200 backdrop-blur-sm transition-colors duration-200 hover:border-teal/60 hover:text-teal;
-  }
+  .panel { @apply relative rounded-2xl border border-base-500/80 bg-base-700/60 backdrop-blur-sm shadow-panel; }
+  .panel-header { @apply flex items-center justify-between border-b border-base-500/70 px-5 py-3; }
+  .mono-tag { @apply font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400; }
+  .dot-live { @apply relative inline-flex h-2 w-2 rounded-full bg-teal; }
+  .dot-live::before { content: ""; @apply absolute inset-0 rounded-full bg-teal animate-ping; }
+  .section-eyebrow { @apply mono-tag flex items-center gap-2 text-teal; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-mono text-sm font-medium text-base-900 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-full border border-base-400 bg-base-700/50 px-6 py-3 font-mono text-sm text-ink-200 backdrop-blur-sm transition-colors duration-200 hover:border-teal/60 hover:text-teal; }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
-  }
+  .text-balance { text-wrap: balance; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
 }
 
-/* Light theme override — dark is the default experience; this is the
-   secondary, optional mode toggled via ThemeToggle. */
-html.light body {
-  background-color: #f6f7f9;
-  color: #10161f;
-}
+html.light body { background-color: #f6f7f9; color: #10161f; }
 html.light .bg-base-800 { background-color: #f6f7f9 !important; }
-html.light .bg-base-700\/60,
-html.light .bg-base-700\/50 { background-color: #ffffffcc !important; }
+html.light .bg-base-700\/60, html.light .bg-base-700\/50 { background-color: #ffffffcc !important; }
 html.light .bg-base-700 { background-color: #ffffff !important; }
-html.light .border-base-500,
-html.light .border-base-500\/70,
-html.light .border-base-500\/80 { border-color: #dde3ea !important; }
+html.light .border-base-500, html.light .border-base-500\/70, html.light .border-base-500\/80 { border-color: #dde3ea !important; }
 html.light .border-base-400 { border-color: #c7cfd8 !important; }
 html.light .text-ink-200 { color: #1c2530 !important; }
 html.light .text-ink-100 { color: #0b0f14 !important; }
@@ -89,10 +40,10 @@ html.light .text-ink-400 { color: #5b6675 !important; }
 html.light .bg-grid-fine { opacity: 0.4; }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+@media (max-width: 640px) {
+  .panel { border-radius: 1rem; }
+  .btn-primary, .btn-secondary { min-height: 44px; }
 }
