@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/data";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -20,6 +20,12 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+const bodoniModa = Bodoni_Moda({
+  subsets: ["latin"],
+  variable: "--font-bodoni-moda",
   display: "swap",
 });
 
@@ -89,7 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} font-body bg-base-800 text-ink-200 antialiased selection:bg-gold/30 selection:text-ink-100`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${bodoniModa.variable} font-body bg-base-800 text-ink-200 antialiased selection:bg-gold/30 selection:text-ink-100`}
       >
         <script
           type="application/ld+json"
