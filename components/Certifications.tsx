@@ -11,8 +11,8 @@ export default function Certifications() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="-- certifications"
-          title="Verified experience"
-          description="Programs completed alongside coursework and personal projects."
+          title="Certifications & Job Simulations"
+          description="Industry-recognized learning and job simulation experiences completed alongside coursework and personal projects."
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
