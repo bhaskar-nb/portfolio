@@ -4,6 +4,37 @@ import { motion } from "framer-motion";
 import { skillGroups } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 
+const logoMap: Record<string, string> = {
+  Tableau: "tableau/tableau-original.svg",
+  "Power BI": "powerbi/powerbi-original.svg",
+  "Microsoft Excel": "excel/excel-original.svg",
+  Python: "python/python-original.svg",
+  SQL: "mysql/mysql-original.svg",
+  Pandas: "pandas/pandas-original.svg",
+  NumPy: "numpy/numpy-original.svg",
+  Matplotlib: "matplotlib/matplotlib-original.svg",
+  MySQL: "mysql/mysql-original.svg",
+  Git: "git/git-original.svg",
+  GitHub: "github/github-original.svg",
+  "VS Code": "vscode/vscode-original.svg",
+  Streamlit: "streamlit/streamlit-original.svg",
+};
+
+const logoUrl = (skill: string) =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${logoMap[skill]}`;
+
+const getSkills = (id: string) =>
+  skillGroups.find((group) => group.id === id)?.skills ?? [];
+
+const sections = [
+  { id: "visualization", title: "VISUALIZATION", skills: getSkills("visualization"), span: "lg:col-span-4" },
+  { id: "languages", title: "LANGUAGES", skills: getSkills("analysis").filter((skill) => ["Python", "SQL"].includes(skill)), span: "lg:col-span-2" },
+  { id: "libraries", title: "LIBRARIES", skills: getSkills("analysis").filter((skill) => ["Pandas", "NumPy"].includes(skill)).concat(getSkills("visualization").filter((skill) => skill === "Matplotlib")), span: "lg:col-span-2" },
+  { id: "database", title: "DATABASE", skills: getSkills("database"), span: "lg:col-span-2" },
+  { id: "tools", title: "TOOLS", skills: getSkills("workflow").filter((skill) => ["Git", "GitHub", "VS Code"].includes(skill)), span: "lg:col-span-2" },
+  { id: "concepts", title: "CORE CONCEPTS", skills: getSkills("analysis").filter((skill) => skill === "Data Cleaning" || skill === "Exploratory Data Analysis").concat(getSkills("visualization").filter((skill) => skill === "Dashboard Development")), span: "lg:col-span-6" },
+];
+
 export default function Skills() {
   return (
     <section id="skills" className="relative py-24">
@@ -13,17 +44,41 @@ export default function Skills() {
           title="Tools I use to do the work"
           description="A practical analytics stack built around querying, cleaning, analysis, visualization, and version control."
         />
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {skillGroups.map((group, gi) => (
-            <motion.div key={group.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: (gi % 3) * 0.08 }} className="panel p-5 transition-colors hover:border-teal/50">
-              <div className="mono-tag mb-5 text-wire">{group.query}</div>
-              <div className="space-y-3">
-                {group.skills.map((skill) => (
-                  <div key={skill} className="flex items-center justify-between rounded-lg border border-base-500/60 bg-base-600/30 px-3 py-2">
-                    <span className="text-sm text-ink-200">{skill}</span>
-                    <span className="mono-tag text-teal">skill</span>
-                  </div>
-                ))}
+
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
+          {sections.map((section, index) => (
+            <motion.div
+              key={section.id}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: (index % 3) * 0.06 }}
+              className={`panel ${section.span} p-6 transition-colors hover:border-teal/40`}
+            >
+              <div className="mono-tag mb-5 text-teal">{section.title}</div>
+
+              <div className="flex flex-wrap gap-2.5">
+                {section.skills.map((skill) => {
+                  const icon = logoMap[skill];
+
+                  return (
+                    <div
+                      key={skill}
+                      className="inline-flex items-center gap-2 rounded-full border border-base-500/70 bg-base-700/40 px-3.5 py-2 text-sm text-ink-200 transition-colors hover:border-teal/50 hover:text-ink-100"
+                    >
+                      {icon && (
+                        <img
+                          src={logoUrl(skill)}
+                          alt=""
+                          aria-hidden="true"
+                          className="h-5 w-5 object-contain"
+                          loading="lazy"
+                        />
+                      )}
+                      <span>{skill}</span>
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
