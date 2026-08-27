@@ -21,22 +21,11 @@ const getSkills = (id: string) =>
   skillGroups.find((group) => group.id === id)?.skills ?? [];
 
 const sections = [
-  { id: "visualization", title: "VISUALIZATION", skills: getSkills("visualization"), span: "lg:col-span-4" },
-  { id: "languages", title: "LANGUAGES", skills: getSkills("analysis").filter((skill) => ["Python", "SQL"].includes(skill)), span: "lg:col-span-2" },
-  { id: "libraries", title: "LIBRARIES", skills: getSkills("analysis").filter((skill) => ["Pandas", "NumPy"].includes(skill)).concat(getSkills("visualization").filter((skill) => skill === "Matplotlib")), span: "lg:col-span-2" },
+  { id: "analytics-core", title: "ANALYTICS CORE", skills: getSkills("analysis").filter((skill) => ["SQL", "Python", "Data Cleaning", "Exploratory Data Analysis"].includes(skill)), span: "lg:col-span-4" },
+  { id: "visualization", title: "VISUALIZATION", skills: getSkills("visualization").filter((skill) => ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"].includes(skill)), span: "lg:col-span-2" },
+  { id: "libraries", title: "PYTHON LIBRARIES", skills: getSkills("analysis").filter((skill) => ["Pandas", "NumPy"].includes(skill)).concat(getSkills("visualization").filter((skill) => skill === "Matplotlib")), span: "lg:col-span-2" },
   { id: "database", title: "DATABASE", skills: getSkills("database"), span: "lg:col-span-2" },
-  { id: "tools", title: "TOOLS", skills: getSkills("workflow").filter((skill) => ["Git", "GitHub", "VS Code"].includes(skill)), span: "lg:col-span-2" },
-  {
-    id: "concepts",
-    title: "CORE CONCEPTS",
-    skills: [
-      ...getSkills("analysis").filter(
-        (skill) => skill === "Data Cleaning" || skill === "Exploratory Data Analysis"
-      ),
-      ...getSkills("visualization").filter((skill) => skill === "Dashboard Development"),
-    ],
-    span: "lg:col-span-6",
-  },
+  { id: "tools", title: "TOOLS", skills: getSkills("workflow").filter((skill) => ["Git", "GitHub", "VS Code", "Streamlit"].includes(skill)), span: "lg:col-span-2" },
 ];
 
 function BrandIcon({ skill }: { skill: string }) {
