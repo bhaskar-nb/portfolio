@@ -25,7 +25,7 @@ const workflow = [
 export default function Experience() {
   return (
     <section id="experience" className="relative overflow-hidden py-28">
-      <div className="pointer-events-none absolute right-0 top-1/4 h-80 w-80 rounded-full bg-teal/5 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-1/4 h-80 w-80 rounded-full bg-gold/5 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading eyebrow="-- experience" title="From raw data to working applications" description="A hands-on internship where data preparation, analysis, machine-learning workflows, and deployment came together." />
 
@@ -38,14 +38,14 @@ export default function Experience() {
         >
           <div className="grid lg:grid-cols-[0.36fr_0.64fr]">
             <div className="relative overflow-hidden border-b border-base-500/70 p-7 sm:p-9 lg:border-b-0 lg:border-r lg:p-10">
-              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-teal/5 blur-3xl" />
+              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/5 blur-3xl" />
               <div className="relative flex h-full flex-col">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-teal">01 / experience</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">01 / experience</span>
                   <ArrowUpRight size={17} className="text-ink-600" />
                 </div>
 
-                <div className="mt-12 flex h-14 w-14 items-center justify-center rounded-2xl border border-teal/25 bg-teal/10 text-teal">
+                <div className="mt-12 flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/25 bg-gold/10 text-gold">
                   <BriefcaseBusiness size={24} />
                 </div>
                 <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-gold">{experience.period}</p>
@@ -62,7 +62,7 @@ export default function Experience() {
             <div className="p-7 sm:p-9 lg:p-10">
               <div className="flex items-end justify-between border-b border-base-500/70 pb-5">
                 <div>
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal">what I worked on</span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-gold">what I worked on</span>
                   <h4 className="mt-2 font-display text-xl text-ink-100">Data workflows in practice</h4>
                 </div>
                 <span className="hidden font-mono text-[10px] text-ink-600 sm:block">03 / responsibilities</span>
@@ -76,9 +76,9 @@ export default function Experience() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.45, delay: i * 0.1 }}
-                    className="group flex gap-4 rounded-2xl border border-base-500/70 bg-base-700/30 p-5 transition-all duration-300 hover:border-teal/35 hover:bg-base-700/60"
+                    className="group flex gap-4 rounded-2xl border border-base-500/70 bg-base-700/30 p-5 transition-all duration-300 hover:border-gold/35 hover:bg-base-700/60"
                   >
-                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-teal/20 bg-teal/5 text-teal">
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/20 bg-gold/5 text-gold">
                       <Check size={14} />
                     </span>
                     <div>
@@ -92,7 +92,7 @@ export default function Experience() {
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 {workflow.map(({ icon: Icon, label, detail }) => (
                   <div key={label} className="rounded-2xl border border-base-500/70 bg-base-700/20 p-4">
-                    <Icon size={16} className="text-teal" />
+                    <Icon size={16} className="text-gold" />
                     <p className="mt-4 text-sm font-medium text-ink-200">{label}</p>
                     <p className="mt-1 text-[11px] leading-5 text-ink-600">{detail}</p>
                   </div>
