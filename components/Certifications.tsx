@@ -19,13 +19,13 @@ export default function Certifications() {
           </motion.aside>
 
           <div>
-            <div className="mb-5 flex items-end justify-between"><div><span className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal">certifications.log</span><p className="mt-2 text-sm text-ink-500">Selected learning and professional simulations.</p></div><span className="font-mono text-[10px] text-ink-600">{String(certifications.length).padStart(2, "0")} credentials</span></div>
+            <div className="mb-5 flex items-end justify-between"><div><span className="font-mono text-[9px] uppercase tracking-[0.2em] text-gold">certifications.log</span><p className="mt-2 text-sm text-ink-500">Selected learning and professional simulations.</p></div><span className="font-mono text-[10px] text-ink-600">{String(certifications.length).padStart(2, "0")} credentials</span></div>
             <div className="space-y-3">
               {certifications.map((c, i) => (
-                <motion.article key={c.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.45, delay: i * 0.07 }} className="group flex flex-col gap-5 rounded-2xl border border-base-500/80 bg-base-800/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-base-700/70 sm:flex-row sm:items-center sm:p-6">
+                <motion.article key={c.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.45, delay: i * 0.07 }} className="group flex flex-col gap-5 rounded-2xl border border-base-500/80 bg-base-800/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:bg-base-700/70 sm:flex-row sm:items-center sm:p-6">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-gold"><Award size={19} /></div>
-                  <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-x-3 gap-y-1"><h3 className="font-display text-lg leading-snug text-ink-100">{c.title}</h3><span className="font-mono text-[9px] uppercase tracking-wider text-teal">{c.year}</span></div><p className="mt-1.5 text-sm text-ink-500">{c.issuer}</p></div>
-                  {c.link && c.link !== "#" && <a href={c.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${c.title} credential`} className="inline-flex shrink-0 items-center gap-2 rounded-full border border-base-500 px-4 py-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-300 transition-all hover:border-teal/50 hover:text-teal">View <ExternalLink size={12} /></a>}
+                  <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-x-3 gap-y-1"><h3 className="font-display text-lg leading-snug text-ink-100">{c.title}</h3><span className="font-mono text-[9px] uppercase tracking-wider text-gold">{c.year}</span></div><p className="mt-1.5 text-sm text-ink-500">{c.issuer}</p></div>
+                  {c.link && c.link !== "#" && <a href={c.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${c.title} credential`} className="inline-flex shrink-0 items-center gap-2 rounded-full border border-base-500 px-4 py-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-300 transition-all hover:border-gold/50 hover:text-gold">View <ExternalLink size={12} /></a>}
                 </motion.article>
               ))}
             </div>
