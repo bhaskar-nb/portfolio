@@ -22,7 +22,7 @@ const getSkills = (id: string) => skillGroups.find((group) => group.id === id)?.
 
 const sections = [
   { id: "analytics-core", title: "ANALYTICS CORE", icon: Code2, skills: getSkills("analysis").filter((s) => ["SQL", "Python", "Data Cleaning", "Exploratory Data Analysis"].includes(s)), span: "lg:col-span-4" },
-  { id: "visualization", title: "VISUALIZATION", icon: BarChart3, skills: getSkills("visualization").filter((s) => ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"].includes(s)), span: "lg:col-span-2" },
+  { id: "visualization", title: "BI & VISUALIZATION", icon: BarChart3, skills: getSkills("visualization").filter((s) => ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"].includes(s)), span: "lg:col-span-2" },
   { id: "libraries", title: "PYTHON LIBRARIES", icon: Table2, skills: getSkills("analysis").filter((s) => ["Pandas", "NumPy"].includes(s)).concat(getSkills("visualization").filter((s) => s === "Matplotlib")), span: "lg:col-span-2" },
   { id: "database", title: "DATABASE", icon: Database, skills: getSkills("database"), span: "lg:col-span-2" },
   { id: "tools", title: "TOOLS", icon: GitBranch, skills: getSkills("workflow").filter((s) => ["Git", "GitHub", "VS Code", "Streamlit"].includes(s)), span: "lg:col-span-2" },
@@ -44,7 +44,7 @@ export default function Skills() {
     <section id="skills" className="relative overflow-hidden py-28">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-20 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="-- skills" title="The stack behind my analysis" description="The tools I use across the full workflow — from raw data and SQL queries to analysis, visualization, and delivery." />
+        <SectionHeading eyebrow="-- skills" title="The tools behind the decisions" description="A practical stack for taking data from raw tables to analysis, dashboards, and decision-ready insights." />
 
         <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-6">
           {sections.map((section, index) => {
@@ -69,7 +69,12 @@ export default function Skills() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-5 overflow-hidden rounded-2xl border border-base-500/70 bg-base-800/40 p-5 sm:p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><div><span className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal">workflow</span><p className="mt-2 text-sm text-ink-400">How the tools fit together in a typical analysis.</p></div><div className="flex flex-wrap items-center gap-2 font-mono text-[9px] uppercase tracking-wider text-ink-500"><span>raw data</span><span className="text-teal">→</span><span>query</span><span className="text-teal">→</span><span>clean</span><span className="text-teal">→</span><span>analyze</span><span className="text-teal">→</span><span>visualize</span><span className="text-teal">→</span><span>insight</span></div></div>
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div><span className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal">workflow</span><p className="mt-2 max-w-md text-sm leading-6 text-ink-400">The stack is only useful when each step produces something the next step can trust.</p></div>
+            <div className="flex flex-wrap items-center gap-2 font-mono text-[9px] uppercase tracking-wider text-ink-500">
+              {["raw data", "SQL", "clean", "analyze", "visualize", "insight"].map((step, i) => <span key={step} className="flex items-center gap-2"><span className={i === 5 ? "text-ink-200" : ""}>{step}</span>{i < 5 && <span className="text-teal">→</span>}</span>)}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
