@@ -1,53 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Database, Lightbulb, Target } from "lucide-react";
+import { Database, Lightbulb, Target, ArrowDownRight } from "lucide-react";
 import { profile } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 
 const highlights = [
-  {
-    icon: Database,
-    title: "Strong with messy data",
-    detail: "I use SQL, Python, and Excel to clean, validate, and explore data so the numbers are reliable before I draw conclusions.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Focused on what matters",
-    detail: "I look beyond the numbers to find trends, patterns, and the business story behind them — not just make charts.",
-  },
-  {
-    icon: Target,
-    title: "Built for decision-making",
-    detail: "I turn analysis into clear dashboards and practical insights with Tableau and Power BI that are easy to understand and act on.",
-  },
+  { icon: Database, number: "01", title: "Clean before I conclude", detail: "I use SQL, Python, and Excel to clean, validate, and explore data before turning it into conclusions." },
+  { icon: Lightbulb, number: "02", title: "Find the useful signal", detail: "I focus on trends, patterns, KPIs, and the business story behind the numbers—not charts for the sake of charts." },
+  { icon: Target, number: "03", title: "Make insights actionable", detail: "I build focused Tableau and Power BI dashboards that help people understand what changed and what deserves attention." },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading
-          eyebrow="-- about"
-          title="I turn data into insights people can act on"
-          description={`I'm ${profile.name}, a Data Analyst who enjoys finding the story behind the numbers. I work across SQL, Python, Excel, Tableau, and Power BI — from cleaning and exploring data to building dashboards and presenting insights clearly. My focus is simple: help turn data into better business decisions.`}
-        />
-
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {highlights.map((h, i) => (
-            <motion.div
-              key={h.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="panel p-5 transition-colors hover:border-teal/50"
-            >
-              <h.icon size={20} className="text-teal" />
-              <h3 className="mt-4 font-display text-base text-ink-100">{h.title}</h3>
-              <p className="mt-2 text-sm text-ink-400">{h.detail}</p>
-            </motion.div>
-          ))}
+    <section id="about" className="relative overflow-hidden border-t border-base-500/60 py-28">
+      <div className="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full bg-gold/5 blur-[120px]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow="-- about / approach" title="I care about what the data means, not just how it looks." description={`I'm ${profile.name}, a Data Analyst focused on turning raw datasets into clear, decision-ready insights. My workflow moves from data preparation and exploration to visualization and communication across SQL, Python, Excel, Tableau, and Power BI.`} />
+        <div className="mt-14 grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-70px" }} transition={{ duration: 0.6 }} className="relative overflow-hidden rounded-3xl border border-base-500/80 bg-base-800/70 p-7 sm:p-9">
+            <div className="absolute right-0 top-0 h-44 w-44 rounded-full bg-gold/5 blur-3xl" />
+            <div className="relative flex h-full flex-col justify-between">
+              <div>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">01 / philosophy</span>
+                <p className="mt-10 max-w-md font-display text-3xl leading-tight tracking-tight text-ink-100 sm:text-4xl">Raw data is only useful when it leads to a better question, a clearer answer, or a smarter decision.</p>
+              </div>
+              <div className="mt-12 flex items-center justify-between border-t border-base-500/70 pt-5"><span className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-600">data → analysis → insight</span><ArrowDownRight size={18} className="text-gold" /></div>
+            </div>
+          </motion.div>
+          <div className="grid gap-4">
+            {highlights.map((h, i) => (
+              <motion.div key={h.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.08 }} className="group grid grid-cols-[auto_1fr_auto] items-start gap-5 rounded-3xl border border-base-500/80 bg-base-800/55 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:bg-base-700/70 sm:p-7">
+                <span className="font-mono text-[10px] text-gold">{h.number}</span>
+                <div><div className="flex items-center gap-3"><h3 className="font-display text-xl text-ink-100">{h.title}</h3><h.icon size={17} className="text-gold opacity-70 transition-transform group-hover:scale-110" /></div><p className="mt-2 max-w-xl text-sm leading-6 text-ink-400">{h.detail}</p></div>
+                <ArrowDownRight size={16} className="text-ink-600 transition-all group-hover:translate-x-1 group-hover:translate-y-1 group-hover:text-gold" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
