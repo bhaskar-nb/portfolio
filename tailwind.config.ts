@@ -11,33 +11,33 @@ const config: Config = {
     extend: {
       colors: {
         base: {
-          900: "#05080B",
-          800: "#080C11",
-          700: "#0D131A",
-          600: "#131B24",
-          500: "#1B2631",
-          400: "#2A3744",
+          900: "#050505",
+          800: "#090A0C",
+          700: "#101114",
+          600: "#17191D",
+          500: "#24272C",
+          400: "#363A42",
         },
         ink: {
-          100: "#F3F6F8",
-          200: "#E5EBEF",
-          400: "#8A98A6",
-          600: "#606D79",
+          100: "#F7F7F5",
+          200: "#E9E8E4",
+          400: "#A2A1A0",
+          600: "#686868",
         },
         gold: {
-          DEFAULT: "#19C3B1",
-          soft: "#19C3B122",
+          DEFAULT: "#FF7A18",
+          soft: "#FF7A1822",
         },
         teal: {
-          DEFAULT: "#19C3B1",
-          soft: "#19C3B122",
+          DEFAULT: "#FF7A18",
+          soft: "#FF7A1822",
         },
         wire: {
-          DEFAULT: "#19C3B1",
-          soft: "#19C3B122",
+          DEFAULT: "#FF7A18",
+          soft: "#FF7A1822",
         },
         rose: {
-          DEFAULT: "#A7B1BC",
+          DEFAULT: "#C9C7C3",
         },
       },
       fontFamily: {
@@ -47,9 +47,9 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-fine":
-          "linear-gradient(to right, #1B263122 1px, transparent 1px), linear-gradient(to bottom, #1B263122 1px, transparent 1px)",
+          "linear-gradient(to right, #24272C22 1px, transparent 1px), linear-gradient(to bottom, #24272C22 1px, transparent 1px)",
         "radial-fade":
-          "radial-gradient(circle at 50% 0%, rgba(25,195,177,0.08), transparent 60%)",
+          "radial-gradient(circle at 50% 0%, rgba(255,122,24,0.10), transparent 60%)",
       },
       backgroundSize: {
         grid: "40px 40px",
@@ -79,7 +79,7 @@ const config: Config = {
         marquee: "marquee 30s linear infinite",
       },
       boxShadow: {
-        panel: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 20px 60px -20px rgba(0,0,0,0.6)",
+        panel: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 20px 60px -20px rgba(0,0,0,0.65)",
         glow: "0 0 40px -8px var(--tw-shadow-color)",
       },
     },
