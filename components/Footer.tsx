@@ -1,23 +1,45 @@
-import { Github, Linkedin, BarChart3 } from "lucide-react";
+"use client";
+
+import { Github, Linkedin, BarChart3, ArrowUp, ArrowUpRight } from "lucide-react";
 import { profile } from "@/lib/data";
+
+const socials = [
+  { icon: Github, label: "GitHub", href: profile.links.github },
+  { icon: Linkedin, label: "LinkedIn", href: profile.links.linkedin },
+  { icon: BarChart3, label: "Tableau", href: profile.links.tableau },
+];
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-base-500/70 py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6">
-        <p className="font-mono text-xs text-ink-400">
-          © {new Date().getFullYear()} {profile.name}. Built with Next.js & Tailwind.
-        </p>
-        <div className="flex items-center gap-4">
-          <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink-400 hover:text-ink-100">
-            <Github size={16} />
+    <footer className="relative overflow-hidden border-t border-base-500/70 pt-14 pb-8">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-48 w-96 -translate-x-1/2 rounded-full bg-teal/5 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 border-b border-base-500/70 pb-12 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-teal">-- end of page</span>
+            <h2 className="mt-5 max-w-2xl font-display text-3xl leading-tight text-ink-100 sm:text-4xl">Thanks for looking through the work.</h2>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-ink-400">If the projects caught your attention, the next step is simple: start a conversation.</p>
+          </div>
+          <a href="#contact" className="group inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-teal transition-all hover:border-teal hover:bg-teal/15">
+            Get in touch <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
-          <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-ink-400 hover:text-ink-100">
-            <Linkedin size={16} />
-          </a>
-          <a href={profile.links.tableau} target="_blank" rel="noreferrer" aria-label="Tableau" className="text-ink-400 hover:text-ink-100">
-            <BarChart3 size={16} />
-          </a>
+        </div>
+
+        <div className="flex flex-col gap-6 pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-mono text-xs text-ink-400">© {new Date().getFullYear()} {profile.name}</p>
+            <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-600">Built with Next.js & Tailwind</p>
+          </div>
+          <div className="flex items-center gap-2">
+            {socials.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="flex h-9 w-9 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold">
+                <s.icon size={15} />
+              </a>
+            ))}
+            <a href="#home" aria-label="Back to top" className="ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-teal/60 hover:text-teal">
+              <ArrowUp size={15} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
