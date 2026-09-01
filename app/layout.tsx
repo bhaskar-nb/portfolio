@@ -30,37 +30,56 @@ const bodoniModa = Bodoni_Moda({
 });
 
 const siteUrl = "https://portfolio-sand-one-44.vercel.app";
+const siteTitle = `${profile.name} — Data Analyst Portfolio`;
+const siteDescription =
+  "Data Analyst portfolio showcasing SQL, Python, Tableau, Power BI, Excel, data visualization, dashboards, and practical analytics projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${profile.name} — Data Analyst`,
+    default: siteTitle,
     template: `%s — ${profile.name}`,
   },
-  description: profile.summary,
+  description: siteDescription,
   keywords: [
     "Data Analyst",
+    "Data Analyst Portfolio",
     "SQL",
     "Python",
     "Tableau",
     "Power BI",
-    "Data Analytics Portfolio",
+    "Excel",
+    "Data Visualization",
+    "Business Intelligence",
+    "Data Analytics",
     profile.name,
   ],
   authors: [{ name: profile.name }],
   creator: profile.name,
+  category: "technology",
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: `${profile.name} — Data Analyst`,
-    description: profile.summary,
+    locale: "en_US",
+    title: siteTitle,
+    description: siteDescription,
     siteName: `${profile.name} Portfolio`,
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${profile.name} — Data Analyst Portfolio`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — Data Analyst`,
-    description: profile.summary,
+    title: siteTitle,
+    description: siteDescription,
     images: ["/og-image.png"],
   },
   icons: {
@@ -69,6 +88,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
