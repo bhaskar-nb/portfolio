@@ -16,11 +16,11 @@
   .panel { @apply relative rounded-2xl border border-base-500/80 bg-base-700/60 backdrop-blur-sm shadow-panel; }
   .panel-header { @apply flex items-center justify-between border-b border-base-500/70 px-5 py-3; }
   .mono-tag { @apply font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400; }
-  .dot-live { @apply relative inline-flex h-2 w-2 rounded-full bg-teal; }
-  .dot-live::before { content: ""; @apply absolute inset-0 rounded-full bg-teal animate-ping; }
-  .section-eyebrow { @apply mono-tag flex items-center gap-2 text-teal; }
+  .dot-live { @apply relative inline-flex h-2 w-2 rounded-full bg-gold; }
+  .dot-live::before { content: ""; @apply absolute inset-0 rounded-full bg-gold animate-ping; }
+  .section-eyebrow { @apply mono-tag flex items-center gap-2 text-gold; }
   .btn-primary { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-mono text-sm font-medium text-base-900 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]; }
-  .btn-secondary { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-base-400 bg-base-700/50 px-6 py-3 font-mono text-sm text-ink-200 backdrop-blur-sm transition-colors duration-200 hover:border-teal/60 hover:text-teal; }
+  .btn-secondary { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-base-400 bg-base-700/50 px-6 py-3 font-mono text-sm text-ink-200 backdrop-blur-sm transition-colors duration-200 hover:border-gold/60 hover:text-gold; }
   .name-outline { color: transparent; -webkit-text-stroke: 1.5px rgba(243, 246, 248, 0.72); text-shadow: 0 0 28px rgba(243, 246, 248, 0.04); }
 }
 
@@ -31,9 +31,9 @@
 
 html.light body { background-color: #f6f7f9; color: #10161f; }
 html.light .bg-base-800 { background-color: #f6f7f9 !important; }
-html.light .bg-base-700\/60, html.light .bg-base-700\/50 { background-color: #ffffffcc !important; }
+html.light .bg-base-700\\/60, html.light .bg-base-700\\/50 { background-color: #ffffffcc !important; }
 html.light .bg-base-700 { background-color: #ffffff !important; }
-html.light .border-base-500, html.light .border-base-500\/70, html.light .border-base-500\/80 { border-color: #dde3ea !important; }
+html.light .border-base-500, html.light .border-base-500\\/70, html.light .border-base-500\\/80 { border-color: #dde3ea !important; }
 html.light .border-base-400 { border-color: #c7cfd8 !important; }
 html.light .text-ink-200 { color: #1c2530 !important; }
 html.light .text-ink-100 { color: #0b0f14 !important; }
