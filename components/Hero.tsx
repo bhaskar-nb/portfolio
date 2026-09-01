@@ -138,17 +138,17 @@ export default function Hero() {
                 <div className="mt-1 text-xl font-medium text-teal">+20.6%</div>
               </div>
             </div>
-          </div>
 
-          <motion.div
-            animate={{ y: [0, -7, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="panel absolute -bottom-7 -left-4 hidden w-44 bg-base-700/90 p-4 backdrop-blur-md sm:block"
-          >
-            <div className="font-mono text-[10px] uppercase tracking-wider text-ink-600">Latest finding</div>
-            <div className="mt-2 text-sm leading-5 text-ink-200">Profit growth outpaced sales growth.</div>
-            <div className="mt-2 font-mono text-[10px] text-teal">+43.7% profit YoY</div>
-          </motion.div>
+            <div className="mt-2 rounded-xl border border-base-500 bg-base-800/70 p-3 sm:p-3.5">
+              <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <div className="min-w-0">
+                  <div className="font-mono text-[9px] uppercase tracking-wider text-ink-600">Latest finding</div>
+                  <div className="mt-1 text-xs leading-5 text-ink-200 sm:text-sm">Profit growth outpaced sales growth.</div>
+                </div>
+                <div className="shrink-0 font-mono text-[9px] text-teal sm:text-[10px]">+43.7% profit YoY</div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
