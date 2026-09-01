@@ -4,10 +4,10 @@
 
 @layer base {
   * { @apply border-base-500; }
-  html { scrollbar-color: #2A3744 #080C11; scroll-behavior: smooth; }
+  html { scrollbar-color: #FF7A18 #080808; scroll-behavior: smooth; }
   body { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  ::selection { background: rgba(25, 195, 177, 0.22); }
-  :focus-visible { outline: 2px solid #19C3B1; outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: rgba(255, 122, 24, 0.22); }
+  :focus-visible { outline: 2px solid #FF7A18; outline-offset: 3px; border-radius: 4px; }
   h1, h2, h3, h4 { @apply font-display tracking-tight; }
   @media (max-width: 640px) { h1 { font-size: clamp(2.35rem, 11vw, 3.5rem); line-height: 1.02; } }
 }
@@ -19,13 +19,9 @@
   .dot-live { @apply relative inline-flex h-2 w-2 rounded-full bg-teal; }
   .dot-live::before { content: ""; @apply absolute inset-0 rounded-full bg-teal animate-ping; }
   .section-eyebrow { @apply mono-tag flex items-center gap-2 text-teal; }
-  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-mono text-sm font-medium text-base-900 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]; }
-  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-full border border-base-400 bg-base-700/50 px-6 py-3 font-mono text-sm text-ink-200 backdrop-blur-sm transition-colors duration-200 hover:border-teal/60 hover:text-teal; }
-  .name-outline {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(243, 246, 248, 0.72);
-    text-shadow: 0 0 28px rgba(243, 246, 248, 0.04);
-  }
+  .btn-primary { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-mono text-sm font-medium text-base-900 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]; }
+  .btn-secondary { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-base-400 bg-base-700/50 px-6 py-3 font-mono text-sm text-ink-200 backdrop-blur-sm transition-colors duration-200 hover:border-teal/60 hover:text-teal; }
+  .name-outline { color: transparent; -webkit-text-stroke: 1.5px rgba(243, 246, 248, 0.72); text-shadow: 0 0 28px rgba(243, 246, 248, 0.04); }
 }
 
 @layer utilities {
@@ -44,11 +40,11 @@ html.light .text-ink-100 { color: #0b0f14 !important; }
 html.light .text-ink-400 { color: #5b6675 !important; }
 html.light .bg-grid-fine { opacity: 0.4; }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-}
-
 @media (max-width: 640px) {
   .panel { border-radius: 1rem; }
-  .btn-primary, .btn-secondary { min-height: 44px; }
+  .btn-primary, .btn-secondary { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
