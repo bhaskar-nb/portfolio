@@ -34,7 +34,7 @@ export default function Loader() {
           </div>
           <div className="h-px w-56 overflow-hidden bg-base-500">
             <motion.div
-              className="h-full bg-gradient-to-r from-teal via-gold to-wire"
+              className="h-full bg-gold"
               style={{ width: `${progress}%` }}
             />
           </div>
