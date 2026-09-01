@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight, Database, BarChart3, Code2, GitBranch, Table2 } from "lucide-react";
 import { skillGroups } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -17,93 +18,59 @@ const logoMap: Record<string, string> = {
   Streamlit: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg",
 };
 
-const getSkills = (id: string) =>
-  skillGroups.find((group) => group.id === id)?.skills ?? [];
+const getSkills = (id: string) => skillGroups.find((group) => group.id === id)?.skills ?? [];
 
 const sections = [
-  { id: "analytics-core", title: "ANALYTICS CORE", skills: getSkills("analysis").filter((skill) => ["SQL", "Python", "Data Cleaning", "Exploratory Data Analysis"].includes(skill)), span: "lg:col-span-4" },
-  { id: "visualization", title: "VISUALIZATION", skills: getSkills("visualization").filter((skill) => ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"].includes(skill)), span: "lg:col-span-2" },
-  { id: "libraries", title: "PYTHON LIBRARIES", skills: getSkills("analysis").filter((skill) => ["Pandas", "NumPy"].includes(skill)).concat(getSkills("visualization").filter((skill) => skill === "Matplotlib")), span: "lg:col-span-2" },
-  { id: "database", title: "DATABASE", skills: getSkills("database"), span: "lg:col-span-2" },
-  { id: "tools", title: "TOOLS", skills: getSkills("workflow").filter((skill) => ["Git", "GitHub", "VS Code", "Streamlit"].includes(skill)), span: "lg:col-span-2" },
+  { id: "analytics-core", title: "ANALYTICS CORE", icon: Code2, skills: getSkills("analysis").filter((s) => ["SQL", "Python", "Data Cleaning", "Exploratory Data Analysis"].includes(s)), span: "lg:col-span-4" },
+  { id: "visualization", title: "VISUALIZATION", icon: BarChart3, skills: getSkills("visualization").filter((s) => ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"].includes(s)), span: "lg:col-span-2" },
+  { id: "libraries", title: "PYTHON LIBRARIES", icon: Table2, skills: getSkills("analysis").filter((s) => ["Pandas", "NumPy"].includes(s)).concat(getSkills("visualization").filter((s) => s === "Matplotlib")), span: "lg:col-span-2" },
+  { id: "database", title: "DATABASE", icon: Database, skills: getSkills("database"), span: "lg:col-span-2" },
+  { id: "tools", title: "TOOLS", icon: GitBranch, skills: getSkills("workflow").filter((s) => ["Git", "GitHub", "VS Code", "Streamlit"].includes(s)), span: "lg:col-span-2" },
 ];
 
 function BrandIcon({ skill }: { skill: string }) {
-  if (skill === "Tableau") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
-        <path fill="#E97627" d="M11 2h2v4h4v2h-4v4h-2V8H7V6h4V2Zm-7 7h2v3h3v2H6v3H4v-3H1v-2h3V9Zm14 0h2v3h3v2h-3v3h-2v-3h-3v-2h3V9Zm-7 7h2v3h3v2h-3v3h-2v-3H8v-2h3v-3Z" />
-      </svg>
-    );
-  }
-
-  if (skill === "Power BI") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
-        <path fill="#F2C811" d="M4 18h3V9H4v9Zm5 0h3V6H9v12Zm5 0h3V3h-3v15Zm5 0h2V11h-2v7Z" />
-      </svg>
-    );
-  }
-
-  if (skill === "Microsoft Excel") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
-        <rect x="3" y="2" width="18" height="20" rx="2.5" fill="#217346" />
-        <path fill="#fff" d="m7 7 3 4-3 6h2.4l1.8-3.8L13 17h2.5l-3.2-6L15 7h-2.4l-1.4 3-1.5-3H7Z" />
-      </svg>
-    );
-  }
-
   const icon = logoMap[skill];
-  if (!icon) return null;
-
-  return (
-    <img
-      src={icon}
-      alt=""
-      aria-hidden="true"
-      className={`h-5 w-5 shrink-0 object-contain ${skill === "GitHub" ? "brightness-0 invert" : ""}`}
-      loading="lazy"
-    />
-  );
+  if (!icon) {
+    if (skill === "Tableau") return <span className="font-bold text-[11px] text-gold">T</span>;
+    if (skill === "Power BI") return <span className="font-bold text-[11px] text-gold">P</span>;
+    if (skill === "Microsoft Excel") return <span className="font-bold text-[11px] text-gold">X</span>;
+    return null;
+  }
+  return <img src={icon} alt="" aria-hidden="true" className={`h-5 w-5 shrink-0 object-contain ${skill === "GitHub" ? "brightness-0 invert" : ""}`} loading="lazy" />;
 }
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading
-          eyebrow="-- skills"
-          title="Tools I use to do the work"
-          description="A practical analytics stack built around querying, cleaning, analysis, visualization, and version control."
-        />
+    <section id="skills" className="relative overflow-hidden py-28">
+      <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-20 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow="-- skills" title="The stack behind my analysis" description="The tools I use across the full workflow — from raw data and SQL queries to analysis, visualization, and delivery." />
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
-          {sections.map((section, index) => (
-            <motion.div
-              key={section.id}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: (index % 3) * 0.06 }}
-              className={`panel ${section.span} p-6 transition-colors hover:border-teal/40`}
-            >
-              <div className="mono-tag mb-5 text-teal">{section.title}</div>
-
-              <div className="flex flex-wrap gap-2.5">
-                {section.skills.map((skill) => (
-                  <div
-                    key={skill}
-                    className="inline-flex items-center gap-2 rounded-full border border-base-500/70 bg-base-700/40 px-3.5 py-2 text-sm text-ink-200 transition-colors hover:border-teal/50 hover:text-ink-100"
-                  >
-                    <BrandIcon skill={skill} />
-                    <span>{skill}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-6">
+          {sections.map((section, index) => {
+            const Icon = section.icon;
+            return (
+              <motion.div key={section.id} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-70px" }} transition={{ duration: 0.5, delay: (index % 3) * 0.07 }} whileHover={{ y: -4 }} className={`group relative overflow-hidden rounded-2xl border border-base-500/80 bg-base-800/60 p-6 transition-all duration-300 hover:border-teal/40 hover:bg-base-700/70 ${section.span}`}>
+                <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-teal/5 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="relative flex items-center justify-between">
+                  <div className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-xl border border-base-500 bg-base-700/60 text-teal"><Icon size={16} /></span><span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-400">{section.title}</span></div>
+                  <ArrowUpRight size={15} className="text-ink-600 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-teal" />
+                </div>
+                <div className="relative mt-7 flex flex-wrap gap-2.5">
+                  {section.skills.map((skill, skillIndex) => (
+                    <motion.div key={skill} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: skillIndex * 0.035 }} className="inline-flex items-center gap-2 rounded-xl border border-base-500/70 bg-base-700/40 px-3.5 py-2.5 text-sm text-ink-200 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal/50 hover:bg-base-600/50 hover:text-ink-100">
+                      <BrandIcon skill={skill} /><span>{skill}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-5 overflow-hidden rounded-2xl border border-base-500/70 bg-base-800/40 p-5 sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><div><span className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal">workflow</span><p className="mt-2 text-sm text-ink-400">How the tools fit together in a typical analysis.</p></div><div className="flex flex-wrap items-center gap-2 font-mono text-[9px] uppercase tracking-wider text-ink-500"><span>raw data</span><span className="text-teal">→</span><span>query</span><span className="text-teal">→</span><span>clean</span><span className="text-teal">→</span><span>analyze</span><span className="text-teal">→</span><span>visualize</span><span className="text-teal">→</span><span>insight</span></div></div>
+        </motion.div>
       </div>
     </section>
   );
