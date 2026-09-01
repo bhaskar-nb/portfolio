@@ -20,7 +20,7 @@ export default function SectionHeading({
       className="mb-12 max-w-2xl"
     >
       <div className="section-eyebrow">
-        <span className="h-px w-6 bg-teal" />
+        <span className="h-px w-6 bg-gold" />
         {eyebrow}
       </div>
       <h2 className="mt-3 text-balance text-3xl font-medium text-ink-100 sm:text-4xl">
