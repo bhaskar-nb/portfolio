@@ -19,7 +19,7 @@ export default function CursorGlow() {
         }
       });
     };
-    window.addEventListener("mousemove", move);
+    window.addEventListener("mousemove", move, { passive: true });
     return () => {
       window.removeEventListener("mousemove", move);
       cancelAnimationFrame(raf);
