@@ -25,12 +25,12 @@ const config: Config = {
           600: "#686868",
         },
         gold: {
-          DEFAULT: "#FF7A18",
-          soft: "#FF7A1822",
+          DEFAULT: "#22C55E",
+          soft: "#22C55E22",
         },
         wire: {
-          DEFAULT: "#FF7A18",
-          soft: "#FF7A1822",
+          DEFAULT: "#22C55E",
+          soft: "#22C55E22",
         },
         rose: {
           DEFAULT: "#C9C7C3",
@@ -45,7 +45,7 @@ const config: Config = {
         "grid-fine":
           "linear-gradient(to right, #24272C22 1px, transparent 1px), linear-gradient(to bottom, #24272C22 1px, transparent 1px)",
         "radial-fade":
-          "radial-gradient(circle at 50% 0%, rgba(255,122,24,0.10), transparent 60%)",
+          "radial-gradient(circle at 50% 0%, rgba(34,197,94,0.10), transparent 60%)",
       },
       backgroundSize: {
         grid: "40px 40px",
