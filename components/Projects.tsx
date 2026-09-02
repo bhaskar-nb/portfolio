@@ -59,11 +59,17 @@ export default function Projects() {
                     <h3 className={`${flagship ? "mt-10" : "mt-12"} max-w-xl font-display text-3xl font-medium tracking-tight text-ink-100 sm:text-4xl`}>{p.title}</h3>
                     <p className="mt-5 max-w-xl text-sm leading-7 text-ink-400 sm:text-base">{p.summary}</p>
                     {flagship && (
-                      <div className="mt-7 grid max-w-lg grid-cols-2 gap-3 sm:grid-cols-3">
-                        <div className="rounded-xl border border-gold/20 bg-gold/[0.05] p-3"><span className="block font-display text-xl text-gold">20.6%</span><span className="mt-1 block font-mono text-[9px] uppercase tracking-wider text-ink-500">sales YoY</span></div>
-                        <div className="rounded-xl border border-gold/20 bg-gold/[0.05] p-3"><span className="block font-display text-xl text-gold">43.7%</span><span className="mt-1 block font-mono text-[9px] uppercase tracking-wider text-ink-500">profit growth</span></div>
-                        <div className="col-span-2 rounded-xl border border-base-500/70 bg-base-700/50 p-3 sm:col-span-1"><span className="block font-mono text-[9px] uppercase tracking-wider text-ink-500">Evidence</span><span className="mt-1 block text-xs leading-5 text-ink-300">Performance analysis across time and products</span></div>
-                      </div>
+                      <>
+                        <div className="mt-6 max-w-xl rounded-xl border border-base-500/70 bg-base-900/40 px-4 py-3">
+                          <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Target size={12} aria-hidden="true" /> Business question</div>
+                          <p className="mt-2 text-xs leading-5 text-ink-300">{p.challenges}</p>
+                        </div>
+                        <div className="mt-4 grid max-w-lg grid-cols-2 gap-3 sm:grid-cols-3">
+                          <div className="rounded-xl border border-gold/20 bg-gold/[0.05] p-3"><span className="block font-display text-xl text-gold">20.6%</span><span className="mt-1 block font-mono text-[9px] uppercase tracking-wider text-ink-500">sales YoY</span></div>
+                          <div className="rounded-xl border border-gold/20 bg-gold/[0.05] p-3"><span className="block font-display text-xl text-gold">43.7%</span><span className="mt-1 block font-mono text-[9px] uppercase tracking-wider text-ink-500">profit growth</span></div>
+                          <div className="col-span-2 rounded-xl border border-base-500/70 bg-base-700/50 p-3 sm:col-span-1"><span className="block font-mono text-[9px] uppercase tracking-wider text-ink-500">Evidence</span><span className="mt-1 block text-xs leading-5 text-ink-300">Performance analysis across time and products</span></div>
+                        </div>
+                      </>
                     )}
                   </div>
                   <div className="mt-10 flex flex-wrap gap-2">
