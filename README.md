@@ -14,9 +14,10 @@ The site brings together my analytics projects, technical skills, experience, re
 
 ## Featured Projects
 
-- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — explores sales, profit, quantity, and profitability to evaluate business performance.
-- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — analyzes workforce, hiring, terminations, compensation, and employee demographics.
-- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — explores electric vehicle registrations, manufacturers, vehicle mix, and geographic adoption.
+- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — explores sales, profit, quantity, year-over-year performance, and product profitability; analysis identified 20.6% year-over-year sales growth and 43.7% profit growth.
+- [Global Disaster Analysis](https://github.com/bhaskar-nb/disaster-dashboard) — analyzes 15,090 disaster events across disaster types, countries, time, human impact, and economic damage.
+- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — analyzes workforce, hiring, terminations, compensation, performance, and demographics using explicitly synthetic employee data.
+- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — explores 150,413 electric vehicle records across model years, states, manufacturers, vehicle types, models, and eligibility categories.
 
 ## Tech Stack
 
@@ -32,7 +33,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000` in your browser.
+Open `http://localhost:3000`.
 
 ## Project Structure
 
@@ -46,17 +47,21 @@ public/        Static assets such as resume and favicon
 
 ## Resume
 
-The latest resume is available directly from the portfolio website through the **Download résumé** buttons in the Hero and Navbar.
+The latest resume is available directly from the portfolio website through the **Download résumé** buttons in the Hero, Navbar, and recruiter contact area.
 
-If you are running the project locally, keep the current resume in the `public/` directory using the same filename referenced by the portfolio code.
+If you are running the project locally, keep the current resume in `public/` using the filename referenced by the portfolio code.
 
-## Deployment Checklist
+## Deployment
 
-Before the final production deployment:
+The portfolio is deployed with Vercel from the `main` branch.
 
-- Update the production domain in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts`.
-- Make sure the current resume file is present in `public/` and matches the filename used by the Hero and Navbar download links.
-- Add `public/og-image.png` if social sharing previews are required.
+Production metadata and crawl configuration are maintained in:
+
+- `app/layout.tsx` — site title, description, canonical URL, Open Graph/Twitter metadata, and structured data
+- `app/robots.ts` — crawler rules and sitemap reference
+- `app/sitemap.ts` — sitemap generation
+
+Keep `public/Resume.pdf` available so the résumé download actions continue to work.
 
 ## Contact
 
