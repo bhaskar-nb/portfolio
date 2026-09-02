@@ -46,17 +46,27 @@ export default function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.22 }}
-            className="mt-8 flex flex-wrap gap-3"
+            className="mt-8 flex flex-wrap items-center gap-3"
           >
             <MagneticButton href="#projects" className="btn-primary">View projects <ArrowUpRight size={15} /></MagneticButton>
             <MagneticButton href="/Resume.pdf" download className="btn-secondary"><Download size={15} /> Download résumé</MagneticButton>
+            <a href="#contact" className="px-2 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500 transition-colors hover:text-gold">Let&apos;s connect</a>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.38 }}
-            className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-600"
+            transition={{ delay: 0.34 }}
+            className="mt-7 flex flex-wrap gap-x-3 gap-y-2 font-mono text-[9px] uppercase tracking-[0.13em] text-ink-500"
+          >
+            <span><strong className="font-medium text-ink-200">15,090</strong> disaster events</span><span>/</span><span><strong className="font-medium text-ink-200">150,413</strong> EV records</span><span>/</span><span><strong className="font-medium text-gold">+20.6%</strong> sales YoY</span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.42 }}
+            className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-600"
           >
             <span className="text-ink-300">SQL</span><span>/</span><span>Python</span><span>/</span><span>Excel</span><span>/</span><span>Tableau</span><span>/</span><span>Power BI</span>
           </motion.div>
@@ -64,7 +74,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.48 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-8 flex items-center gap-4 border-t border-base-500/80 pt-5"
           >
             <div className="flex items-center gap-3">
