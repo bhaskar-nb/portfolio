@@ -50,7 +50,7 @@ export default function Hero() {
           >
             <MagneticButton href="#projects" className="btn-primary">View projects <ArrowUpRight size={15} /></MagneticButton>
             <MagneticButton href="/Resume.pdf" download className="btn-secondary"><Download size={15} /> Download résumé</MagneticButton>
-            <a href="#contact" className="px-2 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500 transition-colors hover:text-gold">Let&apos;s connect</a>
+            <a href="#contact" className="inline-flex min-h-11 items-center px-2 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500 transition-colors hover:text-gold">Let&apos;s connect</a>
           </motion.div>
 
           <motion.div
@@ -77,11 +77,11 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-8 flex items-center gap-4 border-t border-base-500/80 pt-5"
           >
-            <div className="flex items-center gap-3">
-              <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-ink-400 transition-colors hover:text-gold"><Linkedin size={17} /></a>
-              <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink-400 transition-colors hover:text-gold"><Github size={17} /></a>
-              <a href={profile.links.tableau} target="_blank" rel="noreferrer" aria-label="Tableau Public" className="text-ink-400 transition-colors hover:text-gold"><BarChart3 size={17} /></a>
-              <a href={`mailto:${profile.email}`} aria-label="Email" className="text-ink-400 transition-colors hover:text-gold"><Mail size={17} /></a>
+            <div className="flex items-center gap-1">
+              <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex min-h-11 min-w-11 items-center justify-center rounded-full text-ink-400 transition-colors hover:text-gold"><Linkedin size={17} /></a>
+              <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="flex min-h-11 min-w-11 items-center justify-center rounded-full text-ink-400 transition-colors hover:text-gold"><Github size={17} /></a>
+              <a href={profile.links.tableau} target="_blank" rel="noreferrer" aria-label="Tableau Public" className="flex min-h-11 min-w-11 items-center justify-center rounded-full text-ink-400 transition-colors hover:text-gold"><BarChart3 size={17} /></a>
+              <a href={`mailto:${profile.email}`} aria-label="Email" className="flex min-h-11 min-w-11 items-center justify-center rounded-full text-ink-400 transition-colors hover:text-gold"><Mail size={17} /></a>
             </div>
             <span className="hidden h-4 w-px bg-base-500 sm:block" />
             <span className="font-mono text-[10px] text-ink-600">{profile.location}</span>
