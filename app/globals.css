@@ -29,17 +29,6 @@
   .scrollbar-none::-webkit-scrollbar { display: none; }
 }
 
-html.light body { background-color: #f6f7f9; color: #10161f; }
-html.light .bg-base-800 { background-color: #f6f7f9 !important; }
-html.light .bg-base-700\/60, html.light .bg-base-700\/50 { background-color: #ffffffcc !important; }
-html.light .bg-base-700 { background-color: #ffffff !important; }
-html.light .border-base-500, html.light .border-base-500\/70, html.light .border-base-500\/80 { border-color: #dde3ea !important; }
-html.light .border-base-400 { border-color: #c7cfd8 !important; }
-html.light .text-ink-200 { color: #1c2530 !important; }
-html.light .text-ink-100 { color: #0b0f14 !important; }
-html.light .text-ink-400 { color: #5b6675 !important; }
-html.light .bg-grid-fine { opacity: 0.4; }
-
 @media (max-width: 640px) {
   .panel { border-radius: 1rem; }
   .btn-primary, .btn-secondary { width: 100%; }
