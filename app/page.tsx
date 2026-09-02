@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import RecruiterProof from "@/components/RecruiterProof";
 import Projects from "@/components/Projects";
+import DashboardProof from "@/components/DashboardProof";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Certifications from "@/components/Certifications";
@@ -21,6 +22,7 @@ export default function Home() {
         <About />
         <RecruiterProof />
         <Projects />
+        <DashboardProof />
         <Experience />
         <Skills />
         <Certifications />
