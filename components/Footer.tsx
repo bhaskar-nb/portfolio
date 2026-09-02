@@ -31,11 +31,11 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2">
             {socials.map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="flex h-9 w-9 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold">
+              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="flex h-11 w-11 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold">
                 <s.icon size={15} />
               </a>
             ))}
-            <a href="#home" aria-label="Back to top" className="ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold">
+            <a href="#home" aria-label="Back to top" className="ml-2 flex h-11 w-11 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold">
               <ArrowUp size={15} />
             </a>
           </div>
