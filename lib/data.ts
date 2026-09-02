@@ -54,5 +54,5 @@ export const achievements = [
   { title: "15,090 disaster events analyzed", detail: "Built a Global Disaster Analysis dashboard covering disaster type, country, time, human impact, and economic damage." },
 ];
 export const nav = [
-  { id: "home", label: "Home" }, { id: "about", label: "About" }, { id: "experience", label: "Experience" }, { id: "skills", label: "Skills" }, { id: "projects", label: "Projects" }, { id: "certifications", label: "Certifications" }, { id: "education", label: "Education" }, { id: "contact", label: "Contact" },
+  { id: "home", label: "Home" }, { id: "about", label: "About" }, { id: "projects", label: "Projects" }, { id: "experience", label: "Experience" }, { id: "skills", label: "Skills" }, { id: "certifications", label: "Certifications" }, { id: "education", label: "Education" }, { id: "contact", label: "Contact" },
 ];
