@@ -28,10 +28,6 @@ const config: Config = {
           DEFAULT: "#FF7A18",
           soft: "#FF7A1822",
         },
-        teal: {
-          DEFAULT: "#FF7A18",
-          soft: "#FF7A1822",
-        },
         wire: {
           DEFAULT: "#FF7A18",
           soft: "#FF7A1822",
