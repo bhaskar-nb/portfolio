@@ -35,6 +35,8 @@ function BrandIcon({ skill }: { skill: string }) {
     if (skill === "Microsoft Excel") return <span className="font-bold text-[11px] text-gold">X</span>;
     return null;
   }
+  // Devicon assets are intentionally loaded as lightweight decorative remote SVGs.
+  // eslint-disable-next-line @next/next/no-img-element
   return <img src={icon} alt="" aria-hidden="true" className={`h-5 w-5 shrink-0 object-contain ${skill === "GitHub" ? "brightness-0 invert" : ""}`} loading="lazy" />;
 }
 
