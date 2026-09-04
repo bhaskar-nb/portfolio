@@ -13,24 +13,30 @@ const resumeUrl = "/Resume.pdf?download=1";
 export default function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
+  const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const previousScrollY = lastScrollY.current;
+      lastScrollY.current = Math.max(0, lastScrollY.current);
 
-      if (currentScrollY <= 24) {
-        setVisible(true);
-      } else if (currentScrollY < previousScrollY) {
-        setVisible(true);
-      } else if (currentScrollY > previousScrollY + 4) {
-        setVisible(false);
-        setOpen(false);
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const delta = currentScrollY - lastScrollY.current;
+
+          if (currentScrollY <= 12) {
+            setHidden(false);
+          } else if (Math.abs(delta) >= 6) {
+            setHidden(delta > 0);
+            lastScrollY.current = currentScrollY;
+          }
+
+          ticking.current = false;
+        });
+        ticking.current = true;
       }
-
-      lastScrollY.current = currentScrollY;
     };
 
     lastScrollY.current = window.scrollY;
@@ -57,11 +63,14 @@ export default function Navbar() {
   }
 
   return (
-    <header
-      className={cn(
-        "pointer-events-none fixed inset-x-0 top-0 z-50 transition-transform duration-300 ease-out",
-        visible ? "translate-y-0" : "-translate-y-[120%]"
-      )}
+    <motion.header
+      className="pointer-events-none fixed inset-x-0 top-0 z-50"
+      animate={{ y: hidden ? "-110%" : "0%", opacity: hidden ? 0 : 1 }}
+      transition={{
+        duration: 0.52,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      style={{ willChange: "transform, opacity" }}
     >
       <div className="mx-auto max-w-7xl px-5 pt-6 sm:px-8 lg:px-10">
         <div className="pointer-events-auto flex items-center justify-between">
@@ -173,6 +182,6 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 }
