@@ -6,10 +6,10 @@ import { ArrowUpRight, BarChart3, ExternalLink, Github, Lightbulb, ListChecks, T
 import { additionalProjects, projects } from "@/lib/data";
 
 type Project = (typeof projects)[number];
+type AdditionalProject = (typeof additionalProjects)[number];
+type ProjectLike = Project | AdditionalProject;
 
-type ProjectLike = Project | (typeof additionalProjects)[number];
-
-const allProjects = [...projects, ...additionalProjects];
+const allProjects: ProjectLike[] = [...projects, ...additionalProjects];
 
 export default function CaseStudyOverlay() {
   const [active, setActive] = useState<ProjectLike | null>(null);
@@ -48,6 +48,8 @@ export default function CaseStudyOverlay() {
     };
   }, [active]);
 
+  const isFeatured = active ? projects.some((item) => item.id === active.id) : false;
+
   return (
     <AnimatePresence>
       {active && (
@@ -72,7 +74,9 @@ export default function CaseStudyOverlay() {
             <header className="sticky top-0 z-10 flex items-center justify-between border-b border-base-500/70 bg-base-800/90 px-5 py-4 backdrop-blur-xl sm:px-7">
               <div>
                 <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-gold">case_study / recruiter view</span>
-                <span className="mt-1 block font-mono text-[8px] uppercase tracking-wider text-ink-600">Question → Method → Evidence → Recommendation</span>
+                <span className="mt-1 block font-mono text-[8px] uppercase tracking-wider text-ink-600">
+                  {isFeatured ? "Question → Method → Evidence → Recommendation" : "Project → Capability → Code / Demo"}
+                </span>
               </div>
               <button type="button" onClick={() => setActive(null)} aria-label="Close case study" className="flex h-10 w-10 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-colors hover:border-gold/40 hover:bg-base-700 hover:text-ink-100">
                 <X size={17} aria-hidden="true" />
@@ -83,7 +87,7 @@ export default function CaseStudyOverlay() {
               <section>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full border border-gold/25 bg-gold/[0.06] px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-gold">
-                    {projects.some((item) => item.id === active.id) ? "Featured project" : "Supporting project"}
+                    {isFeatured ? "Featured project" : "Supporting project"}
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-600">{active.stack.join(" · ")}</span>
                 </div>
@@ -91,41 +95,56 @@ export default function CaseStudyOverlay() {
                 <p className="mt-4 max-w-3xl text-sm leading-7 text-ink-300 sm:text-base">{active.summary}</p>
               </section>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
-                  <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Target size={14} aria-hidden="true" /> Business question</div>
-                  <p className="mt-3 text-sm leading-6 text-ink-300">{active.challenges}</p>
-                </div>
-                <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
-                  <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Workflow size={14} aria-hidden="true" /> Method</div>
-                  <p className="mt-3 text-sm leading-6 text-ink-300">{active.approach}</p>
-                </div>
-              </div>
+              {isFeatured ? (
+                <>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
+                      <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Target size={14} aria-hidden="true" /> Business question</div>
+                      <p className="mt-3 text-sm leading-6 text-ink-300">{active.challenges}</p>
+                    </div>
+                    <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
+                      <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Workflow size={14} aria-hidden="true" /> Method</div>
+                      <p className="mt-3 text-sm leading-6 text-ink-300">{active.approach}</p>
+                    </div>
+                  </div>
 
-              <div className="rounded-2xl border border-gold/25 bg-gold/[0.045] p-5 sm:p-6">
-                <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><BarChart3 size={14} aria-hidden="true" /> Key evidence</div>
-                <p className="mt-3 text-sm leading-6 text-ink-200 sm:text-base">{active.evidence}</p>
-              </div>
+                  <div className="rounded-2xl border border-gold/25 bg-gold/[0.045] p-5 sm:p-6">
+                    <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><BarChart3 size={14} aria-hidden="true" /> Key evidence</div>
+                    <p className="mt-3 text-sm leading-6 text-ink-200 sm:text-base">{active.evidence}</p>
+                  </div>
 
-              <div>
-                <div className="mb-3 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-ink-300"><ListChecks size={14} className="text-gold" aria-hidden="true" /> Analysis coverage</div>
-                <ul className="grid gap-2 sm:grid-cols-2">
-                  {active.features.map((feature) => (
-                    <li key={feature} className="rounded-xl border border-base-500/60 bg-base-900/25 px-4 py-3 text-sm leading-5 text-ink-400"><span className="mr-2 text-gold">▸</span>{feature}</li>
-                  ))}
-                </ul>
-              </div>
+                  <div>
+                    <div className="mb-3 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-ink-300"><ListChecks size={14} className="text-gold" aria-hidden="true" /> Analysis coverage</div>
+                    <ul className="grid gap-2 sm:grid-cols-2">
+                      {active.features.map((feature) => (
+                        <li key={feature} className="rounded-xl border border-base-500/60 bg-base-900/25 px-4 py-3 text-sm leading-5 text-ink-400"><span className="mr-2 text-gold">▸</span>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-              <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-stretch">
-                <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
-                  <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Lightbulb size={14} aria-hidden="true" /> Insight / takeaway</div>
-                  <p className="mt-3 text-sm leading-6 text-ink-300">{active.learnings}</p>
+                  <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-stretch">
+                    <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
+                      <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Lightbulb size={14} aria-hidden="true" /> Insight / takeaway</div>
+                      <p className="mt-3 text-sm leading-6 text-ink-300">{active.learnings}</p>
+                    </div>
+                    <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5 sm:min-w-[220px]">
+                      <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-600">Decision lens</span>
+                      <p className="mt-3 text-sm leading-6 text-ink-300">What should a stakeholder understand or act on after seeing the analysis?</p>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
+                    <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Target size={14} aria-hidden="true" /> Project focus</div>
+                    <p className="mt-3 text-sm leading-6 text-ink-300">{active.summary}</p>
+                  </div>
+                  <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
+                    <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold"><Workflow size={14} aria-hidden="true" /> Capability signal</div>
+                    <p className="mt-3 text-sm leading-6 text-ink-300">{active.category} · {active.stack.join(" · ")}</p>
+                  </div>
                 </div>
-                <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5 sm:min-w-[220px]">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-600">Decision lens</span>
-                  <p className="mt-3 text-sm leading-6 text-ink-300">What should a stakeholder understand or act on after seeing the analysis?</p>
-                </div>
-              </div>
+              )}
 
               <footer className="flex flex-wrap gap-3 border-t border-base-500/70 pt-5">
                 <a href={active.github} target="_blank" rel="noreferrer" className="btn-secondary"><Github size={15} aria-hidden="true" /> View code <ArrowUpRight size={13} aria-hidden="true" /></a>
