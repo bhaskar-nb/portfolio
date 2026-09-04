@@ -29,9 +29,10 @@ export const projects = [
 ];
 
 export const additionalProjects = [
+  { id: "hospital-emergency-dashboard", title: "Hospital Emergency Room Analysis", category: "Excel · Healthcare Analytics", stack: ["Excel", "Pivot Tables", "Dashboard"], summary: "Operational healthcare analysis across 9,216 patient records, covering patient volume, admissions, waiting time, satisfaction, demographics, referrals, and daily trends.", github: "https://github.com/bhaskar-nb/hospital-emergency-dashboard", demo: "" },
+  { id: "decodelabs-internship", title: "DecodeLabs Data Analytics Internship", category: "End-to-End Analytics", stack: ["Python", "SQL", "Tableau"], summary: "End-to-end analytics workflow covering data cleaning, exploratory analysis, SQL business analysis, and Tableau reporting across a shared dataset.", github: "https://github.com/bhaskar-nb/DecodeLabs-Internship", demo: "" },
+  { id: "house-price-prediction", title: "House Price Prediction", category: "Applied Machine Learning", stack: ["Python", "Scikit-learn", "Streamlit"], summary: "End-to-end house price prediction application with preprocessing, Random Forest regression, feature handling, batch prediction, and an interactive Streamlit interface.", github: "https://github.com/bhaskar-nb/house-price-prediction", demo: "" },
   { id: "amazon-prime-content-intelligence", title: "Amazon Prime Content Intelligence", category: "Data Visualization", stack: ["Tableau"], summary: "Catalog analysis exploring movies versus TV shows, genres, ratings, release trends, countries, and content composition.", github: "https://github.com/bhaskar-nb/amazon-prime-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/AmazonprimeAnalysis_17871481548780/AMAZONCONTENTINTELLIGENCEDASHBOARD" },
-  { id: "house-price-prediction", title: "House Price Prediction", category: "Applied Machine Learning", stack: ["Python", "Scikit-learn", "Streamlit"], summary: "End-to-end house price prediction application with preprocessing, Random Forest regression, feature handling, and an interactive Streamlit interface.", github: "https://github.com/bhaskar-nb/house-price-prediction", demo: "" },
-  { id: "diabetes-prediction", title: "Diabetes Prediction", category: "Applied Machine Learning", stack: ["Python", "Scikit-learn", "Streamlit"], summary: "Classification application covering data preprocessing, feature scaling, model prediction, and an interactive Streamlit interface.", github: "https://github.com/bhaskar-nb/diabetes-prediction", demo: "" },
 ];
 
 export const certifications = [
