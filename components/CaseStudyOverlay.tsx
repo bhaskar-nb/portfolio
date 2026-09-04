@@ -11,6 +11,10 @@ type ProjectLike = Project | AdditionalProject;
 
 const allProjects: ProjectLike[] = [...projects, ...additionalProjects];
 
+function isFeaturedProject(project: ProjectLike): project is Project {
+  return projects.some((item) => item.id === project.id);
+}
+
 export default function CaseStudyOverlay() {
   const [active, setActive] = useState<ProjectLike | null>(null);
 
@@ -48,8 +52,6 @@ export default function CaseStudyOverlay() {
     };
   }, [active]);
 
-  const isFeatured = active ? projects.some((item) => item.id === active.id) : false;
-
   return (
     <AnimatePresence>
       {active && (
@@ -75,7 +77,7 @@ export default function CaseStudyOverlay() {
               <div>
                 <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-gold">case_study / recruiter view</span>
                 <span className="mt-1 block font-mono text-[8px] uppercase tracking-wider text-ink-600">
-                  {isFeatured ? "Question → Method → Evidence → Recommendation" : "Project → Capability → Code / Demo"}
+                  {isFeaturedProject(active) ? "Question → Method → Evidence → Recommendation" : "Project → Capability → Code / Demo"}
                 </span>
               </div>
               <button type="button" onClick={() => setActive(null)} aria-label="Close case study" className="flex h-10 w-10 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-colors hover:border-gold/40 hover:bg-base-700 hover:text-ink-100">
@@ -87,7 +89,7 @@ export default function CaseStudyOverlay() {
               <section>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full border border-gold/25 bg-gold/[0.06] px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-gold">
-                    {isFeatured ? "Featured project" : "Supporting project"}
+                    {isFeaturedProject(active) ? "Featured project" : "Supporting project"}
                   </span>
                   <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-600">{active.stack.join(" · ")}</span>
                 </div>
@@ -95,7 +97,7 @@ export default function CaseStudyOverlay() {
                 <p className="mt-4 max-w-3xl text-sm leading-7 text-ink-300 sm:text-base">{active.summary}</p>
               </section>
 
-              {isFeatured ? (
+              {isFeaturedProject(active) ? (
                 <>
                   <div className="grid gap-3 sm:grid-cols-2">
                     <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
