@@ -33,7 +33,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
+    <header className="pointer-events-none absolute inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-7xl px-5 pt-6 sm:px-8 lg:px-10">
         <div className="pointer-events-auto flex items-center justify-between">
           <button
