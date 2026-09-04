@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Download, MessageCircle } from "lucide-react";
 import { nav } from "@/lib/data";
@@ -13,6 +13,30 @@ const resumeUrl = "/Resume.pdf?download=1";
 export default function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const previousScrollY = lastScrollY.current;
+
+      if (currentScrollY <= 24) {
+        setVisible(true);
+      } else if (currentScrollY < previousScrollY) {
+        setVisible(true);
+      } else if (currentScrollY > previousScrollY + 4) {
+        setVisible(false);
+        setOpen(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    lastScrollY.current = window.scrollY;
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const sections = nav.map((item) => document.getElementById(item.id)).filter(Boolean) as HTMLElement[];
@@ -33,7 +57,12 @@ export default function Navbar() {
   }
 
   return (
-    <header className="pointer-events-none absolute inset-x-0 top-0 z-50">
+    <header
+      className={cn(
+        "pointer-events-none fixed inset-x-0 top-0 z-50 transition-transform duration-300 ease-out",
+        visible ? "translate-y-0" : "-translate-y-[120%]"
+      )}
+    >
       <div className="mx-auto max-w-7xl px-5 pt-6 sm:px-8 lg:px-10">
         <div className="pointer-events-auto flex items-center justify-between">
           <button
