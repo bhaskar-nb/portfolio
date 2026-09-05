@@ -9,40 +9,45 @@ import { cn } from "@/lib/utils";
 const primaryOrder = ["home", "about", "projects", "experience", "skills", "contact"];
 const primaryNav = primaryOrder.map((id) => nav.find((item) => item.id === id)).filter(Boolean) as typeof nav;
 const resumeUrl = "/Resume.pdf?download=1";
+const HIDE_DELAY = 800;
 
 export default function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const lastScrollY = useRef(0);
-  const ticking = useRef(false);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      lastScrollY.current = Math.max(0, lastScrollY.current);
-
-      if (!ticking.current) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-          const delta = currentScrollY - lastScrollY.current;
-
-          if (currentScrollY <= 12) {
-            setHidden(false);
-          } else if (Math.abs(delta) >= 6) {
-            setHidden(delta > 0);
-            lastScrollY.current = currentScrollY;
-          }
-
-          ticking.current = false;
-        });
-        ticking.current = true;
+    const clearHideTimer = () => {
+      if (hideTimer.current !== null) {
+        window.clearTimeout(hideTimer.current);
+        hideTimer.current = null;
       }
     };
 
-    lastScrollY.current = window.scrollY;
+    const handleScroll = () => {
+      setHidden(false);
+      clearHideTimer();
+
+      if (window.scrollY <= 12) return;
+
+      hideTimer.current = window.setTimeout(() => {
+        setHidden(true);
+        hideTimer.current = null;
+      }, HIDE_DELAY);
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearHideTimer();
+    };
   }, []);
+
+  useEffect(() => {
+    if (open) setHidden(false);
+  }, [open]);
 
   useEffect(() => {
     const sections = nav.map((item) => document.getElementById(item.id)).filter(Boolean) as HTMLElement[];
