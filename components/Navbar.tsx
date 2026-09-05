@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const primaryOrder = ["home", "about", "projects", "experience", "skills", "contact"];
 const primaryNav = primaryOrder.map((id) => nav.find((item) => item.id === id)).filter(Boolean) as typeof nav;
 const resumeUrl = "/Resume.pdf?download=1";
-const HIDE_DELAY = 800;
+const HIDE_DELAY = 80;
 
 export default function Navbar() {
   const [active, setActive] = useState("home");
@@ -72,7 +72,7 @@ export default function Navbar() {
       className="pointer-events-none fixed inset-x-0 top-0 z-50"
       animate={{ y: hidden ? "-110%" : "0%", opacity: hidden ? 0 : 1 }}
       transition={{
-        duration: 0.52,
+        duration: 0.3,
         ease: [0.22, 1, 0.36, 1],
       }}
       style={{ willChange: "transform, opacity" }}
