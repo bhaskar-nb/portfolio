@@ -15,7 +15,7 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hideTimer = useRef<number | null>(null);
 
   useEffect(() => {
     const clearHideTimer = () => {
