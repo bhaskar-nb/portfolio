@@ -1,5 +1,6 @@
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
+import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import RecruiterProof from "@/components/RecruiterProof";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Loader />
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
