@@ -12,22 +12,60 @@ const bodoniModa = Bodoni_Moda({ subsets: ["latin"], variable: "--font-bodoni-mo
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne", display: "swap" });
 
 const siteUrl = "https://bhaskar-nb-portfolio.vercel.app";
-const siteTitle = `${profile.name} — Data Analyst Portfolio`;
-const siteDescription = "Data Analyst portfolio showcasing SQL, Python, Tableau, Power BI, Excel, data visualization, dashboards, and practical analytics projects.";
+const siteTitle = `${profile.name} — Data Analyst | SQL, Python & BI Portfolio`;
+const siteDescription = "Bhaskar Nakka is a Data Analyst focused on SQL, Python, Excel, Tableau, Power BI, business intelligence, dashboards, and evidence-backed analytics.";
+const siteKeywords = [
+  "Bhaskar Nakka",
+  "Data Analyst",
+  "Data Analyst Portfolio",
+  "Junior Data Analyst",
+  "Entry Level Data Analyst",
+  "BI Analyst",
+  "Business Analyst",
+  "Reporting Analyst",
+  "SQL",
+  "MySQL",
+  "Python",
+  "Pandas",
+  "Excel",
+  "Tableau",
+  "Power BI",
+  "Business Intelligence",
+  "Data Visualization",
+  "Dashboard Development",
+  "Data Analytics",
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: siteTitle, template: `%s — ${profile.name}` },
   description: siteDescription,
-  keywords: ["Data Analyst", "Data Analyst Portfolio", "SQL", "Python", "Tableau", "Power BI", "Excel", "Data Visualization", "Business Intelligence", "Data Analytics", profile.name],
-  authors: [{ name: profile.name }],
+  keywords: siteKeywords,
+  authors: [{ name: profile.name, url: profile.links.linkedin }],
   creator: profile.name,
   category: "technology",
   alternates: { canonical: siteUrl },
-  openGraph: { type: "website", url: siteUrl, locale: "en_US", title: siteTitle, description: siteDescription, siteName: `${profile.name} Portfolio` },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    locale: "en_US",
+    title: siteTitle,
+    description: siteDescription,
+    siteName: `${profile.name} — Data Analyst Portfolio`,
+  },
   twitter: { card: "summary", title: siteTitle, description: siteDescription },
   icons: { icon: "/favicon.svg" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,9 +74,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "Person",
     name: profile.name,
     jobTitle: profile.role,
+    description: profile.summary,
     email: profile.email,
     telephone: profile.phone,
-    address: { "@type": "PostalAddress", addressLocality: profile.location },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: profile.location,
+    },
     url: siteUrl,
     sameAs: [profile.links.linkedin, profile.links.github, profile.links.tableau],
   };
