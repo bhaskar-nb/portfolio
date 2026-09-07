@@ -15,7 +15,33 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
   const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const opening = document.getElementById("opening");
+    if (!opening) {
+      setShowNavbar(true);
+      return;
+    }
+
+    // The opening is a standalone cinematic scene. Keep the navbar completely
+    // out of it and reveal navigation only once the Intro section begins.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inOpening = entry.isIntersecting;
+        setShowNavbar(!inOpening);
+        if (inOpening) {
+          setHidden(false);
+          setOpen(false);
+        }
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(opening);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;
@@ -24,21 +50,23 @@ export default function Navbar() {
       const currentScrollY = window.scrollY;
       const delta = currentScrollY - lastScrollY.current;
 
-      // Keep the navbar visible at the top and while the mobile menu is open.
-      if (currentScrollY <= 12 || open) {
+      // The opening controls its own visual space; navbar visibility starts at Intro.
+      if (!showNavbar) {
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      if (open) {
         setHidden(false);
         lastScrollY.current = currentScrollY;
         return;
       }
 
-      // Ignore tiny scroll jitter so the navbar does not flicker.
       if (Math.abs(delta) < SCROLL_THRESHOLD) return;
 
       if (delta > 0) {
-        // Scrolling down: get the navigation out of the way.
         setHidden(true);
       } else {
-        // Scrolling up: bring the navigation back immediately.
         setHidden(false);
       }
 
@@ -47,7 +75,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [open]);
+  }, [open, showNavbar]);
 
   useEffect(() => {
     if (open) setHidden(false);
@@ -74,12 +102,15 @@ export default function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }
 
+  const navbarHidden = !showNavbar || hidden;
+
   return (
     <motion.header
       className="pointer-events-none fixed inset-x-0 top-0 z-50"
-      animate={{ y: hidden ? "-130%" : "0%", opacity: hidden ? 0 : 1 }}
+      animate={{ y: navbarHidden ? "-130%" : "0%", opacity: navbarHidden ? 0 : 1 }}
       transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
       style={{ willChange: "transform, opacity" }}
+      aria-hidden={navbarHidden}
     >
       <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 sm:pt-5 lg:px-8">
         <div className="pointer-events-auto mx-auto flex min-h-[62px] items-center justify-between rounded-2xl border border-base-500/70 bg-base-900/75 px-3 shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:px-4">
