@@ -2,40 +2,77 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Download, Mail, Github, Linkedin, BarChart3, ArrowUpRight } from "lucide-react";
+import { Download, ArrowUpRight } from "lucide-react";
 import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
-
-const tools = ["SQL", "Python", "Tableau", "Power BI", "Excel"];
 
 export default function Hero() {
   return (
     <section id="intro" className="relative overflow-hidden bg-base-900">
-      <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-20" />
-      <div className="pointer-events-none absolute left-[15%] top-1/4 h-72 w-72 rounded-full bg-gold/5 blur-[110px]" />
-      <div className="pointer-events-none absolute right-[5%] bottom-0 h-96 w-96 rounded-full bg-gold/5 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-15" />
+      <div className="pointer-events-none absolute right-[-8%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-gold/5 blur-[130px]" />
 
-      <div className="relative mx-auto grid min-h-[100svh] w-full max-w-7xl items-center gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16 lg:px-8">
-        <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7 }} className="relative mx-auto h-[52svh] min-h-[420px] w-full max-w-[470px] sm:h-[68svh] lg:mx-0 lg:h-[76svh]">
-          <div className="absolute inset-8 rounded-[2.5rem] border border-gold/15 bg-gold/[0.025]" />
-          <div className="absolute inset-x-8 bottom-0 h-2/3 rounded-[2.5rem] bg-gradient-to-t from-gold/10 to-transparent blur-3xl" />
-          <Image src="/DP image.png" alt={`${profile.name} — Data Analyst`} fill sizes="(max-width: 1024px) 90vw, 470px" className="relative z-10 object-contain object-bottom" />
-          <div className="absolute left-0 top-1/2 z-20 -translate-y-1/2 font-display text-3xl italic leading-[1.05] text-gold/80 sm:text-4xl">Data in.<br />Decisions out.</div>
-          <div className="absolute bottom-4 left-0 z-20 h-px w-16 bg-gold" />
+      <div className="relative mx-auto grid min-h-[78svh] w-full max-w-7xl items-center gap-12 px-5 py-28 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="max-w-2xl"
+        >
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+            Hello, I&apos;m
+          </p>
+
+          <h1 className="mt-5 font-display text-5xl font-semibold leading-[0.95] tracking-[-0.045em] text-ink-100 sm:text-7xl lg:text-8xl">
+            {profile.name}
+          </h1>
+
+          <p className="mt-5 font-mono text-sm uppercase tracking-[0.24em] text-gold sm:text-base">
+            Data Analyst
+          </p>
+
+          <p className="mt-7 max-w-xl text-base leading-7 text-ink-400 sm:text-lg sm:leading-8">
+            I analyze data, uncover useful insights, and build clear dashboards
+            that help turn business questions into better decisions.
+          </p>
+
+          <p className="mt-5 font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">
+            SQL · Python · Excel · Tableau · Power BI
+          </p>
+
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <MagneticButton href="#projects" className="btn-primary">
+              View my work <ArrowUpRight size={15} />
+            </MagneticButton>
+            <MagneticButton href="/Resume.pdf" download className="btn-secondary">
+              <Download size={15} /> Download résumé
+            </MagneticButton>
+          </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, delay: 0.08 }} className="relative">
-          <div className="flex items-center justify-between gap-4"><div className="flex items-center gap-4 font-mono text-[9px] uppercase tracking-[0.22em] text-gold"><span>01 / 06</span><span className="h-px w-16 bg-gold/60 sm:w-28" /></div><span className="hidden rounded-full border border-gold/25 px-3 py-1.5 font-mono text-[8px] uppercase tracking-[0.18em] text-ink-400 sm:block">Open to Data Analyst roles</span></div>
-          <p className="mt-7 font-mono text-[10px] uppercase tracking-[0.22em] text-gold">SQL · Python · Tableau · Power BI · Excel</p>
-          <h1 className="mt-4 max-w-4xl font-display text-[4.3rem] font-semibold leading-[0.86] tracking-[-0.06em] text-transparent [background:linear-gradient(180deg,#f7f7f5_0%,#22c55e_100%)] bg-clip-text sm:text-[6.8rem] lg:text-[7.8rem]">Data Analyst</h1>
-          <div className="mt-8 max-w-3xl rounded-[1.75rem] border border-base-500/80 bg-base-800/65 p-6 shadow-panel backdrop-blur-xl sm:p-8">
-            <p className="text-xl leading-8 text-ink-200 sm:text-2xl sm:leading-9">Hey, I&apos;m <span className="font-semibold text-gold">{profile.name}.</span></p>
-            <p className="mt-5 text-sm leading-7 text-ink-400 sm:text-base sm:leading-8">I turn raw datasets into clear, decision-ready insights using <span className="font-semibold text-ink-200">SQL, Python, Tableau, Power BI, and Excel</span>. My work focuses on data cleaning, exploratory analysis, KPI reporting, and business-focused dashboards.</p>
-            <div className="mt-7 flex flex-wrap gap-2 border-t border-base-500/70 pt-6">{tools.map((tool) => <span key={tool} className="rounded-full border border-gold/20 bg-gold/[0.04] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-300">{tool}</span>)}</div>
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="relative mx-auto h-[420px] w-full max-w-[430px] sm:h-[500px] lg:h-[570px]"
+        >
+          <div className="absolute inset-x-10 bottom-0 top-8 rounded-[3rem] border border-gold/15 bg-gold/[0.025]" />
+          <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-[90px]" />
+          <Image
+            src="/DP image.png"
+            alt={`${profile.name} — Data Analyst`}
+            fill
+            sizes="(max-width: 1024px) 90vw, 430px"
+            className="relative z-10 object-contain object-bottom"
+            priority
+          />
+          <div className="absolute bottom-7 right-0 z-20 rounded-full border border-gold/20 bg-base-800/80 px-4 py-2 backdrop-blur-md sm:right-2">
+            <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-ink-400">
+              Open to opportunities
+            </span>
           </div>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3"><div className="rounded-2xl border border-base-500/80 bg-base-800/45 p-4"><span className="font-display text-2xl text-ink-100">8</span><span className="mt-1 block font-mono text-[8px] uppercase tracking-[0.14em] text-ink-600">Analytics projects</span></div><div className="rounded-2xl border border-base-500/80 bg-base-800/45 p-4"><span className="font-display text-2xl text-ink-100">1</span><span className="mt-1 block font-mono text-[8px] uppercase tracking-[0.14em] text-ink-600">Analytics internship</span></div><div className="rounded-2xl border border-gold/20 bg-gold/[0.035] p-4"><span className="font-display text-2xl text-gold">Open</span><span className="mt-1 block font-mono text-[8px] uppercase tracking-[0.14em] text-ink-600">Data Analyst / BI roles</span></div></div>
-          <div className="mt-7 flex flex-wrap items-center gap-3"><MagneticButton href="#projects" className="btn-primary">View selected work <ArrowUpRight size={15} /></MagneticButton><MagneticButton href="/Resume.pdf" download className="btn-secondary"><Download size={15} /> Download résumé</MagneticButton></div>
-          <div className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-base-500/70 pt-5 font-mono text-[9px] uppercase tracking-[0.16em] text-ink-600"><a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex min-h-11 min-w-11 items-center justify-center text-ink-400 transition-colors hover:text-gold"><Linkedin size={16} /></a><a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="flex min-h-11 min-w-11 items-center justify-center text-ink-400 transition-colors hover:text-gold"><Github size={16} /></a><a href={profile.links.tableau} target="_blank" rel="noreferrer" aria-label="Tableau Public" className="flex min-h-11 min-w-11 items-center justify-center text-ink-400 transition-colors hover:text-gold"><BarChart3 size={16} /></a><a href={`mailto:${profile.email}`} aria-label="Email" className="flex min-h-11 min-w-11 items-center justify-center text-ink-400 transition-colors hover:text-gold"><Mail size={16} /></a><span className="mx-2 hidden h-4 w-px bg-base-500 sm:block" /><span>{profile.location}</span></div>
         </motion.div>
       </div>
     </section>
