@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Link from "next/link";
 
 const tools = ["SQL", "PYTHON", "TABLEAU", "POWER BI", "EXCEL"];
 
@@ -8,45 +6,27 @@ export default function Opening() {
   return (
     <section
       id="opening"
-      aria-label="Portfolio"
-      className="relative flex h-[100dvh] min-h-[560px] w-full items-center justify-center overflow-hidden bg-base-900"
+      aria-label="Portfolio introduction"
+      className="relative flex h-[100dvh] min-h-[600px] w-full items-center justify-center overflow-hidden bg-base-900"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-15" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[38rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-400/[0.07] blur-[120px]" />
       <div className="pointer-events-none absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
-      <div className="pointer-events-none absolute left-6 top-6 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-600 sm:left-8 sm:top-8">
+
+      <div className="absolute left-6 top-6 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-600 sm:left-8 sm:top-8">
         00 / portfolio
       </div>
-      <div className="pointer-events-none absolute right-6 top-6 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-600 sm:right-8 sm:top-8">
-        2026 / data analytics
+      <div className="absolute right-6 top-6 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-600 sm:right-8 sm:top-8">
+        data / analytics
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 14 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        className="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 -rotate-90 origin-left font-mono text-[8px] uppercase tracking-[0.28em] text-ink-700 lg:block"
-      >
-        Turning data into decisions
-      </motion.div>
-
-      <div className="relative z-10 flex w-full max-w-[96vw] flex-col items-center justify-center px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-5 flex items-center gap-3 text-[8px] font-mono uppercase tracking-[0.24em] text-ink-500 sm:mb-7 sm:text-[9px]"
-        >
-          <span className="h-px w-8 bg-gold/60 sm:w-12" />
+      <div className="relative z-10 w-full max-w-5xl px-5 text-center sm:px-8">
+        <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-gold sm:text-xs">
           Data Analyst Portfolio
-          <span className="h-px w-8 bg-gold/60 sm:w-12" />
-        </motion.div>
+        </p>
 
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9, y: 14 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full whitespace-nowrap text-[clamp(3.25rem,6.1vw,11.5rem)] font-black uppercase leading-[0.88] tracking-[-0.09em]"
+        <h1
+          className="mt-6 text-[clamp(4rem,8vw,9rem)] font-black uppercase leading-[0.86] tracking-[-0.09em]"
           style={{
             fontFamily: "var(--font-syne), sans-serif",
             background:
@@ -56,75 +36,54 @@ export default function Opening() {
             color: "transparent",
             WebkitTextStroke: "1px rgba(125,255,153,0.24)",
             filter:
-              "drop-shadow(0 0 24px rgba(34,197,94,0.34)) drop-shadow(0 18px 34px rgba(0,0,0,0.55))",
+              "drop-shadow(0 0 24px rgba(34,197,94,0.28)) drop-shadow(0 18px 34px rgba(0,0,0,0.5))",
           }}
         >
           BHASKAR NAKKA
-        </motion.h1>
+        </h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 flex items-center gap-5 sm:mt-8 sm:gap-8"
-        >
-          <span className="h-px w-10 bg-gold/80 sm:w-16" aria-hidden="true" />
-          <span
-            className="whitespace-nowrap text-[clamp(1.3rem,2.3vw,2.35rem)] font-bold uppercase leading-none tracking-[0.16em] text-ink-100"
-            style={{ fontFamily: "var(--font-syne), sans-serif" }}
-          >
-            PORTFOLIO
-          </span>
-          <span className="h-px w-10 bg-gold/80 sm:w-16" aria-hidden="true" />
-        </motion.div>
+        <div className="mx-auto mt-7 h-px max-w-2xl bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:mt-6 sm:text-base"
-          style={{ fontFamily: "var(--font-syne), sans-serif" }}
-        >
-          DATA ANALYST
-        </motion.p>
+        <p className="mx-auto mt-7 max-w-3xl text-[clamp(1.35rem,2.6vw,2.25rem)] font-medium leading-[1.25] tracking-tight text-ink-100">
+          I turn business questions into clear, data-backed insights.
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.45 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[8px] uppercase tracking-[0.18em] text-ink-500 sm:mt-10 sm:text-[9px]"
-        >
-          {tools.map((tool, index) => (
-            <span key={tool} className="flex items-center gap-3">
-              {index > 0 && <span className="text-gold/45" aria-hidden="true">/</span>}
+        <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-ink-400 sm:text-base">
+          I use SQL, Python, Excel, Tableau, and Power BI to clean data, uncover trends, build decision-focused dashboards, and communicate what the numbers mean.
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+          {tools.map((tool) => (
+            <span
+              key={tool}
+              className="rounded-full border border-base-500/80 bg-base-800/60 px-3.5 py-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-400"
+            >
               {tool}
             </span>
           ))}
-        </motion.div>
+        </div>
+
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
+          <Link
+            href="#projects"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-gold px-5 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-base-900 transition-transform hover:-translate-y-0.5"
+          >
+            Explore projects
+          </Link>
+          <a
+            href="/Resume.pdf"
+            download
+            className="inline-flex min-h-11 items-center justify-center rounded-full border border-base-500 bg-base-800/50 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.15em] text-ink-200 transition-colors hover:border-gold/60 hover:text-gold"
+          >
+            Download résumé
+          </a>
+        </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.75 }}
-        className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-center sm:bottom-9"
-      >
+      <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-center sm:bottom-9">
         <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-ink-600">scroll to explore</span>
-        <motion.span
-          animate={{ scaleY: [1, 1.35, 1], opacity: [0.65, 1, 0.65] }}
-          transition={{ duration: 1.7, repeat: Infinity, ease: "easeInOut" }}
-          className="h-8 w-px origin-top bg-gradient-to-b from-gold/80 to-transparent"
-        />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.9 }}
-        className="pointer-events-none absolute bottom-7 right-6 hidden font-mono text-[8px] uppercase tracking-[0.18em] text-ink-700 sm:block sm:right-8"
-      >
-        SQL / Python / BI
-      </motion.div>
+        <span className="h-8 w-px bg-gradient-to-b from-gold/70 to-transparent" />
+      </div>
     </section>
   );
 }
