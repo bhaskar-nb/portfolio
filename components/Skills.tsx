@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart3, Code2, Database, GitBranch, Table2 } from "lucide-react";
+import { BarChart3, Code2, Database, GitBranch } from "lucide-react";
 import { skillGroups } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -9,50 +9,42 @@ const getSkills = (id: string) => skillGroups.find((group) => group.id === id)?.
 
 const sections = [
   {
-    id: "analytics",
-    title: "Analytics",
-    caption: "Query · clean · explore",
-    icon: Code2,
-    skills: getSkills("analysis").filter((s) => ["SQL", "Python", "Pandas", "NumPy", "Data Cleaning", "Exploratory Data Analysis"].includes(s)),
+    id: "sql",
+    title: "SQL",
+    caption: "Query · join · analyze",
+    icon: Database,
+    skills: ["SQL", "MySQL"],
     featured: true,
   },
   {
     id: "bi",
-    title: "BI & Visualization",
-    caption: "Explain · compare · communicate",
+    title: "BI & Reporting",
+    caption: "Visualize · compare · communicate",
     icon: BarChart3,
-    skills: getSkills("visualization").filter((s) => ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"].includes(s)),
+    skills: ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"],
     featured: true,
   },
   {
-    id: "database",
-    title: "Database",
-    caption: "Structure · query · manage",
-    icon: Database,
-    skills: getSkills("database"),
-    featured: false,
+    id: "python",
+    title: "Python & Data Analysis",
+    caption: "Clean · transform · explore",
+    icon: Code2,
+    skills: ["Python", "Pandas", "NumPy", "Data Cleaning", "Exploratory Data Analysis"],
+    featured: true,
   },
   {
-    id: "tools",
-    title: "Tools",
+    id: "workflow",
+    title: "Tools & Workflow",
     caption: "Version · build · deliver",
     icon: GitBranch,
-    skills: getSkills("workflow").filter((s) => ["Git", "GitHub", "VS Code", "Streamlit"].includes(s)),
-    featured: false,
-  },
-  {
-    id: "visualization-libs",
-    title: "Supporting Libraries",
-    caption: "Transform · calculate · plot",
-    icon: Table2,
-    skills: getSkills("analysis").filter((s) => ["Pandas", "NumPy"].includes(s)).concat(getSkills("visualization").filter((s) => s === "Matplotlib")),
+    skills: ["Git", "GitHub", "VS Code", "Streamlit"],
     featured: false,
   },
 ];
 
-function SkillPill({ skill }: { skill: string }) {
+function SkillPill({ skill, priority = false }: { skill: string; priority?: boolean }) {
   return (
-    <span className="inline-flex min-h-10 items-center rounded-xl border border-base-500/80 bg-base-700/45 px-3.5 py-2 text-sm text-ink-200 transition-colors duration-200 hover:border-gold/45 hover:bg-base-700/75">
+    <span className={`inline-flex min-h-10 items-center rounded-xl border px-3.5 py-2 text-sm transition-colors duration-200 hover:border-gold/45 hover:bg-base-700/75 ${priority ? "border-gold/25 bg-gold/[0.06] font-medium text-ink-100" : "border-base-500/80 bg-base-700/45 text-ink-200"}`}>
       {skill}
     </span>
   );
@@ -65,12 +57,12 @@ export default function Skills() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="-- skills"
-          title="The tools I use to do the work"
-          description="A practical stack for querying data, preparing it, finding useful patterns, and turning analysis into clear business-facing outputs."
+          title="A data analyst stack, shown in priority order"
+          description="The core tools are placed first because they are the skills most relevant to the roles I am targeting. Supporting tools stay visible without competing with the main analytics stack."
         />
 
-        <div className="mt-14 grid gap-4 lg:grid-cols-2">
-          {sections.slice(0, 2).map((section, index) => {
+        <div className="mt-14 grid gap-4 lg:grid-cols-3">
+          {sections.slice(0, 3).map((section, index) => {
             const Icon = section.icon;
             return (
               <motion.div
@@ -91,15 +83,15 @@ export default function Skills() {
                   </div>
                 </div>
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {section.skills.map((skill) => <SkillPill key={skill} skill={skill} />)}
+                  {section.skills.map((skill, skillIndex) => <SkillPill key={skill} skill={skill} priority={skillIndex < 2} />)}
                 </div>
               </motion.div>
             );
           })}
         </div>
 
-        <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          {sections.slice(2).map((section, index) => {
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {sections.slice(3).map((section, index) => {
             const Icon = section.icon;
             return (
               <motion.div
