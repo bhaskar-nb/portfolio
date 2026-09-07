@@ -57,18 +57,20 @@ export default function Hero() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative mx-auto h-[68svh] w-full max-w-[500px] sm:h-[74svh] lg:h-[82svh] lg:max-h-[700px] lg:min-h-[560px]"
+          className="relative mx-auto h-[68svh] w-full max-w-[500px] overflow-hidden rounded-[2rem] sm:h-[74svh] lg:h-[82svh] lg:max-h-[700px] lg:min-h-[560px]"
         >
-          <div className="absolute inset-x-12 bottom-0 top-10 rounded-[2rem] border border-gold/8 bg-gold/[0.012]" />
-          <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-gold/7 blur-[100px]" />
-          <Image
-            src="/DP image.png"
-            alt={`${profile.name} — Data Analyst`}
-            fill
-            sizes="(max-width: 1024px) 90vw, 500px"
-            className="relative z-10 object-contain object-bottom"
-            priority
-          />
+          <div className="absolute inset-6 rounded-[1.75rem] border border-gold/8 bg-gold/[0.01]" />
+          <div className="absolute inset-x-6 bottom-0 top-6 overflow-hidden rounded-[1.75rem]">
+            <Image
+              src="/DP image.png"
+              alt={`${profile.name} — Data Analyst`}
+              fill
+              sizes="(max-width: 1024px) 90vw, 500px"
+              className="object-contain object-bottom"
+              priority
+            />
+          </div>
+          <div className="pointer-events-none absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/7 blur-[100px]" />
         </motion.div>
       </div>
     </section>
