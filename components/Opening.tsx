@@ -35,7 +35,7 @@ export default function Opening() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.95, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute left-1/2 bottom-0 z-10 h-[88dvh] w-[min(46vw,760px)] min-w-[330px] -translate-x-1/2 lg:left-[calc(50%-20vw)] sm:h-[91dvh] lg:h-[94dvh]"
+          className="absolute left-1/2 bottom-0 z-10 h-[88dvh] w-[min(46vw,760px)] min-w-[330px] -translate-x-1/2 sm:h-[91dvh] lg:h-[94dvh]"
         >
           <div className="absolute inset-x-[18%] bottom-[8%] h-[62%] rounded-full bg-gold/15 blur-[80px]" />
           <Image
@@ -52,7 +52,7 @@ export default function Opening() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.4 }}
-          className="absolute bottom-[22%] left-[42%] z-20 sm:left-[43%] lg:left-[44%]"
+          className="absolute bottom-[22%] left-[6%] z-20 sm:left-[8%] lg:left-[9%] xl:left-[10%]"
         >
           <div className="font-display text-2xl font-medium tracking-[-0.035em] text-ink-100 sm:text-3xl lg:text-4xl">
             Data <span className="text-gold">Analyst</span>
@@ -64,11 +64,11 @@ export default function Opening() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.47 }}
-          className="absolute bottom-[22%] left-[70%] z-20"
+          className="absolute bottom-[22%] right-[6%] z-20 sm:right-[8%] lg:right-[9%] xl:right-[10%]"
         >
           <MagneticButton
             href="#contact"
-            className="group flex min-h-12 w-max items-center gap-3 whitespace-nowrap rounded-full border border-gold bg-gold/[0.025] px-5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-100 shadow-[0_0_20px_rgba(34,197,94,0.22),inset_0_0_18px_rgba(34,197,94,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold/10 hover:shadow-[0_0_34px_rgba(34,197,94,0.42),inset_0_0_22px_rgba(34,197,94,0.12)]"
+            className="group min-h-12 w-max gap-3 whitespace-nowrap rounded-full border border-gold bg-gold/[0.025] px-5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-100 shadow-[0_0_20px_rgba(34,197,94,0.22),inset_0_0_18px_rgba(34,197,94,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold/10 hover:shadow-[0_0_34px_rgba(34,197,94,0.42),inset_0_0_22px_rgba(34,197,94,0.12)]"
           >
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-gold/60 bg-gold/10 text-gold transition-transform duration-300 group-hover:rotate-[-8deg]">
               <Send size={12} />
