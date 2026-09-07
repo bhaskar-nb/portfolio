@@ -8,11 +8,11 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function Hero() {
   return (
-    <section id="intro" className="relative min-h-screen overflow-hidden bg-base-900">
+    <section id="intro" className="relative h-[100svh] min-h-[680px] overflow-hidden bg-base-900">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-15" />
       <div className="pointer-events-none absolute right-[-8%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-gold/5 blur-[130px]" />
 
-      <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-center gap-8 px-5 py-20 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12 lg:px-10 lg:py-16">
+      <div className="relative mx-auto grid h-full w-full max-w-7xl items-center gap-8 px-5 py-16 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12 lg:px-10 lg:py-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function Hero() {
             Hello, I&apos;m
           </p>
 
-          <h1 className="mt-5 font-display text-5xl font-semibold leading-[0.95] tracking-[-0.045em] text-ink-100 sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 font-display text-5xl font-semibold leading-[0.95] tracking-[-0.045em] text-ink-100 sm:text-6xl lg:text-[clamp(4rem,6vw,6.5rem)]">
             {profile.name}
           </h1>
 
@@ -57,10 +57,10 @@ export default function Hero() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative mx-auto h-[430px] w-full max-w-[440px] sm:h-[540px] lg:h-[70svh] lg:max-h-[620px] lg:min-h-[520px] lg:max-w-[500px]"
+          className="relative mx-auto h-[68svh] w-full max-w-[500px] sm:h-[74svh] lg:h-[82svh] lg:max-h-[700px] lg:min-h-[560px]"
         >
-          <div className="absolute inset-x-6 bottom-0 top-4 rounded-[3rem] border border-gold/15 bg-gold/[0.025]" />
-          <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-[90px]" />
+          <div className="absolute inset-x-4 bottom-0 top-0 rounded-[3rem] border border-gold/15 bg-gold/[0.025]" />
+          <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-gold/10 blur-[100px]" />
           <Image
             src="/DP image.png"
             alt={`${profile.name} — Data Analyst`}
