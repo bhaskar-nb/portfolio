@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Opening() {
@@ -29,22 +28,6 @@ export default function Opening() {
       >
         PORTFOLIO
       </motion.h1>
-
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[78dvh] w-[min(88vw,720px)] -translate-x-1/2 sm:h-[82dvh]"
-      >
-        <Image
-          src="/DP image.png"
-          alt=""
-          fill
-          priority
-          sizes="(max-width: 640px) 88vw, 720px"
-          className="object-contain object-bottom"
-        />
-      </motion.div>
     </section>
   );
 }
