@@ -53,7 +53,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="-- contact / open channel"
           title="Let&apos;s talk about the work."
-          description="Hiring for a Data Analyst or BI role, or have a project to discuss? Start with the context and I&apos;ll take it from there."
+          description="Hiring for a Data Analyst, BI Analyst, Business Analyst, or Reporting Analyst role? Send the role or context and I&apos;ll take it from there."
         />
 
         <div className="mt-14 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
@@ -67,10 +67,10 @@ export default function Contact() {
             <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-gold/5 blur-3xl" />
             <div className="relative flex h-full flex-col justify-between">
               <div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">01 / direct contact</span>
-                <h3 className="mt-7 max-w-md font-display text-3xl leading-tight text-ink-100 sm:text-4xl">The fastest route is a direct message.</h3>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">01 / recruiter route</span>
+                <h3 className="mt-7 max-w-md font-display text-3xl leading-tight text-ink-100 sm:text-4xl">Review the work. Then let&apos;s talk.</h3>
                 <p className="mt-5 max-w-md text-sm leading-7 text-ink-400">
-                  Reach out about hiring, collaboration, reporting, dashboards, or data analysis. I&apos;m especially interested in opportunities where analysis can support a real business decision.
+                  I&apos;m actively targeting entry-level Data Analyst and BI opportunities. If the work looks relevant to your team, the résumé, LinkedIn, and direct contact options are below.
                 </p>
               </div>
 
@@ -101,7 +101,7 @@ export default function Contact() {
 
               <div className="mt-6 border-t border-base-500/70 pt-5">
                 <div className="flex items-center justify-between gap-4">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">online</span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">profiles / proof</span>
                   <div className="flex gap-2">
                     {socials.map((s) => (
                       <a
@@ -135,7 +135,7 @@ export default function Contact() {
               <div className="flex items-center justify-between border-b border-base-500/70 pb-5">
                 <div>
                   <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-gold">02 / message</span>
-                  <h3 className="mt-2 font-display text-2xl text-ink-100">Tell me what you&apos;re working on.</h3>
+                  <h3 className="mt-2 font-display text-2xl text-ink-100">Tell me what you&apos;re hiring for.</h3>
                 </div>
                 <span className="hidden rounded-full border border-base-500 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider text-ink-500 sm:block">mailto</span>
               </div>
@@ -183,7 +183,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="w-full resize-none rounded-xl border border-base-500 bg-base-900/40 px-4 py-3 text-sm leading-6 text-ink-100 outline-none transition-all placeholder:text-ink-600 focus:border-gold focus:bg-base-800"
-                    placeholder="Role, project, question, or problem..."
+                    placeholder="Role title, team, location, or question..."
                   />
                 </div>
 
@@ -193,7 +193,7 @@ export default function Contact() {
                   </p>
                   <MagneticButton type="submit" className="btn-primary min-h-11 justify-center">
                     {sent ? <Check size={15} /> : <Send size={15} />}
-                    {sent ? "Email draft opened" : "Start conversation"}
+                    {sent ? "Email draft opened" : "Contact me"}
                   </MagneticButton>
                 </div>
               </div>
@@ -209,8 +209,8 @@ export default function Contact() {
           className="mt-5 flex flex-col gap-4 rounded-2xl border border-gold/20 bg-gold/[0.03] p-5 sm:flex-row sm:items-center sm:justify-between"
         >
           <div>
-            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-gold">for recruiters</span>
-            <p className="mt-1 text-xs leading-5 text-ink-400">Want the quick overview first? Start with the résumé.</p>
+            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-gold">recruiter quick view</span>
+            <p className="mt-1 text-xs leading-5 text-ink-400">Short on time? Open the résumé for the fastest overview of skills, experience, and projects.</p>
           </div>
           <a
             href="/Resume.pdf"
