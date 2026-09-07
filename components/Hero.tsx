@@ -8,7 +8,7 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function Hero() {
   return (
-    <section id="intro" className="relative h-[100svh] min-h-[680px] overflow-hidden bg-base-900">
+    <section id="home" className="relative h-[100svh] min-h-[680px] overflow-hidden bg-base-900">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-15" />
       <div className="pointer-events-none absolute right-[-8%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-gold/5 blur-[130px]" />
 
