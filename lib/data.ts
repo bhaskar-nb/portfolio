@@ -22,10 +22,61 @@ export const skillGroups = [
 ];
 
 export const projects = [
-  { id: "sales-performance-dashboard", title: "Sales Performance Dashboard", stack: ["Tableau"], summary: "Business-focused sales analysis covering revenue, profit, quantity, year-over-year performance, and product profitability. The analysis identified 20.6% year-over-year sales growth and 43.7% profit growth.", features: ["Year-over-year sales, profit, and quantity KPIs", "Product and sub-category profitability analysis", "Interactive filters for time and product comparisons", "Decision-focused KPI and trend storytelling"], challenges: "How did sales and profitability change over time, and which product patterns deserve attention?", approach: "Structured the analysis around core KPIs, year-over-year comparison, and product profitability so a recruiter or stakeholder can move from overall performance to specific drivers.", evidence: "20.6% year-over-year sales growth and 43.7% profit growth were identified in the analysis.", learnings: "Strengthened KPI design, comparative analysis, dashboard hierarchy, and business storytelling.", recommendation: "Use product-level profitability analysis alongside sales growth to identify areas where revenue growth is not translating into equally strong profit performance.", github: "https://github.com/bhaskar-nb/sales-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/SalesDashboardProject_17823218142750/SalesDashboard" },
-  { id: "global-disaster-analysis", title: "Global Disaster Analysis", stack: ["Tableau"], summary: "15,090 disaster events analyzed across disaster types, countries, time, human impact, and economic damage to compare where frequency and severity diverge.", features: ["Disaster frequency and severity analysis", "Human impact and economic damage exploration", "Country, disaster-type, and time-based comparisons"], challenges: "How can disaster patterns be compared across frequency, human impact, geography, and economic damage without reducing the story to event counts alone?", approach: "Organized the analysis around frequency, severity, human impact, geography, and economic damage so the dashboard supports comparison rather than a single event-count view.", evidence: "15,090 disaster events analyzed across the available dataset.", learnings: "Strengthened KPI selection, geographic analysis, impact-focused storytelling, and dashboard hierarchy.", recommendation: "Compare event frequency with human and economic impact before prioritizing regions or disaster types; high frequency does not automatically mean highest severity.", github: "https://github.com/bhaskar-nb/disaster-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/DisasterAnalysis_17869126013330/Globaldashboard" },
-  { id: "hr-analytics-dashboard", title: "HR Analytics Dashboard", stack: ["Tableau", "Python", "Pandas", "NumPy", "Faker"], summary: "Workforce analysis covering hiring, terminations, demographics, departments, compensation, performance, and geography using explicitly synthetic employee data.", features: ["Workforce, hiring, and termination KPIs", "Department, demographic, salary, and performance analysis", "Synthetic employee dataset generated and prepared with Python"], challenges: "How can workforce composition, hiring, attrition, and compensation patterns be presented clearly to HR stakeholders?", approach: "Generated and prepared a synthetic employee dataset with Python, then organized workforce, hiring, termination, compensation, performance, and demographic views into a stakeholder-oriented dashboard.", evidence: "Synthetic employee data was used for the analysis; conclusions are illustrative and demonstrate the analytical workflow rather than represent a real workforce.", learnings: "Strengthened synthetic data generation, preparation, KPI design, and dashboard communication.", recommendation: "Use department-level workforce and attrition views to identify areas that warrant deeper HR investigation rather than treating overall workforce metrics as sufficient.", github: "https://github.com/bhaskar-nb/hr-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/HRDashboard_17824941977350/HRSummary_1" },
-  { id: "ev-adoption-dashboard", title: "EV Adoption Dashboard", stack: ["Tableau"], summary: "Analysis of 150,413 electric vehicle records across model years, states, manufacturers, vehicle types, models, and eligibility categories.", features: ["Manufacturer and vehicle-type comparisons", "State-level geographic analysis", "Model-year and CAFV eligibility exploration"], challenges: "How do EV registrations vary by geography, manufacturer, vehicle type, and model year within the available dataset?", approach: "Segmented registrations by geography, manufacturer, vehicle type, model year, model, and CAFV eligibility to make the dataset easier to compare across multiple dimensions.", evidence: "150,413 EV records analyzed across the available dataset.", learnings: "Improved geographic analysis, dataset-scope communication, and interactive dashboard design.", recommendation: "Use geographic and manufacturer-level comparisons to identify where EV adoption is concentrated and which segments may need deeper market analysis.", github: "https://github.com/bhaskar-nb/ev-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/EVDashboard_17866424745700/EvDashboard" },
+  {
+    id: "sales-performance-dashboard",
+    title: "Sales Performance Dashboard",
+    stack: ["Tableau"],
+    summary: "An interactive sales analytics dashboard built to evaluate revenue growth, profitability, sales volume, product performance, and year-over-year trends.",
+    features: [
+      "Year-over-year sales, profit, and quantity KPI analysis",
+      "Category and sub-category performance analysis",
+      "Revenue versus profitability comparison",
+      "Product-level performance exploration",
+      "Interactive filtering for deeper comparisons",
+    ],
+    challenges: "How did sales and profitability change over time, which categories and products drove performance, and where did strong revenue fail to translate into equally strong profit?",
+    approach: "Connected four related CSV datasets in Tableau, structured the analysis around sales, profit, and quantity KPIs, compared year-over-year performance, then drilled from category and sub-category level down to product-level profitability.",
+    evidence: "In 2023, total sales reached $164.42M (+20.6% YoY), total profit reached $27.89M (+43.7%), and total quantity reached 12K (+26.8%). Profit grew faster than sales, making profitability an important performance lens.",
+    learnings: "Strengthened KPI design, year-over-year comparison, profitability analysis, dashboard hierarchy, interactive filtering, and business storytelling.",
+    recommendation: "Evaluate revenue growth together with profit performance, investigate high-revenue products with comparatively weaker profitability, and use category-to-product drilldowns before making portfolio decisions.",
+    dataset: "4 related CSV datasets — Orders, Customers, Products, and Location",
+    methodology: ["Source data", "Tableau data modeling", "KPI analysis", "YoY comparison", "Category & product analysis", "Dashboard & recommendations"],
+    metrics: [
+      { value: "$164.42M", label: "2023 sales" },
+      { value: "+20.6%", label: "sales YoY" },
+      { value: "$27.89M", label: "2023 profit" },
+      { value: "+43.7%", label: "profit YoY" },
+      { value: "12K", label: "2023 quantity" },
+      { value: "+26.8%", label: "quantity YoY" },
+    ],
+    businessQuestions: [
+      "How did sales, profit, and quantity change year over year?",
+      "Which categories and sub-categories contribute most to revenue and profit?",
+      "Where is high revenue not translating into equally strong profitability?",
+      "Which periods show stronger or weaker performance?",
+      "Which parts of the product portfolio deserve further investigation?",
+    ],
+    github: "https://github.com/bhaskar-nb/sales-dashboard",
+    demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/SalesDashboardProject_17823218142750/SalesDashboard"
+  },
+  {
+    id: "global-disaster-analysis",
+    title: "Global Disaster Analysis",
+    stack: ["Tableau"],
+    summary: "15,090 disaster events analyzed across disaster types, countries, time, human impact, and economic damage to compare where frequency and severity diverge.", features: ["Disaster frequency and severity analysis", "Human impact and economic damage exploration", "Country, disaster-type, and time-based comparisons"], challenges: "How can disaster patterns be compared across frequency, human impact, geography, and economic damage without reducing the story to event counts alone?", approach: "Organized the analysis around frequency, severity, human impact, geography, and economic damage so the dashboard supports comparison rather than a single event-count view.", evidence: "15,090 disaster events analyzed across the available dataset.", learnings: "Strengthened KPI selection, geographic analysis, impact-focused storytelling, and dashboard hierarchy.", recommendation: "Compare event frequency with human and economic impact before prioritizing regions or disaster types; high frequency does not automatically mean highest severity.", github: "https://github.com/bhaskar-nb/disaster-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/DisasterAnalysis_17869126013330/Globaldashboard"
+  },
+  {
+    id: "hr-analytics-dashboard",
+    title: "HR Analytics Dashboard",
+    stack: ["Tableau", "Python", "Pandas", "NumPy", "Faker"],
+    summary: "Workforce analysis covering hiring, terminations, demographics, departments, compensation, performance, and geography using explicitly synthetic employee data.", features: ["Workforce, hiring, and termination KPIs", "Department, demographic, salary, and performance analysis", "Synthetic employee dataset generated and prepared with Python"], challenges: "How can workforce composition, hiring, attrition, and compensation patterns be presented clearly to HR stakeholders?", approach: "Generated and prepared a synthetic employee dataset with Python, then organized workforce, hiring, termination, compensation, performance, and demographic views into a stakeholder-oriented dashboard.", evidence: "Synthetic employee data was used for the analysis; conclusions are illustrative and demonstrate the analytical workflow rather than represent a real workforce.", learnings: "Strengthened synthetic data generation, preparation, KPI design, and dashboard communication.", recommendation: "Use department-level workforce and attrition views to identify areas that warrant deeper HR investigation rather than treating overall workforce metrics as sufficient.", github: "https://github.com/bhaskar-nb/hr-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/HRDashboard_17824941977350/HRSummary_1"
+  },
+  {
+    id: "ev-adoption-dashboard",
+    title: "EV Adoption Dashboard",
+    stack: ["Tableau"],
+    summary: "Analysis of 150,413 electric vehicle records across model years, states, manufacturers, vehicle types, models, and eligibility categories.", features: ["Manufacturer and vehicle-type comparisons", "State-level geographic analysis", "Model-year and CAFV eligibility exploration"], challenges: "How do EV registrations vary by geography, manufacturer, vehicle type, and model year within the available dataset?", approach: "Segmented registrations by geography, manufacturer, vehicle type, model year, model, and CAFV eligibility to make the dataset easier to compare across multiple dimensions.", evidence: "150,413 EV records analyzed across the available dataset.", learnings: "Improved geographic analysis, dataset-scope communication, and interactive dashboard design.", recommendation: "Use geographic and manufacturer-level comparisons to identify where EV adoption is concentrated and which segments may need deeper market analysis.", github: "https://github.com/bhaskar-nb/ev-dashboard", demo: "https://public.tableau.com/app/profile/bhaskar.nakka4980/viz/EVDashboard_17866424745700/EvDashboard"
+  },
 ];
 
 export const additionalProjects = [
