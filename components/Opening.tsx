@@ -10,7 +10,6 @@ export default function Opening() {
   return (
     <section id="opening" className="relative flex h-[100dvh] min-h-[560px] w-full items-end justify-center overflow-hidden bg-base-900">
       <div className="relative h-full w-full max-w-[1920px]">
-        {/* One continuous wordmark — the portrait sits above it, never splitting the word. */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -29,7 +28,6 @@ export default function Opening() {
           PORTFOLIO
         </motion.div>
 
-        {/* Portrait occupies the full visual height so the scene reaches the viewport edge. */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +45,6 @@ export default function Opening() {
           />
         </motion.div>
 
-        {/* Role sits below the left side of PORT, matching the reference composition. */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -60,7 +57,6 @@ export default function Opening() {
           <div className="mt-2 h-[2px] w-24 bg-gradient-to-r from-gold via-gold/70 to-transparent shadow-[0_0_14px_rgba(34,197,94,0.55)] sm:w-32" />
         </motion.div>
 
-        {/* CTA sits below the right side of FOLIO. */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
