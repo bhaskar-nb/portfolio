@@ -52,7 +52,7 @@ export default function Opening() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.4 }}
-          className="absolute bottom-[22%] left-[10%] z-20 sm:left-[12%] lg:left-[13%] xl:left-[15%]"
+          className="absolute bottom-[22%] left-[42%] z-20 sm:left-[43%] lg:left-[44%]"
         >
           <div className="font-display text-2xl font-medium tracking-[-0.035em] text-ink-100 sm:text-3xl lg:text-4xl">
             Data <span className="text-gold">Analyst</span>
@@ -64,17 +64,17 @@ export default function Opening() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.47 }}
-          className="absolute bottom-[22%] right-[10%] z-20 sm:right-[12%] lg:right-[13%] xl:right-[15%]"
+          className="absolute bottom-[22%] left-[70%] z-20"
         >
           <MagneticButton
             href="#contact"
-            className="group min-h-12 gap-3 rounded-full border border-gold bg-gold/[0.025] px-5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-100 shadow-[0_0_20px_rgba(34,197,94,0.22),inset_0_0_18px_rgba(34,197,94,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold/10 hover:shadow-[0_0_34px_rgba(34,197,94,0.42),inset_0_0_22px_rgba(34,197,94,0.12)]"
+            className="group flex min-h-12 w-max items-center gap-3 whitespace-nowrap rounded-full border border-gold bg-gold/[0.025] px-5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-100 shadow-[0_0_20px_rgba(34,197,94,0.22),inset_0_0_18px_rgba(34,197,94,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold/10 hover:shadow-[0_0_34px_rgba(34,197,94,0.42),inset_0_0_22px_rgba(34,197,94,0.12)]"
           >
-            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gold/60 bg-gold/10 text-gold transition-transform duration-300 group-hover:rotate-[-8deg]">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-gold/60 bg-gold/10 text-gold transition-transform duration-300 group-hover:rotate-[-8deg]">
               <Send size={12} />
             </span>
             Let&apos;s Connect
-            <ArrowUpRight size={14} className="text-gold transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRight size={14} className="shrink-0 text-gold transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </MagneticButton>
         </motion.div>
       </div>
