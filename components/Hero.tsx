@@ -59,8 +59,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="relative mx-auto h-[68svh] w-full max-w-[500px] sm:h-[74svh] lg:h-[82svh] lg:max-h-[700px] lg:min-h-[560px]"
         >
-          <div className="absolute inset-x-4 bottom-0 top-0 rounded-[3rem] border border-gold/15 bg-gold/[0.025]" />
-          <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-gold/10 blur-[100px]" />
+          <div className="absolute inset-x-12 bottom-0 top-10 rounded-[2rem] border border-gold/8 bg-gold/[0.012]" />
+          <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-gold/7 blur-[100px]" />
           <Image
             src="/DP image.png"
             alt={`${profile.name} — Data Analyst`}
