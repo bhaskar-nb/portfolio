@@ -34,7 +34,7 @@ export default function Opening() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[78dvh] w-[min(88vw,720px)] -translate-x-1/2 sm:h-[82dvh]"
+        className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[78dvh] w-[min(88vw,720px)] -translate-x-[42%] sm:h-[82dvh]"
       >
         <Image
           src="/DP image.png"
