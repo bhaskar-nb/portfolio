@@ -8,11 +8,11 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function Hero() {
   return (
-    <section id="intro" className="relative overflow-hidden bg-base-900">
+    <section id="intro" className="relative min-h-screen overflow-hidden bg-base-900">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-15" />
       <div className="pointer-events-none absolute right-[-8%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-gold/5 blur-[130px]" />
 
-      <div className="relative mx-auto grid min-h-[72svh] w-full max-w-7xl items-center gap-10 px-5 py-24 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10">
+      <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-center gap-10 px-5 py-28 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
