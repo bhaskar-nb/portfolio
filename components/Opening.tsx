@@ -14,7 +14,7 @@ export default function Opening() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full whitespace-nowrap text-[clamp(3.4rem,10.2vw,11.5rem)] font-black uppercase leading-none tracking-[-0.095em]"
+          className="w-full whitespace-nowrap text-[clamp(3.4rem,8.6vw,11.5rem)] font-black uppercase leading-none tracking-[-0.095em]"
           style={{
             fontFamily: "var(--font-syne), sans-serif",
             background:
