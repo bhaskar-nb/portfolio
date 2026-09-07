@@ -24,9 +24,9 @@ export default function Experience() {
       <div className="pointer-events-none absolute right-0 top-1/4 h-80 w-80 rounded-full bg-gold/5 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="-- experience"
-          title="Hands-on analytics experience"
-          description="My internship experience across data preparation, analysis, predictive workflows, and application delivery."
+          eyebrow="-- professional experience"
+          title="Data Analyst Intern"
+          description="Professional experience applying data preparation, analysis, predictive workflows, and application delivery to practical datasets."
         />
 
         <motion.article
@@ -39,7 +39,7 @@ export default function Experience() {
           <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
             <div className="border-b border-base-500/70 p-7 sm:p-9 lg:border-b-0 lg:border-r lg:p-10">
               <div className="flex items-center justify-between gap-4">
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">01 / experience</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">01 / work experience</span>
                 <span className="rounded-full border border-gold/20 bg-gold/5 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-gold">{experience.type}</span>
               </div>
 
@@ -49,7 +49,7 @@ export default function Experience() {
 
               <p className="mt-7 font-mono text-[9px] uppercase tracking-[0.16em] text-gold">{experience.period}</p>
               <h3 className="mt-3 font-display text-3xl leading-tight text-ink-100">{experience.role}</h3>
-              <p className="mt-2 text-base text-ink-400">{experience.company}</p>
+              <p className="mt-2 text-base font-medium text-ink-300">{experience.company}</p>
 
               <div className="mt-7 flex flex-wrap gap-2">
                 {tools.map((tool) => (
@@ -60,7 +60,7 @@ export default function Experience() {
               </div>
 
               <div className="mt-10 border-t border-base-500/70 pt-6">
-                <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">Focus</p>
+                <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">Role scope</p>
                 <p className="mt-2 text-sm leading-6 text-ink-400">Data preparation · exploratory analysis · predictive workflows · application delivery</p>
               </div>
             </div>
@@ -68,8 +68,8 @@ export default function Experience() {
             <div className="p-7 sm:p-9 lg:p-10">
               <div className="flex items-end justify-between gap-4 border-b border-base-500/70 pb-6">
                 <div>
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-gold">what I worked on</span>
-                  <h4 className="mt-2 font-display text-xl text-ink-100">Practical analytics responsibilities</h4>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-gold">responsibilities</span>
+                  <h4 className="mt-2 font-display text-xl text-ink-100">What I worked on</h4>
                 </div>
                 <ArrowUpRight size={17} className="shrink-0 text-ink-600" aria-hidden="true" />
               </div>
