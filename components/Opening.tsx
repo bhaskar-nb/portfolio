@@ -10,15 +10,25 @@ export default function Opening() {
   return (
     <section id="opening" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-base-900 px-4 sm:px-6 lg:px-8">
       <div className="relative flex h-[100svh] w-full max-w-[1700px] items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
-          className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-center font-display text-[clamp(7rem,17vw,18rem)] font-semibold leading-none tracking-[-0.09em]"
-          aria-hidden="true"
-        >
-          <span className="text-ink-100">PORT</span><span className="text-gold">FOLIO</span>
-        </motion.div>
+        {/* Split wordmark keeps PORT on the left and FOLIO on the right of the portrait. */}
+        <div className="pointer-events-none absolute inset-x-0 top-[49%] z-0 -translate-y-1/2 select-none font-display font-semibold leading-none tracking-[-0.09em]" aria-hidden="true">
+          <motion.span
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="absolute right-[50%] mr-[clamp(7rem,14vw,12rem)] whitespace-nowrap text-[clamp(5.5rem,11vw,12rem)] text-ink-100"
+          >
+            PORT
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.05 }}
+            className="absolute left-[50%] ml-[clamp(7rem,14vw,12rem)] whitespace-nowrap text-[clamp(5.5rem,11vw,12rem)] text-gold"
+          >
+            FOLIO
+          </motion.span>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
