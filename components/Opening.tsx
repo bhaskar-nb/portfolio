@@ -18,7 +18,7 @@ export default function Opening() {
             aria-hidden="true"
             className="w-max whitespace-nowrap text-center text-[clamp(4.2rem,14vw,17rem)] font-black uppercase leading-[0.78] tracking-[-0.095em]"
             style={{
-              fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif',
+              fontFamily: 'var(--font-syne), sans-serif',
               background: "linear-gradient(180deg, #effff3 0%, #b9f7c5 22%, #63d975 50%, #18843b 76%, #063b1a 100%)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
