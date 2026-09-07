@@ -45,6 +45,16 @@ export default function Opening() {
           </span>
           <span className="h-px w-10 bg-gold/80 sm:w-16" aria-hidden="true" />
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-5 text-sm font-semibold uppercase tracking-[0.3em] text-gold sm:mt-6 sm:text-base"
+          style={{ fontFamily: "var(--font-syne), sans-serif" }}
+        >
+          DATA ANALYST
+        </motion.p>
       </div>
     </section>
   );
