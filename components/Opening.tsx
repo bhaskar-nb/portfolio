@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Opening() {
@@ -13,7 +14,7 @@ export default function Opening() {
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full max-w-[96vw] whitespace-nowrap text-center text-[clamp(3.4rem,10.2vw,11.5rem)] font-black uppercase leading-none tracking-[-0.095em]"
+        className="relative z-0 w-full max-w-[96vw] whitespace-nowrap text-center text-[clamp(3.4rem,10.2vw,11.5rem)] font-black uppercase leading-none tracking-[-0.095em]"
         style={{
           fontFamily: "var(--font-syne), sans-serif",
           background:
@@ -28,6 +29,22 @@ export default function Opening() {
       >
         PORTFOLIO
       </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+        className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[78dvh] w-[min(88vw,720px)] -translate-x-1/2 sm:h-[82dvh]"
+      >
+        <Image
+          src="/DP image.png"
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 640px) 88vw, 720px"
+          className="object-contain object-bottom"
+        />
+      </motion.div>
     </section>
   );
 }
