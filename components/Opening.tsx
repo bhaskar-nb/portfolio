@@ -9,10 +9,31 @@ export default function Opening() {
       aria-label="Portfolio"
       className="relative flex h-[100dvh] min-h-[560px] w-full items-center justify-center overflow-hidden bg-base-900"
     >
-      <div className="relative z-0 flex w-full max-w-[96vw] flex-col items-center justify-center text-center">
+      <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-20" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-400/[0.055] blur-[100px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="pointer-events-none absolute left-6 top-6 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-600 sm:left-8 sm:top-8">
+        00 / portfolio
+      </div>
+      <div className="pointer-events-none absolute right-6 top-6 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-600 sm:right-8 sm:top-8">
+        data / analytics
+      </div>
+
+      <div className="relative z-10 flex w-full max-w-[96vw] flex-col items-center justify-center text-center">
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-5 flex items-center gap-3 text-[8px] font-mono uppercase tracking-[0.24em] text-ink-500 sm:mb-7 sm:text-[9px]"
+        >
+          <span className="h-px w-8 bg-gold/60 sm:w-12" />
+          Bhaskar Nakka
+          <span className="h-px w-8 bg-gold/60 sm:w-12" />
+        </motion.div>
+
         <motion.h1
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.94, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="w-full whitespace-nowrap text-[clamp(3.4rem,6vw,11.5rem)] font-black uppercase leading-none tracking-[-0.095em]"
           style={{
@@ -56,6 +77,16 @@ export default function Opening() {
           DATA ANALYST
         </motion.p>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-center sm:bottom-9"
+      >
+        <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-ink-600">scroll to explore</span>
+        <span className="h-8 w-px bg-gradient-to-b from-gold/70 to-transparent" />
+      </motion.div>
     </section>
   );
 }
