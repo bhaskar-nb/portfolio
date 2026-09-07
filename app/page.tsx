@@ -1,6 +1,7 @@
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
+import Opening from "@/components/Opening";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import RecruiterProof from "@/components/RecruiterProof";
@@ -20,6 +21,7 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <main>
+        <Opening />
         <Hero />
         <About />
         <RecruiterProof />
