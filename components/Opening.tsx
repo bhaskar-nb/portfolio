@@ -32,7 +32,7 @@ export default function Opening() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.95, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-x-1/2 bottom-0 z-10 h-[88dvh] w-[min(46vw,760px)] min-w-[330px] -translate-x-1/2 sm:h-[91dvh] lg:h-[94dvh]"
+          className="absolute left-1/2 bottom-0 z-10 h-[88dvh] w-[min(46vw,760px)] min-w-[330px] -translate-x-1/2 sm:h-[91dvh] lg:h-[94dvh]"
         >
           <div className="absolute inset-x-[18%] bottom-[8%] h-[62%] rounded-full bg-gold/15 blur-[80px]" />
           <Image
