@@ -29,13 +29,13 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 font-mono text-sm uppercase tracking-[0.24em] text-gold sm:text-base">
-            Data Analyst
+            Data Analyst · Business Intelligence
           </p>
 
           <p className="mt-7 max-w-xl text-base leading-7 text-ink-400 sm:text-lg sm:leading-8">
-            I use SQL, Python, Excel, Tableau, and Power BI to analyze data,
-            uncover trends, and build dashboards that support better business
-            decisions.
+            I turn raw data into clear business insights using SQL, Python,
+            Excel, and Tableau — from data preparation and analysis to
+            decision-focused dashboards.
           </p>
 
           <p className="mt-5 font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">
