@@ -15,7 +15,7 @@ export default function Opening() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-[38%] z-0 w-max -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-center text-[clamp(4.2rem,14vw,17rem)] font-black uppercase leading-[0.78] tracking-[-0.095em] sm:left-[calc(50%+14vw)] lg:left-[calc(50%+20vw)]"
+          className="pointer-events-none absolute left-1/2 top-[38%] z-0 w-max -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-center text-[clamp(4.2rem,14vw,17rem)] font-black uppercase leading-[0.78] tracking-[-0.095em]"
           style={{
             fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif',
             background: "linear-gradient(180deg, #effff3 0%, #b9f7c5 22%, #63d975 50%, #18843b 76%, #063b1a 100%)",
