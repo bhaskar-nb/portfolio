@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-15" />
       <div className="pointer-events-none absolute right-[-8%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-gold/5 blur-[130px]" />
 
-      <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-center gap-10 px-5 py-28 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10">
+      <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-center gap-8 px-5 py-20 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12 lg:px-10 lg:py-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,15 +57,15 @@ export default function Hero() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative mx-auto h-[380px] w-full max-w-[400px] sm:h-[450px] lg:h-[510px]"
+          className="relative mx-auto h-[430px] w-full max-w-[440px] sm:h-[540px] lg:h-[70svh] lg:max-h-[620px] lg:min-h-[520px] lg:max-w-[500px]"
         >
-          <div className="absolute inset-x-8 bottom-0 top-6 rounded-[3rem] border border-gold/15 bg-gold/[0.025]" />
-          <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gold/10 blur-[90px]" />
+          <div className="absolute inset-x-6 bottom-0 top-4 rounded-[3rem] border border-gold/15 bg-gold/[0.025]" />
+          <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-[90px]" />
           <Image
             src="/DP image.png"
             alt={`${profile.name} — Data Analyst`}
             fill
-            sizes="(max-width: 1024px) 90vw, 400px"
+            sizes="(max-width: 1024px) 90vw, 500px"
             className="relative z-10 object-contain object-bottom"
             priority
           />
