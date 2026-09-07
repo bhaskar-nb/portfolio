@@ -10,7 +10,7 @@ export default function Opening() {
   return (
     <section id="opening" className="relative flex h-[100dvh] min-h-[560px] w-full items-end justify-center overflow-hidden bg-base-900">
       <div className="relative h-full w-full max-w-[1920px]">
-        <div className="pointer-events-none absolute inset-x-0 top-[38%] z-0 flex -translate-y-1/2 justify-center select-none">
+        <div className="pointer-events-none absolute inset-x-0 top-[43%] z-0 flex -translate-y-1/2 justify-center select-none">
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
