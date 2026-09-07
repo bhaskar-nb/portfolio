@@ -52,7 +52,7 @@ export default function Opening() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.4 }}
-          className="absolute bottom-[8%] left-[8%] z-20 sm:left-[11%] lg:left-[13%] xl:left-[15%]"
+          className="absolute bottom-[22%] left-[10%] z-20 sm:left-[12%] lg:left-[13%] xl:left-[15%]"
         >
           <div className="font-display text-2xl font-medium tracking-[-0.035em] text-ink-100 sm:text-3xl lg:text-4xl">
             Data <span className="text-gold">Analyst</span>
@@ -64,7 +64,7 @@ export default function Opening() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, delay: 0.47 }}
-          className="absolute bottom-[8%] right-[8%] z-20 sm:right-[11%] lg:right-[13%] xl:right-[15%]"
+          className="absolute bottom-[22%] right-[10%] z-20 sm:right-[12%] lg:right-[13%] xl:right-[15%]"
         >
           <MagneticButton
             href="#contact"
