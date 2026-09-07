@@ -36,9 +36,9 @@ export const projects = [
     ],
     challenges: "How did sales and profitability change over time, which categories and products drove performance, and where did strong revenue fail to translate into equally strong profit?",
     approach: "Connected four related CSV datasets in Tableau, structured the analysis around sales, profit, and quantity KPIs, compared year-over-year performance, then drilled from category and sub-category level down to product-level profitability.",
-    evidence: "In 2023, total sales reached $164.42M (+20.6% YoY), total profit reached $27.89M (+43.7%), and total quantity reached 12K (+26.8%). Profit grew faster than sales, making profitability an important performance lens.",
-    learnings: "Strengthened KPI design, year-over-year comparison, profitability analysis, dashboard hierarchy, interactive filtering, and business storytelling.",
-    recommendation: "Evaluate revenue growth together with profit performance, investigate high-revenue products with comparatively weaker profitability, and use category-to-product drilldowns before making portfolio decisions.",
+    evidence: "In 2023, total sales reached $164.42M (+20.6% YoY), total profit reached $27.89M (+43.7%), and total quantity reached 12K (+26.8%). The sub-category view shows Chairs as the largest sales contributor, while Phones and Appliances show stronger profit contribution. Tables generate high sales but are loss-making, illustrating why revenue alone is not enough to judge performance.",
+    learnings: "Strengthened KPI design, year-over-year comparison, profitability analysis, dashboard hierarchy, interactive filtering, and the ability to distinguish sales volume from profitable growth.",
+    recommendation: "Evaluate revenue growth together with profit performance. Prioritize investigation of high-sales but loss-making areas such as Tables, and compare product and sub-category profitability before making portfolio decisions.",
     dataset: "4 related CSV datasets — Orders, Customers, Products, and Location",
     methodology: ["Source data", "Tableau data modeling", "KPI analysis", "YoY comparison", "Category & product analysis", "Dashboard & recommendations"],
     metrics: [
@@ -51,7 +51,7 @@ export const projects = [
     ],
     businessQuestions: [
       "How did sales, profit, and quantity change year over year?",
-      "Which categories and sub-categories contribute most to revenue and profit?",
+      "Which sub-categories contribute most to sales and profit?",
       "Where is high revenue not translating into equally strong profitability?",
       "Which periods show stronger or weaker performance?",
       "Which parts of the product portfolio deserve further investigation?",
