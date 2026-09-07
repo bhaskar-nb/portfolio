@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono, Bodoni_Moda } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono, Bodoni_Moda, Syne } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/data";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -9,6 +9,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 const bodoniModa = Bodoni_Moda({ subsets: ["latin"], variable: "--font-bodoni-moda", display: "swap" });
+const syne = Syne({ subsets: ["latin"], variable: "--font-syne", display: "swap" });
 
 const siteUrl = "https://bhaskar-nb-portfolio.vercel.app";
 const siteTitle = `${profile.name} — Data Analyst Portfolio`;
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${bodoniModa.variable} font-body bg-base-800 text-ink-200 antialiased selection:bg-gold/30 selection:text-ink-100`}>
+      <body className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${bodoniModa.variable} ${syne.variable} font-body bg-base-800 text-ink-200 antialiased selection:bg-gold/30 selection:text-ink-100`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <div className="pointer-events-none fixed inset-0 -z-10 bg-grid-fine bg-grid [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
         <ScrollProgress />
