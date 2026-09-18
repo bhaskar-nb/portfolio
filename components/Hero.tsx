@@ -22,7 +22,7 @@ export default function Hero() {
           transition={{ duration: 0.65 }}
           className="max-w-[650px] lg:pl-10"
         >
-          <div className="mb-5 inline-flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.04] px-3.5 py-2.5 backdrop-blur-xl">
+          <div className="mb-7 inline-flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.04] px-3.5 py-2.5 backdrop-blur-xl">
             <div className="relative h-7 w-7 overflow-hidden rounded-full border border-white/10 bg-base-700">
               <Image src="/DP image.png" alt="" fill sizes="28px" className="object-cover object-top" />
             </div>
@@ -31,15 +31,15 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="max-w-[610px] font-display text-[clamp(3rem,4.8vw,5.2rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-ink-200">
+          <h1 className="max-w-[500px] font-display text-[clamp(3.2rem,5vw,5.1rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-ink-400">
             Hi I&apos;m {profile.name}
           </h1>
 
-          <p className="mt-6 max-w-[560px] text-[0.95rem] leading-7 text-ink-400 sm:text-base sm:leading-7">
+          <p className="mt-7 max-w-[610px] text-[0.98rem] leading-7 text-ink-200 sm:text-[1.05rem] sm:leading-7">
             {profile.summary}
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center gap-3">
             <MagneticButton
               href="/Resume.pdf"
               download
