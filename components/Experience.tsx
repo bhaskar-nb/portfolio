@@ -5,18 +5,18 @@ import { BriefcaseBusiness, Check, ArrowUpRight } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 
 const experience = {
-  company: "EduExpose.in",
+  company: "DecodeLabs",
   role: "Data Analyst Intern",
-  period: "Feb 2026 – Apr 2026",
+  period: "2026",
   type: "Internship",
   bullets: [
-    "Worked with real-world datasets for diabetes classification and house-price prediction applications using Python and Streamlit.",
-    "Cleaned and prepared datasets with Python, handled categorical features, prepared model inputs, and evaluated model performance using standard metrics.",
-    "Built end-to-end workflows covering data preparation, exploratory analysis, model training, prediction, and interactive application delivery.",
+    "Worked in a data analytics internship focused on practical analysis and reporting workflows.",
+    "Applied analytical tools and structured problem-solving to turn datasets into useful findings.",
+    "Built hands-on experience relevant to entry-level Data Analyst and BI roles.",
   ],
 };
 
-const tools = ["Python", "Pandas", "Scikit-learn", "Streamlit"];
+const tools = ["SQL", "Python", "Tableau", "Excel"];
 
 export default function Experience() {
   return (
