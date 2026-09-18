@@ -22,36 +22,36 @@ export default function Hero() {
           transition={{ duration: 0.65 }}
           className="max-w-[650px] lg:pl-10"
         >
-          <div className="mb-6 inline-flex items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.045] px-4 py-3 backdrop-blur-xl">
-            <div className="relative h-8 w-8 overflow-hidden rounded-full border border-white/10 bg-base-700">
-              <Image src="/DP image.png" alt="" fill sizes="32px" className="object-cover object-top" />
+          <div className="mb-5 inline-flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.04] px-3.5 py-2.5 backdrop-blur-xl">
+            <div className="relative h-7 w-7 overflow-hidden rounded-full border border-white/10 bg-base-700">
+              <Image src="/DP image.png" alt="" fill sizes="28px" className="object-cover object-top" />
             </div>
-            <span className="text-sm font-medium text-ink-200">
+            <span className="text-xs font-medium tracking-wide text-ink-300 sm:text-sm">
               “Turning data into clear insights.”
             </span>
           </div>
 
-          <h1 className="max-w-[620px] font-display text-[clamp(3.2rem,5.2vw,5.7rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-ink-200">
+          <h1 className="max-w-[610px] font-display text-[clamp(3rem,4.8vw,5.2rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-ink-200">
             Hi I&apos;m {profile.name}
           </h1>
 
-          <p className="mt-7 max-w-[650px] text-base leading-7 text-ink-300 sm:text-[1.05rem] sm:leading-8">
+          <p className="mt-6 max-w-[560px] text-[0.95rem] leading-7 text-ink-400 sm:text-base sm:leading-7">
             {profile.summary}
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <MagneticButton
               href="/Resume.pdf"
               download
-              className="btn-secondary rounded-full px-6 py-3 text-sm"
+              className="btn-secondary rounded-full px-5 py-2.5 text-xs sm:text-sm"
             >
-              Download résumé <Download size={14} />
+              Download résumé <Download size={13} />
             </MagneticButton>
             <MagneticButton
               href="#projects"
-              className="btn-secondary rounded-full px-6 py-3 text-sm"
+              className="btn-secondary rounded-full px-5 py-2.5 text-xs sm:text-sm"
             >
-              Explore my projects <ArrowUpRight size={14} />
+              Explore my projects <ArrowUpRight size={13} />
             </MagneticButton>
           </div>
         </motion.div>
