@@ -40,17 +40,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <MagneticButton
-              href="/Resume.pdf"
-              download
-              className="btn-secondary rounded-full px-7 py-3.5"
-            >
+            <MagneticButton href="/Resume.pdf" download className="btn-secondary rounded-full px-7 py-3.5">
               Download résumé <Download size={15} />
             </MagneticButton>
-            <MagneticButton
-              href="#projects"
-              className="btn-secondary rounded-full px-7 py-3.5"
-            >
+            <MagneticButton href="#projects" className="btn-secondary rounded-full px-7 py-3.5">
               Explore my projects <ArrowUpRight size={15} />
             </MagneticButton>
           </div>
@@ -63,46 +56,46 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="relative mx-auto w-full max-w-[430px]"
         >
-          <div className="absolute -inset-10 rounded-[55px] bg-violet-500/[0.11] blur-[75px]" />
+          <div className="absolute -inset-12 rounded-[58px] bg-violet-500/[0.12] blur-[80px]" />
 
-          <div className="relative rounded-[32px] border border-cyan-300/65 bg-[#171729]/80 p-[1px] shadow-[0_30px_100px_rgba(0,0,0,0.5),0_0_65px_rgba(139,92,246,0.2)]">
-            <div className="relative aspect-[0.715] overflow-hidden rounded-[31px] bg-[#202039]">
+          <div className="relative rounded-[34px] bg-gradient-to-br from-cyan-300 via-violet-500 to-violet-700 p-[1.5px] shadow-[0_30px_100px_rgba(0,0,0,0.5),0_0_65px_rgba(139,92,246,0.22)]">
+            <div className="relative aspect-[0.715] overflow-hidden rounded-[32px] bg-[#202039]">
               <Image
                 src="/DP image.png"
-                alt={`${profile.name} — Data Analyst`}
+                alt={profile.name + " — Data Analyst"}
                 fill
                 sizes="430px"
                 className="object-cover object-top"
                 priority
               />
 
-              <div className="absolute inset-0 bg-gradient-to-b from-violet-950/55 via-transparent to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#392c68]/65 via-transparent to-[#07070b]/35" />
 
-              <div className="absolute left-0 right-0 top-0 px-7 pt-7 text-center">
-                <h2 className="font-display text-3xl font-semibold tracking-[-0.04em] text-white sm:text-[2.1rem]">
+              <div className="absolute left-0 right-0 top-0 z-10 px-6 pt-7 text-center">
+                <h2 className="font-display text-[2.05rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[2.2rem]">
                   {profile.name}
                 </h2>
-                <p className="mt-0.5 text-sm font-semibold text-violet-200 sm:text-base">
+                <p className="mt-1 text-sm font-semibold text-white/75 sm:text-base">
                   {profile.role}
                 </p>
               </div>
 
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3.5 backdrop-blur-xl">
+              <div className="absolute bottom-5 left-5 right-5 z-10 flex items-center justify-between gap-3 rounded-2xl border border-white/[0.12] bg-slate-900/55 px-4 py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-xl">
                 <div className="flex min-w-0 items-center gap-3">
-                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/10">
+                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/[0.12]">
                     <Image src="/DP image.png" alt="" fill sizes="40px" className="object-cover object-top" />
                   </div>
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold text-white">@{profile.githubUsername}</p>
-                    <p className="text-xs text-ink-400">Online</p>
+                    <p className="text-xs text-white/60">Online</p>
                   </div>
                 </div>
 
                 <a
                   href="#contact"
-                  className="shrink-0 rounded-xl border border-white/10 bg-white/[0.08] px-4 py-2.5 text-xs font-semibold text-ink-100 transition hover:bg-white/[0.14]"
+                  className="shrink-0 rounded-xl border border-white/[0.12] bg-white/[0.10] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-white/[0.16]"
                 >
-                  Contact me
+                  Contact Me
                 </a>
               </div>
             </div>
