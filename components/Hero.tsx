@@ -66,17 +66,19 @@ export default function Hero() {
           <div className="absolute -inset-10 rounded-[55px] bg-violet-500/[0.10] blur-[75px]" />
 
           <div className="relative rounded-[32px] bg-gradient-to-br from-cyan-300 via-violet-500 to-violet-700 p-[1.5px] shadow-[0_30px_90px_rgba(0,0,0,0.48),0_0_55px_rgba(139,92,246,0.18)]">
-            <div className="relative aspect-[0.73] overflow-hidden rounded-[30px] bg-[#202039]">
+            <div className="relative aspect-[0.73] overflow-hidden rounded-[30px] bg-[radial-gradient(circle_at_50%_25%,rgba(99,102,241,0.32),transparent_48%),linear-gradient(145deg,#17162f_0%,#292653_48%,#11111f_100%)]">
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(167,139,250,0.18),transparent_32%,transparent_68%,rgba(56,189,248,0.10))]" />
+
               <Image
                 src="/DP image.png"
                 alt={profile.name + " — Data Analyst"}
                 fill
                 sizes="430px"
-                className="object-cover object-top"
+                className="object-contain object-bottom scale-[1.08]"
                 priority
               />
 
-              <div className="absolute inset-0 bg-gradient-to-b from-[#392c68]/60 via-transparent to-[#07070b]/30" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#211c48]/25 via-transparent to-[#07070b]/20" />
 
               <div className="absolute left-0 right-0 top-0 z-10 px-5 pt-7 text-center">
                 <h2 className="font-display text-[1.9rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[2rem]">
