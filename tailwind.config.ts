@@ -13,8 +13,8 @@ const config: Config = {
         rose: { DEFAULT: "#C4B5FD" },
       },
       fontFamily: {
-        display: ["var(--font-space-grotesk)", "sans-serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-poppins)", "sans-serif"],
+        body: ["var(--font-poppins)", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       backgroundImage: {
