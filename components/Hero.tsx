@@ -6,32 +6,22 @@ import { ArrowUpRight, Download } from "lucide-react";
 import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.18,
-    },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 22 },
+const cardVariants = {
+  hidden: { opacity: 0, y: 420, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
+    scale: 1,
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, x: 55, scale: 0.94 },
+const wordVariants = {
+  hidden: { opacity: 0.18, filter: "blur(9px)" },
   show: {
     opacity: 1,
-    x: 0,
-    scale: 1,
-    transition: { duration: 0.85, delay: 0.22, ease: [0.22, 1, 0.36, 1] as const },
+    filter: "blur(0px)",
+    transition: { duration: 0.42, ease: "easeOut" as const },
   },
 };
 
@@ -60,6 +50,8 @@ export default function Hero() {
     mouseY.set(0);
   };
 
+  const summaryWords = profile.summary.split(" ");
+
   return (
     <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-base-900">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-[0.03]" />
@@ -68,42 +60,38 @@ export default function Hero() {
       <div className="pointer-events-none absolute right-[10%] top-[18%] h-[34rem] w-[34rem] rounded-full bg-violet-500/[0.08] blur-[130px]" />
 
       <div className="relative mx-auto grid min-h-[100svh] w-full max-w-[1450px] items-center gap-12 px-6 pb-16 pt-24 sm:px-10 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-16 lg:px-14 lg:pb-20 lg:pt-20">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="max-w-[650px] lg:pl-10"
-        >
-          <motion.div
-            variants={textVariants}
-            className="mb-7 inline-flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.04] px-3.5 py-2.5 backdrop-blur-xl"
-          >
+        <div className="max-w-[650px] lg:pl-10">
+          <div className="mb-7 inline-flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.04] px-3.5 py-2.5 backdrop-blur-xl">
             <div className="relative h-7 w-7 overflow-hidden rounded-full border border-white/10 bg-base-700">
               <Image src="/DP image.png" alt="" fill sizes="28px" className="object-cover object-top" />
             </div>
             <span className="text-xs font-medium tracking-wide text-ink-300 sm:text-sm">
               “Turning data into clear insights.”
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            variants={textVariants}
-            className="max-w-[500px] font-display text-[clamp(3.2rem,5vw,5.1rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-ink-400"
-          >
+          <h1 className="max-w-[500px] font-display text-[clamp(3.2rem,5vw,5.1rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-ink-400">
             Hi I&apos;m {profile.name}
-          </motion.h1>
+          </h1>
 
           <motion.p
-            variants={textVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ staggerChildren: 0.045, delayChildren: 0.28 }}
             className="mt-7 max-w-[610px] text-[0.98rem] leading-7 text-ink-200 sm:text-[1.05rem] sm:leading-7"
           >
-            {profile.summary}
+            {summaryWords.map((word, index) => (
+              <motion.span
+                key={index}
+                variants={wordVariants}
+                className="mr-[0.28em] inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
           </motion.p>
 
-          <motion.div
-            variants={textVariants}
-            className="mt-7 flex flex-wrap items-center gap-3"
-          >
+          <div className="mt-7 flex flex-wrap items-center gap-3">
             <MagneticButton
               href="/Resume.pdf"
               download
@@ -117,8 +105,8 @@ export default function Hero() {
             >
               Explore my projects <ArrowUpRight size={13} />
             </MagneticButton>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         <motion.div
           variants={cardVariants}
