@@ -21,7 +21,7 @@ const textVariants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -31,7 +31,7 @@ const cardVariants = {
     opacity: 1,
     x: 0,
     scale: 1,
-    transition: { duration: 0.85, delay: 0.22, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.85, delay: 0.22, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
