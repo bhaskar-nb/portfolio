@@ -14,17 +14,23 @@ export default function Loader() {
       return;
     }
 
-    const start = Date.now();
-    const id = setInterval(() => {
-      const pct = Math.min(100, Math.round(((Date.now() - start) / 900) * 100));
-      setProgress(pct);
-      if (pct >= 100) {
-        clearInterval(id);
-        setTimeout(() => setLoading(false), 200);
-      }
-    }, 30);
+    const start = performance.now();
+    const duration = 3000;
 
-    return () => clearInterval(id);
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const pct = Math.min(100, Math.floor((elapsed / duration) * 100));
+      setProgress(pct);
+
+      if (pct < 100) {
+        requestAnimationFrame(tick);
+      } else {
+        window.setTimeout(() => setLoading(false), 350);
+      }
+    };
+
+    const frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   return (
@@ -33,22 +39,23 @@ export default function Loader() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-4 bg-base-800"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-black"
           role="status"
           aria-live="polite"
-          aria-label="Loading portfolio"
+          aria-label={`Loading portfolio: ${progress}%`}
         >
-          <div className="font-mono text-xs uppercase tracking-[0.3em] text-ink-400">
-            Booting dashboard
-          </div>
-          <div className="h-px w-56 overflow-hidden bg-base-500" aria-hidden="true">
-            <motion.div
-              className="h-full bg-gold"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <div className="font-mono text-2xl text-ink-200" aria-hidden="true">{progress}%</div>
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-[58%] bg-[radial-gradient(ellipse_65%_70%_at_20%_0%,rgba(91,145,133,0.46),transparent_68%),radial-gradient(ellipse_70%_75%_at_80%_0%,rgba(48,132,153,0.48),transparent_68%)] blur-2xl" />
+          <div className="pointer-events-none absolute left-1/2 top-[8%] h-[38%] w-[58%] -translate-x-1/2 rounded-full bg-teal-500/[0.08] blur-[100px]" />
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="relative font-display text-5xl font-semibold tracking-[-0.055em] text-white sm:text-6xl"
+          >
+            {progress}
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
