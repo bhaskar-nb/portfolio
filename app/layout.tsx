@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono, Bodoni_Moda, Syne } from "next/font/google";
+import { Poppins, JetBrains_Mono, Bodoni_Moda, Syne } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/data";
 import ScrollProgress from "@/components/ScrollProgress";
 import CursorGlow from "@/components/CursorGlow";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk", display: "swap" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 const bodoniModa = Bodoni_Moda({ subsets: ["latin"], variable: "--font-bodoni-moda", display: "swap" });
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne", display: "swap" });
@@ -87,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${bodoniModa.variable} ${syne.variable} font-body bg-base-800 text-ink-200 antialiased selection:bg-gold/30 selection:text-ink-100`}>
+      <body className={`${poppins.variable} ${jetbrainsMono.variable} ${bodoniModa.variable} ${syne.variable} font-body bg-base-800 text-ink-200 antialiased selection:bg-gold/30 selection:text-ink-100`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <div className="pointer-events-none fixed inset-0 -z-10 bg-grid-fine bg-grid [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
         <ScrollProgress />
