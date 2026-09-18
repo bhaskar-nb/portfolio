@@ -1,34 +1,18 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useAnimation, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight, Download } from "lucide-react";
 import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
 
-const contentVariants = {
-  hidden: { opacity: 0, x: 90 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1.05,
-      delay: 0.45,
-      ease: [0.22, 1, 0.36, 1] as const,
-      staggerChildren: 0.14,
-    },
-  },
-};
-
 const contentItemVariants = {
-  hidden: { opacity: 0, x: 55 },
+  hidden: { opacity: 0, x: 70 },
   show: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -38,15 +22,24 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: {
-      duration: 1.15,
-      delay: 0.12,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
+    transition: { duration: 1.15, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
 export default function Hero() {
+  const contentControls = useAnimation();
+  const cardControls = useAnimation();
+
+  useEffect(() => {
+    const startHeroAnimation = () => {
+      void cardControls.start("show");
+      void contentControls.start("show");
+    };
+
+    window.addEventListener("portfolio-loader-complete", startHeroAnimation);
+    return () => window.removeEventListener("portfolio-loader-complete", startHeroAnimation);
+  }, [cardControls, contentControls]);
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [4, -4]), {
@@ -80,9 +73,9 @@ export default function Hero() {
 
       <div className="relative mx-auto grid min-h-[100svh] w-full max-w-[1450px] items-center gap-12 px-6 pb-16 pt-24 sm:px-10 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-16 lg:px-14 lg:pb-20 lg:pt-20">
         <motion.div
-          variants={contentVariants}
+          variants={{ show: { transition: { staggerChildren: 0.13, delayChildren: 0.05 } } }}
           initial="hidden"
-          animate="show"
+          animate={contentControls}
           className="max-w-[650px] lg:pl-10"
         >
           <motion.div
@@ -115,17 +108,10 @@ export default function Hero() {
             variants={contentItemVariants}
             className="mt-7 flex flex-wrap items-center gap-3"
           >
-            <MagneticButton
-              href="/Resume.pdf"
-              download
-              className="btn-secondary rounded-full px-5 py-2.5 text-xs sm:text-sm"
-            >
+            <MagneticButton href="/Resume.pdf" download className="btn-secondary rounded-full px-5 py-2.5 text-xs sm:text-sm">
               Download résumé <Download size={13} />
             </MagneticButton>
-            <MagneticButton
-              href="#projects"
-              className="btn-secondary rounded-full px-5 py-2.5 text-xs sm:text-sm"
-            >
+            <MagneticButton href="#projects" className="btn-secondary rounded-full px-5 py-2.5 text-xs sm:text-sm">
               Explore my projects <ArrowUpRight size={13} />
             </MagneticButton>
           </motion.div>
@@ -134,7 +120,7 @@ export default function Hero() {
         <motion.div
           variants={cardVariants}
           initial="hidden"
-          animate="show"
+          animate={cardControls}
           className="relative mx-auto w-full max-w-[410px] lg:mr-4"
           style={{ perspective: 1000 }}
           onMouseMove={handleCardMove}
@@ -151,25 +137,12 @@ export default function Hero() {
             <div className="relative rounded-[28px] bg-gradient-to-br from-cyan-300 via-violet-500 to-violet-700 p-[1.5px] shadow-[0_28px_80px_rgba(0,0,0,0.50),0_0_45px_rgba(139,92,246,0.16)]">
               <div className="relative aspect-[0.76] overflow-hidden rounded-[26px] bg-[radial-gradient(circle_at_50%_22%,rgba(99,102,241,0.30),transparent_46%),linear-gradient(145deg,#17162f_0%,#292653_48%,#11111f_100%)]">
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(167,139,250,0.15),transparent_34%,transparent_66%,rgba(56,189,248,0.08))]" />
-
-                <Image
-                  src="/DP image.png"
-                  alt={profile.name + " — Data Analyst"}
-                  fill
-                  sizes="410px"
-                  className="object-contain object-bottom scale-[1.05]"
-                  priority
-                />
-
+                <Image src="/DP image.png" alt={profile.name + " — Data Analyst"} fill sizes="410px" className="object-contain object-bottom scale-[1.05]" priority />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#211c48]/20 via-transparent to-[#07070b]/25" />
 
                 <div className="absolute left-0 right-0 top-0 z-10 px-5 pt-6 text-center">
-                  <h2 className="font-display text-[1.75rem] font-semibold leading-none tracking-[-0.04em] text-white sm:text-[1.9rem]">
-                    {profile.name}
-                  </h2>
-                  <p className="mt-1 text-xs font-medium tracking-wide text-white/65 sm:text-sm">
-                    {profile.role}
-                  </p>
+                  <h2 className="font-display text-[1.75rem] font-semibold leading-none tracking-[-0.04em] text-white sm:text-[1.9rem]">{profile.name}</h2>
+                  <p className="mt-1 text-xs font-medium tracking-wide text-white/65 sm:text-sm">{profile.role}</p>
                 </div>
 
                 <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between gap-3 rounded-xl border border-white/[0.10] bg-slate-950/55 px-3.5 py-2.5 backdrop-blur-xl">
@@ -182,10 +155,7 @@ export default function Hero() {
                       <p className="text-[10px] text-white/50">Online</p>
                     </div>
                   </div>
-                  <a
-                    href="#contact"
-                    className="shrink-0 rounded-lg border border-white/[0.11] bg-white/[0.08] px-3 py-1.5 text-[10px] font-semibold text-white transition hover:bg-white/[0.14]"
-                  >
+                  <a href="#contact" className="shrink-0 rounded-lg border border-white/[0.11] bg-white/[0.08] px-3 py-1.5 text-[10px] font-semibold text-white transition hover:bg-white/[0.14]">
                     Contact Me
                   </a>
                 </div>
