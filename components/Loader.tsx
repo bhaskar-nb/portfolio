@@ -9,8 +9,16 @@ export default function Loader() {
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
+
+    const finishLoading = () => {
       setLoading(false);
+      window.setTimeout(() => {
+        window.dispatchEvent(new Event("portfolio-loader-complete"));
+      }, 50);
+    };
+
+    if (reduceMotion) {
+      finishLoading();
       return;
     }
 
@@ -25,7 +33,7 @@ export default function Loader() {
       if (pct < 100) {
         requestAnimationFrame(tick);
       } else {
-        window.setTimeout(() => setLoading(false), 350);
+        window.setTimeout(finishLoading, 350);
       }
     };
 
