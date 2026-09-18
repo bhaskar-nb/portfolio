@@ -1,7 +1,6 @@
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
-import Opening from "@/components/Opening";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
@@ -20,7 +19,6 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <main>
-        <Opening />
         <Hero />
         <About />
         <Projects />
