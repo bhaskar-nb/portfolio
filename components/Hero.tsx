@@ -12,7 +12,7 @@ const contentItemVariants = {
   show: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -22,7 +22,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 1.15, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -73,7 +73,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid min-h-[100svh] w-full max-w-[1450px] items-center gap-12 px-6 pb-16 pt-24 sm:px-10 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-16 lg:px-14 lg:pb-20 lg:pt-20">
         <motion.div
-          variants={{ show: { transition: { staggerChildren: 0.13, delayChildren: 0.05 } } }}
+          variants={{ show: { transition: { staggerChildren: 0.16, delayChildren: 0.05 } } }}
           initial="hidden"
           animate={contentControls}
           className="max-w-[650px] lg:pl-10"
