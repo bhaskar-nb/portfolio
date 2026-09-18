@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight, Download } from "lucide-react";
 import { profile } from "@/lib/data";
 import MagneticButton from "@/components/MagneticButton";
@@ -36,6 +36,30 @@ const cardVariants = {
 };
 
 export default function Hero() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [4, -4]), {
+    stiffness: 180,
+    damping: 22,
+    mass: 0.6,
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-5, 5]), {
+    stiffness: 180,
+    damping: 22,
+    mass: 0.6,
+  });
+
+  const handleCardMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    mouseX.set((event.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((event.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const handleCardLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   return (
     <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-base-900">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-[0.03]" />
@@ -101,11 +125,15 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           className="relative mx-auto w-full max-w-[410px] lg:mr-4"
+          style={{ perspective: 1000 }}
+          onMouseMove={handleCardMove}
+          onMouseLeave={handleCardLeave}
         >
           <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
+            style={{ rotateX, rotateY }}
+            className="relative transform-gpu"
           >
             <div className="absolute -inset-8 rounded-[48px] bg-violet-500/[0.10] blur-[70px]" />
 
