@@ -61,47 +61,47 @@ export default function Hero() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.75, delay: 0.05 }}
-          className="relative mx-auto w-full max-w-[430px] lg:mr-2"
+          className="relative mx-auto w-full max-w-[410px] lg:mr-4"
         >
-          <div className="absolute -inset-10 rounded-[55px] bg-violet-500/[0.10] blur-[75px]" />
+          <div className="absolute -inset-8 rounded-[48px] bg-violet-500/[0.10] blur-[70px]" />
 
-          <div className="relative rounded-[32px] bg-gradient-to-br from-cyan-300 via-violet-500 to-violet-700 p-[1.5px] shadow-[0_30px_90px_rgba(0,0,0,0.48),0_0_55px_rgba(139,92,246,0.18)]">
-            <div className="relative aspect-[0.73] overflow-hidden rounded-[30px] bg-[radial-gradient(circle_at_50%_25%,rgba(99,102,241,0.32),transparent_48%),linear-gradient(145deg,#17162f_0%,#292653_48%,#11111f_100%)]">
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(167,139,250,0.18),transparent_32%,transparent_68%,rgba(56,189,248,0.10))]" />
+          <div className="relative rounded-[28px] bg-gradient-to-br from-cyan-300 via-violet-500 to-violet-700 p-[1.5px] shadow-[0_28px_80px_rgba(0,0,0,0.50),0_0_45px_rgba(139,92,246,0.16)]">
+            <div className="relative aspect-[0.76] overflow-hidden rounded-[26px] bg-[radial-gradient(circle_at_50%_22%,rgba(99,102,241,0.30),transparent_46%),linear-gradient(145deg,#17162f_0%,#292653_48%,#11111f_100%)]">
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(167,139,250,0.15),transparent_34%,transparent_66%,rgba(56,189,248,0.08))]" />
 
               <Image
                 src="/DP image.png"
                 alt={profile.name + " — Data Analyst"}
                 fill
-                sizes="430px"
-                className="object-contain object-bottom scale-[1.08]"
+                sizes="410px"
+                className="object-contain object-bottom scale-[1.05]"
                 priority
               />
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#211c48]/25 via-transparent to-[#07070b]/20" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#211c48]/20 via-transparent to-[#07070b]/25" />
 
-              <div className="absolute left-0 right-0 top-0 z-10 px-5 pt-7 text-center">
-                <h2 className="font-display text-[1.9rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[2rem]">
+              <div className="absolute left-0 right-0 top-0 z-10 px-5 pt-6 text-center">
+                <h2 className="font-display text-[1.75rem] font-semibold leading-none tracking-[-0.04em] text-white sm:text-[1.9rem]">
                   {profile.name}
                 </h2>
-                <p className="mt-1 text-sm font-semibold text-white/70">
+                <p className="mt-1 text-xs font-medium tracking-wide text-white/65 sm:text-sm">
                   {profile.role}
                 </p>
               </div>
 
-              <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between gap-3 rounded-2xl border border-white/[0.11] bg-slate-900/50 px-4 py-3 backdrop-blur-xl">
-                <div className="flex min-w-0 items-center gap-3">
-                  <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/[0.12]">
-                    <Image src="/DP image.png" alt="" fill sizes="36px" className="object-cover object-top" />
+              <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between gap-3 rounded-xl border border-white/[0.10] bg-slate-950/55 px-3.5 py-2.5 backdrop-blur-xl">
+                <div className="flex min-w-0 items-center gap-2.5">
+                  <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-white/[0.12]">
+                    <Image src="/DP image.png" alt="" fill sizes="32px" className="object-cover object-top" />
                   </div>
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold text-white">@{profile.githubUsername}</p>
-                    <p className="text-xs text-white/55">Online</p>
+                    <p className="truncate text-xs font-semibold text-white">@{profile.githubUsername}</p>
+                    <p className="text-[10px] text-white/50">Online</p>
                   </div>
                 </div>
                 <a
                   href="#contact"
-                  className="shrink-0 rounded-xl border border-white/[0.12] bg-white/[0.09] px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-white/[0.15]"
+                  className="shrink-0 rounded-lg border border-white/[0.11] bg-white/[0.08] px-3 py-1.5 text-[10px] font-semibold text-white transition hover:bg-white/[0.14]"
                 >
                   Contact Me
                 </a>
