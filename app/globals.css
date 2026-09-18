@@ -4,17 +4,18 @@
 
 @layer base {
   * { @apply border-base-500; }
-  html { scrollbar-color: #8B5CF6 #07070A; scroll-behavior: smooth; }
+  html { scrollbar-color: #8B5CF6 #101010; scroll-behavior: smooth; }
   body {
     @apply bg-base-900 text-ink-100 antialiased;
     overflow-x: hidden;
     background:
-      radial-gradient(circle at 12% 10%, rgba(59,130,246,0.07), transparent 28%),
-      radial-gradient(circle at 88% 18%, rgba(124,58,237,0.10), transparent 30%),
-      #07070A;
+      radial-gradient(ellipse 75% 45% at 12% 0%, rgba(45,150,150,0.34), transparent 62%),
+      radial-gradient(ellipse 70% 45% at 88% 0%, rgba(37,132,150,0.28), transparent 60%),
+      radial-gradient(circle at 50% 8%, rgba(124,58,237,0.10), transparent 42%),
+      #101010;
   }
-  ::selection { background: rgba(124,58,237,0.30); }
-  :focus-visible { outline: 2px solid #A78BFA; outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: rgba(139,92,246,0.30); }
+  :focus-visible { outline: 2px solid #8B5CF6; outline-offset: 3px; border-radius: 4px; }
   section[id] { scroll-margin-top: 96px; }
   h1, h2, h3, h4 { @apply font-display tracking-tight; }
 }
