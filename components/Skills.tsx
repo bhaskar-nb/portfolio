@@ -3,127 +3,81 @@
 import { motion } from "framer-motion";
 import { BarChart3, Code2, Database, GitBranch } from "lucide-react";
 import { skillGroups } from "@/lib/data";
-import SectionHeading from "@/components/SectionHeading";
-
-const getSkills = (id: string) => skillGroups.find((group) => group.id === id)?.skills ?? [];
 
 const sections = [
   {
     id: "sql",
     title: "SQL",
-    caption: "Query · join · analyze",
     icon: Database,
     skills: ["SQL", "MySQL"],
-    featured: true,
   },
   {
     id: "bi",
     title: "BI & Reporting",
-    caption: "Visualize · compare · communicate",
     icon: BarChart3,
     skills: ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"],
-    featured: true,
   },
   {
     id: "python",
     title: "Python & Data Analysis",
-    caption: "Clean · transform · explore",
     icon: Code2,
     skills: ["Python", "Pandas", "NumPy", "Data Cleaning", "Exploratory Data Analysis"],
-    featured: true,
   },
   {
     id: "workflow",
     title: "Tools & Workflow",
-    caption: "Version · build · deliver",
     icon: GitBranch,
     skills: ["Git", "GitHub", "VS Code", "Streamlit"],
-    featured: false,
   },
 ];
 
-function SkillPill({ skill, priority = false }: { skill: string; priority?: boolean }) {
-  return (
-    <span className={`inline-flex min-h-10 items-center rounded-xl border px-3.5 py-2 text-sm transition-colors duration-200 hover:border-gold/45 hover:bg-base-700/75 ${priority ? "border-gold/25 bg-gold/[0.06] font-medium text-ink-100" : "border-base-500/80 bg-base-700/45 text-ink-200"}`}>
-      {skill}
-    </span>
-  );
-}
+const skills = sections.flatMap((section) =>
+  section.skills.map((skill) => ({
+    skill,
+    category: section.title,
+    icon: section.icon,
+  }))
+);
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden py-28">
-      <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-15 [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)]" />
+    <section id="skills" className="relative overflow-hidden py-24 sm:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-10 [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)]" />
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="-- skills"
-          title="A data analyst stack, shown in priority order"
-          description="The core tools are placed first because they are the skills most relevant to the roles I am targeting. Supporting tools stay visible without competing with the main analytics stack."
-        />
-
-        <div className="mt-14 grid gap-4 lg:grid-cols-3">
-          {sections.slice(0, 3).map((section, index) => {
-            const Icon = section.icon;
-            return (
-              <motion.div
-                key={section.id}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-70px" }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="rounded-2xl border border-gold/20 bg-base-800/70 p-6 sm:p-7"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold/20 bg-gold/5 text-gold">
-                    <Icon size={17} aria-hidden="true" />
-                  </span>
-                  <div>
-                    <h3 className="font-display text-xl text-ink-100">{section.title}</h3>
-                    <p className="mt-1 text-xs text-ink-600">{section.caption}</p>
-                  </div>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {section.skills.map((skill, skillIndex) => <SkillPill key={skill} skill={skill} priority={skillIndex < 2} />)}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          {sections.slice(3).map((section, index) => {
-            const Icon = section.icon;
-            return (
-              <motion.div
-                key={section.id}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="rounded-2xl border border-base-500/80 bg-base-800/55 p-5 sm:p-6"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-base-500 bg-base-700/60 text-gold">
-                    <Icon size={15} aria-hidden="true" />
-                  </span>
-                  <div>
-                    <h3 className="font-display text-lg text-ink-100">{section.title}</h3>
-                    <p className="mt-1 text-[11px] text-ink-600">{section.caption}</p>
-                  </div>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {section.skills.map((skill) => <SkillPill key={skill} skill={skill} />)}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        <div className="mt-6 flex flex-col gap-3 border-t border-base-500/70 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-2xl text-sm leading-6 text-ink-500">
-            Skills are backed by the projects and internship above — the section shows the tools, while the rest of the portfolio shows how they were used.
+        <div className="mb-10">
+          <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+            Skills &amp; Technologies
+          </h2>
+          <p className="mt-2 text-xs text-ink-500 sm:text-sm">
+            My Professional Skills
           </p>
-          <span className="shrink-0 font-mono text-[9px] uppercase tracking-[0.16em] text-gold">tools → evidence</span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {skills.map(({ skill, category, icon: Icon }, index) => (
+            <motion.div
+              key={skill}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.4, delay: Math.min(index * 0.025, 0.2) }}
+              className="group flex min-h-[76px] items-center gap-3 rounded-xl border border-base-500/80 bg-base-800/55 px-3.5 py-3 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 text-violet-300 transition-colors group-hover:border-violet-400/30">
+                <Icon size={16} aria-hidden="true" />
+              </span>
+
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-ink-100">
+                  {skill}
+                </p>
+                <p className="mt-0.5 truncate font-mono text-[8px] uppercase tracking-[0.12em] text-ink-600">
+                  {category}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
