@@ -11,6 +11,7 @@ import Certifications from "@/components/Certifications";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Aurora from "@/components/Aurora";
 import SectionReveal from "@/components/SectionReveal";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Loader />
       <ScrollProgress />
       <Navbar />
+      <Aurora />
       <main>
         <SectionReveal><Hero /></SectionReveal>
         <SectionReveal><About /></SectionReveal>
