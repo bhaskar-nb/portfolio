@@ -1,7 +1,13 @@
 "use client";
 
-import { Github, Linkedin, BarChart3, ArrowUp, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, BarChart3 } from "lucide-react";
 import { profile } from "@/lib/data";
+
+const items = [
+  { label: "Home", href: "#home" },
+  { label: "About Me", href: "#about" },
+  { label: "Projects", href: "#projects" },
+];
 
 const socials = [
   { icon: Github, label: "GitHub", href: profile.links.github },
@@ -9,31 +15,46 @@ const socials = [
   { icon: BarChart3, label: "Tableau", href: profile.links.tableau },
 ];
 
-const footerNav = [
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
-
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-base-500/70 pt-14 pb-8">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-48 w-96 -translate-x-1/2 rounded-full bg-gold/5 blur-3xl" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 border-b border-base-500/70 pb-10 md:grid-cols-[1fr_auto] md:items-end">
-          <div>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">-- next question</span>
-            <h2 className="mt-5 max-w-2xl font-display text-3xl leading-tight text-ink-100 sm:text-4xl">Have a data problem worth exploring?</h2>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-ink-400">I&apos;m open to Data Analyst and BI opportunities, practical projects, and thoughtful collaborations.</p>
-          </div>
-          <a href="#contact" className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-gold transition-all hover:border-gold hover:bg-gold/15">Get in touch <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
+    <footer className="relative z-10 mt-32 pb-8">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-5 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
+        <h2 className="order-1 font-display text-2xl font-bold tracking-tight text-white md:order-none">
+          Portfolio
+        </h2>
+
+        <div className="order-2 flex items-center gap-3 md:order-none">
+          {socials.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={social.label}
+                className="flex h-10 w-10 items-center justify-center rounded-full text-zinc-300 transition-all duration-300 hover:-translate-y-1 hover:text-violet-300"
+              >
+                <Icon size={22} aria-hidden="true" />
+              </a>
+            );
+          })}
         </div>
-        <div className="flex flex-col gap-7 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <div><p className="font-mono text-xs text-ink-400">© {new Date().getFullYear()} {profile.name}</p><p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-600">Data · Analytics · Visualization</p></div>
-          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-500">{footerNav.map((item) => <a key={item.label} href={item.href} className="min-h-11 inline-flex items-center transition-colors hover:text-gold">{item.label}</a>)}</nav>
-          <div className="flex items-center gap-2"><div className="flex items-center gap-2">{socials.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="flex h-11 w-11 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold"><s.icon size={15} /></a>)}</div><a href="#home" aria-label="Back to top" className="ml-2 flex h-11 w-11 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold"><ArrowUp size={15} /></a></div>
-        </div>
+
+        <nav
+          aria-label="Footer navigation"
+          className="order-3 flex items-center gap-3 rounded-2xl border border-zinc-700/70 bg-zinc-900/70 px-4 py-2 backdrop-blur-md md:order-none"
+        >
+          {items.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="rounded-xl px-4 py-3 font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-400 transition-all hover:bg-zinc-800 hover:text-white"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </footer>
   );
