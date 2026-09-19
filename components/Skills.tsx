@@ -68,18 +68,22 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {skills.map(({ skill, category, image }, index) => (
             <motion.div
               key={skill}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.4, delay: Math.min(index * 0.025, 0.2) }}
-              className="group flex min-h-[68px] items-center gap-3 rounded-xl border border-base-500/80 bg-base-800/55 px-3 py-2.5 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
+              viewport={{ once: true, margin: "-70px" }}
+              transition={{
+                duration: 0.65,
+                delay: Math.min(index * 0.035, 0.28),
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group flex min-h-[88px] items-center gap-3.5 rounded-xl border border-base-500/80 bg-base-800/55 px-4 py-3 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
-                <Image src={image} alt="" width={28} height={28} className="h-7 w-7 object-contain" unoptimized />
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
+                <Image src={image} alt="" width={30} height={30} className="h-7.5 w-7.5 object-contain" unoptimized />
               </span>
 
               <div className="min-w-0">
