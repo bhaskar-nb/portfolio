@@ -80,155 +80,50 @@ export default function Projects() {
           description="A recruiter-focused view of my analytics work: what I investigated, the scale of the data, and the result delivered through a dashboard or application."
         />
 
-        <div className="mt-14 space-y-5">
-          {projects.map((p, i) => {
-            const flagship = i === 0;
-            const evidence = featuredEvidence[p.id];
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p, i) => (
+            <motion.button
+              key={p.id}
+              type="button"
+              onClick={() => setActive(p)}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-70px" }}
+              transition={{ duration: 0.7, delay: i * 0.08 }}
+              whileHover={{ y: -5 }}
+              className="group flex min-h-[300px] w-full flex-col overflow-hidden rounded-2xl border border-base-500/80 bg-base-800/45 text-left transition-all duration-300 hover:border-violet-400/40 hover:bg-base-700/55"
+            >
+              <div className="relative flex h-36 items-center justify-center overflow-hidden border-b border-base-500/70 bg-base-900/70">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(139,92,246,0.16),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="relative font-mono text-[10px] uppercase tracking-[0.18em] text-ink-600">
+                  Project 0{i + 1}
+                </span>
+              </div>
 
-            if (flagship) {
-              return (
-                <motion.article
-                  key={p.id}
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.6 }}
-                  className="group overflow-hidden rounded-[2rem] border border-gold/30 bg-base-800/55 shadow-[0_0_70px_rgba(34,197,94,0.06)]"
-                >
-                  <div className="grid lg:grid-cols-[1.25fr_0.75fr]">
-                    <div className="p-7 sm:p-10 lg:p-12">
-                      <div className="flex flex-wrap items-center gap-3">
-                        <span className="rounded-full border border-gold/25 bg-gold/8 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.18em] text-gold">
-                          01 / flagship case study
-                        </span>
-                        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">
-                          Business analytics
-                        </span>
-                      </div>
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-violet-400">
+                  {p.stack.join(" · ")}
+                </span>
+                <h3 className="mt-3 font-display text-xl tracking-tight text-ink-100 transition-colors duration-300 group-hover:text-white">
+                  {p.title}
+                </h3>
+                <p className="mt-3 line-clamp-3 text-sm leading-6 text-ink-400">
+                  {p.summary}
+                </p>
 
-                      <div className="mt-8 max-w-3xl">
-                        <h3 className="font-display text-4xl font-medium tracking-[-0.03em] text-ink-100 sm:text-5xl">
-                          {p.title}
-                        </h3>
-                        <p className="mt-5 max-w-2xl text-base leading-8 text-ink-400">
-                          {p.summary}
-                        </p>
-                      </div>
-
-                      <div className="mt-8 grid gap-3 sm:grid-cols-[1fr_auto]">
-                        <div className="rounded-2xl border border-base-500/70 bg-base-900/45 p-5">
-                          <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-gold">
-                            <Target size={13} aria-hidden="true" /> Business question
-                          </div>
-                          <p className="mt-3 max-w-2xl text-sm leading-6 text-ink-300">{p.challenges}</p>
-                        </div>
-                        <div className="rounded-2xl border border-gold/20 bg-gold/[0.04] p-5 sm:min-w-[190px]">
-                          <span className="block font-display text-3xl text-gold">20.6%</span>
-                          <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.14em] text-ink-500">sales YoY</span>
-                          <span className="mt-4 block font-display text-3xl text-gold">43.7%</span>
-                          <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.14em] text-ink-500">profit growth</span>
-                        </div>
-                      </div>
-
-                      <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                        <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
-                          <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-600">Approach</span>
-                          <p className="mt-2 text-sm leading-6 text-ink-300">{p.approach}</p>
-                        </div>
-                        <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
-                          <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-ink-600">Recommendation</span>
-                          <p className="mt-2 text-sm leading-6 text-ink-300">{p.recommendation}</p>
-                        </div>
-                      </div>
-
-                      <div className="mt-7 flex flex-wrap items-center gap-2">
-                        {p.stack.map((s) => (
-                          <span key={s} className="rounded-full border border-base-500 bg-base-700/55 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.12em] text-ink-300">
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="mt-8 flex flex-wrap gap-3">
-                        <a href={p.demo} target="_blank" rel="noreferrer" className="btn-primary inline-flex">
-                          View dashboard <ExternalLink size={15} />
-                        </a>
-                        <a href={p.github} target="_blank" rel="noreferrer" className="btn-secondary inline-flex">
-                          <Github size={15} /> GitHub
-                        </a>
-                        <button type="button" onClick={() => setActive(p)} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-base-500 px-4 font-mono text-[10px] uppercase tracking-[0.13em] text-ink-300 transition-colors hover:border-gold/40 hover:text-ink-100">
-                          Full case study <ArrowUpRight size={14} />
-                        </button>
-                      </div>
-                    </div>
-
-                    <div className="relative overflow-hidden border-t border-base-500/70 bg-base-900/45 p-7 lg:border-l lg:border-t-0 lg:p-10">
-                      <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-gold/5 blur-3xl" />
-                      <div className="relative flex h-full flex-col justify-between">
-                        <div>
-                          <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">Key evidence</span>
-                          <p className="mt-3 text-2xl font-medium leading-tight text-ink-100">Growth was visible in both revenue and profit.</p>
-                          <p className="mt-4 text-sm leading-6 text-ink-400">{p.evidence}</p>
-                        </div>
-                        <div className="mt-10 border-t border-base-500/70 pt-6">
-                          <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">Analytical flow</span>
-                          <div className="mt-4 space-y-3">
-                            {["Business question", "KPI comparison", "Product-level drivers", "Recommendation"].map((step, index) => (
-                              <div key={step} className="flex items-center gap-3">
-                                <span className="flex h-7 w-7 items-center justify-center rounded-full border border-gold/20 bg-gold/[0.04] font-mono text-[9px] text-gold">0{index + 1}</span>
-                                <span className="text-sm text-ink-300">{step}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.article>
-              );
-            }
-
-            return (
-              <motion.button
-                key={p.id}
-                type="button"
-                onClick={() => setActive(p)}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-70px" }}
-                transition={{ duration: 0.5, delay: (i - 1) * 0.05 }}
-                whileHover={{ y: -4 }}
-                className="group grid w-full overflow-hidden rounded-[1.75rem] border border-base-500/80 bg-base-800/45 text-left transition-colors duration-300 hover:border-gold/35 lg:grid-cols-[auto_1fr_auto]"
-              >
-                <div className="flex items-start gap-4 p-6 sm:p-7 lg:w-64">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-gold">0{i + 1}</span>
-                  <div>
-                    <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-ink-600">Selected project</span>
-                    <span className="mt-2 block font-mono text-xs text-ink-500">{p.stack.join(" · ")}</span>
-                  </div>
+                <div className="mt-auto flex items-center justify-between border-t border-base-500/70 pt-4">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-ink-600">
+                    View project
+                  </span>
+                  <ArrowUpRight
+                    size={16}
+                    className="text-ink-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-violet-400"
+                    aria-hidden="true"
+                  />
                 </div>
-
-                <div className="border-t border-base-500/70 p-6 sm:p-7 lg:border-l lg:border-t-0">
-                  <h3 className="font-display text-2xl tracking-tight text-ink-100 sm:text-3xl">{p.title}</h3>
-                  <p className="mt-3 max-w-3xl text-sm leading-6 text-ink-400">{p.summary}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {[evidence?.scale, evidence?.label].filter(Boolean).map((item) => (
-                      <span key={item} className="rounded-full border border-base-500 bg-base-900/45 px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-ink-400">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between border-t border-base-500/70 px-6 py-5 sm:px-7 lg:w-60 lg:flex-col lg:items-end lg:justify-between lg:border-l lg:border-t-0">
-                  <div className="max-w-[190px] text-right text-xs leading-5 text-ink-500 lg:mt-1">
-                    {evidence?.focus}
-                  </div>
-                  <ArrowUpRight size={18} className="text-ink-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" aria-hidden="true" />
-                </div>
-              </motion.button>
-            );
-          })}
+              </div>
+            </motion.button>
+          ))}
         </div>
 
         <div className="mt-24">
