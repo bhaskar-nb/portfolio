@@ -89,7 +89,7 @@ export default function About() {
                       className="object-contain object-bottom"
                     />
 
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5 rounded-md bg-violet-600/90 px-2 py-1 text-center text-[10px] font-semibold text-white shadow-[0_0_12px_rgba(139,92,246,0.35)]">
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 rounded-md bg-violet-600/75 px-2 py-0.5 text-center text-[9px] font-semibold text-white shadow-[0_0_12px_rgba(139,92,246,0.35)]">
                       Data Analyst
                     </div>
                     <p className="absolute bottom-[-1px] left-0 right-0 translate-y-full pt-2 text-center text-[8px] font-medium leading-3 text-white/80">
