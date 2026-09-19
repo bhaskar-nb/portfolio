@@ -53,6 +53,10 @@ const skills = sections.flatMap((section) =>
   }))
 );
 
+const rows = Array.from({ length: Math.ceil(skills.length / 4) }, (_, rowIndex) =>
+  skills.slice(rowIndex * 4, rowIndex * 4 + 4)
+);
+
 export default function Skills() {
   return (
     <section id="skills" className="relative overflow-hidden py-24 sm:py-28">
@@ -68,32 +72,39 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {skills.map(({ skill, category, image }, index) => (
+        <div className="mt-8 space-y-4">
+          {rows.map((row, rowIndex) => (
             <motion.div
-              key={skill}
-              initial={{ opacity: 0, y: 2 }}
+              key={rowIndex}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.22, margin: "-20px" }}
+              viewport={{ once: true, amount: 0.18, margin: "-20px" }}
               transition={{
-                duration: 1.6,
-                delay: Math.min(index * 0.14, 1.8),
+                duration: 1.15,
+                delay: rowIndex * 0.18,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group flex min-h-[104px] items-center gap-4 rounded-xl border border-base-500/80 bg-base-800/55 px-5 py-4 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
+              className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
-                <Image src={image} alt="" width={32} height={32} className="h-8 w-8 object-contain" unoptimized />
-              </span>
+              {row.map(({ skill, category, image }) => (
+                <div
+                  key={skill}
+                  className="group flex min-h-[104px] items-center gap-4 rounded-xl border border-base-500/80 bg-base-800/55 px-5 py-4 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
+                >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
+                    <Image src={image} alt="" width={32} height={32} className="h-8 w-8 object-contain" unoptimized />
+                  </span>
 
-              <div className="min-w-0">
-                <p className="truncate text-[0.95rem] font-medium text-ink-100">
-                  {skill}
-                </p>
-                <p className="mt-1 truncate font-mono text-[8px] uppercase tracking-[0.12em] text-ink-600">
-                  {category}
-                </p>
-              </div>
+                  <div className="min-w-0">
+                    <p className="truncate text-[0.95rem] font-medium text-ink-100">
+                      {skill}
+                    </p>
+                    <p className="mt-1 truncate font-mono text-[8px] uppercase tracking-[0.12em] text-ink-600">
+                      {category}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </motion.div>
           ))}
         </div>
