@@ -26,16 +26,34 @@ export default function About() {
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(139,92,246,0.06),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(139,92,246,0.04),transparent_30%)]" />
 
-          <div className="relative grid min-h-[420px] lg:grid-cols-[minmax(0,1fr)_1px_260px]">
+          <div className="relative grid min-h-[500px] lg:grid-cols-[minmax(0,1fr)_1px_260px]">
             <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10">
               <div className="max-w-2xl">
                 <h2 className="font-display text-[1.55rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[1.7rem]">
                   About Me
                 </h2>
 
-                <p className="mt-4 max-w-[650px] text-[0.68rem] leading-[1.65] text-ink-300 sm:text-xs sm:leading-[1.7]">
-                  {profile.summary}
-                </p>
+                <div className="mt-5 max-w-[680px] space-y-4 text-[0.7rem] leading-[1.75] text-ink-300 sm:text-xs sm:leading-[1.8]">
+                  <p>
+                    {profile.summary}
+                  </p>
+
+                  <p>
+                    I enjoy working with data from the first step of preparation to the final dashboard. I use SQL and Python to clean, explore, and analyze datasets, then use Excel, Tableau, and Power BI to present the important patterns in a way that is easy to understand.
+                  </p>
+
+                  <p>
+                    My focus is on connecting technical analysis with practical business questions — understanding what changed, finding the reasons behind the numbers, and communicating the evidence clearly so the analysis can support better decisions.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/[0.06] pt-5">
+                  <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-ink-500 sm:text-[9px]">SQL</span>
+                  <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-ink-500 sm:text-[9px]">Python</span>
+                  <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-ink-500 sm:text-[9px]">Excel</span>
+                  <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-ink-500 sm:text-[9px]">Tableau</span>
+                  <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-ink-500 sm:text-[9px]">Power BI</span>
+                </div>
               </div>
 
               <div className="mt-10">
