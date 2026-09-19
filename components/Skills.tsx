@@ -1,40 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart3, Code2, Database, GitBranch } from "lucide-react";
+import { BarChart3, Braces, Code2, Database, FileSpreadsheet, Gauge, GitBranch, Github, LayoutDashboard, Monitor, Search, Sigma, TableProperties } from "lucide-react";
 
 const sections = [
   {
     id: "sql",
     title: "SQL",
     icon: Database,
-    skills: ["SQL", "MySQL"],
+    skills: [
+      { name: "SQL", icon: Database },
+      { name: "MySQL", icon: TableProperties },
+    ],
   },
   {
     id: "bi",
     title: "BI & Reporting",
     icon: BarChart3,
-    skills: ["Tableau", "Power BI", "Microsoft Excel", "Dashboard Development"],
+    skills: [
+      { name: "Tableau", icon: BarChart3 },
+      { name: "Power BI", icon: Gauge },
+      { name: "Microsoft Excel", icon: FileSpreadsheet },
+      { name: "Dashboard Development", icon: LayoutDashboard },
+    ],
   },
   {
     id: "python",
     title: "Python & Data Analysis",
     icon: Code2,
-    skills: ["Python", "Pandas", "NumPy", "Data Cleaning", "Exploratory Data Analysis"],
+    skills: [
+      { name: "Python", icon: Code2 },
+      { name: "Pandas", icon: Braces },
+      { name: "NumPy", icon: Sigma },
+      { name: "Data Cleaning", icon: Search },
+      { name: "Exploratory Data Analysis", icon: TableProperties },
+    ],
   },
   {
     id: "workflow",
     title: "Tools & Workflow",
     icon: GitBranch,
-    skills: ["Git", "GitHub", "VS Code", "Streamlit"],
+    skills: [
+      { name: "Git", icon: GitBranch },
+      { name: "GitHub", icon: Github },
+      { name: "VS Code", icon: Code2 },
+      { name: "Streamlit", icon: Monitor },
+    ],
   },
 ];
 
 const skills = sections.flatMap((section) =>
-  section.skills.map((skill) => ({
-    skill,
+  section.skills.map((item) => ({
+    skill: item.name,
     category: section.title,
-    icon: section.icon,
+    icon: item.icon,
   }))
 );
 
@@ -44,16 +63,16 @@ export default function Skills() {
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-10 [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
+        <div className="mb-8 sm:mb-9">
           <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
             Skills &amp; Technologies
           </h2>
-          <p className="mt-2 text-xs text-ink-500 sm:text-sm">
+          <p className="mt-1.5 text-xs text-ink-500 sm:text-sm">
             My Professional Skills
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {skills.map(({ skill, category, icon: Icon }, index) => (
             <motion.div
               key={skill}
