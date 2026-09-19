@@ -26,7 +26,7 @@ export default function About() {
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(139,92,246,0.06),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(139,92,246,0.04),transparent_30%)]" />
 
-          <div className="relative grid min-h-[500px] lg:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="relative grid min-h-[500px] lg:grid-cols-[minmax(0,1fr)_1px_320px]">
             <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10">
               <div className="max-w-2xl">
                 <h2 className="font-display text-[1.55rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[1.7rem]">
@@ -61,6 +61,8 @@ export default function About() {
                 </div>
               </div>
             </div>
+
+            <div className="hidden bg-violet-400/20 lg:block" />
 
             <div className="relative flex items-center justify-center px-8 pb-12 pt-20 sm:px-10 lg:pb-10">
               <motion.div
