@@ -22,7 +22,7 @@ export default function Home() {
       <main>
         <SectionReveal><Hero /></SectionReveal>
         <SectionReveal><About /></SectionReveal>
-        <SectionReveal><Skills /></SectionReveal>
+        <Skills />
         <SectionReveal><Projects /></SectionReveal>
         <SectionReveal><Experience /></SectionReveal>
         <SectionReveal><Achievements /></SectionReveal>
