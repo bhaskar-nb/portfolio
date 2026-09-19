@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import SectionHeading from "@/components/SectionHeading";
 import { profile } from "@/lib/data";
 
 export default function About() {
@@ -12,12 +11,6 @@ export default function About() {
       <div className="pointer-events-none absolute right-[4%] bottom-0 h-80 w-80 rounded-full bg-violet-500/[0.05] blur-[130px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="-- about"
-          title=""
-          description=""
-        />
-
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,13 +23,11 @@ export default function About() {
           <div className="relative grid min-h-[420px] lg:grid-cols-[minmax(0,1fr)_1px_260px]">
             <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10">
               <div className="max-w-2xl">
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-violet-400">01 / about me</p>
-
-                <h2 className="mt-4 font-display text-3xl font-semibold tracking-[-0.04em] text-ink-100 sm:text-4xl">
+                <h2 className="font-display text-[1.55rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[1.7rem]">
                   About Me
                 </h2>
 
-                <p className="mt-5 max-w-xl text-sm leading-6 text-ink-400 sm:text-[0.95rem] sm:leading-7">
+                <p className="mt-4 max-w-[650px] text-[0.68rem] leading-[1.65] text-ink-300 sm:text-xs sm:leading-[1.7]">
                   {profile.summary}
                 </p>
               </div>
