@@ -68,7 +68,7 @@ export default function About() {
 
             <div className="hidden h-[70%] self-center bg-violet-400/20 lg:block" />
 
-            <div className="relative flex items-center justify-center px-8 pb-12 pt-20 sm:px-10 lg:pb-10">
+            <div className="relative flex items-center justify-center px-10 pb-12 pt-20 sm:px-12 lg:px-12 lg:pb-10">
               <motion.div
                 initial={{ y: -12 }}
                 whileInView={{ y: 0 }}
