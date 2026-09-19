@@ -26,7 +26,7 @@ export default function About() {
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(139,92,246,0.06),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(139,92,246,0.04),transparent_30%)]" />
 
-          <div className="relative grid min-h-[500px] lg:grid-cols-[minmax(0,1fr)_1px_320px]">
+          <div className="relative grid min-h-[500px] lg:grid-cols-[minmax(0,1fr)_1px_340px]">
             <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10">
               <div className="max-w-2xl">
                 <h2 className="font-display text-[1.55rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[1.7rem]">
@@ -74,7 +74,7 @@ export default function About() {
                 whileInView={{ y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="relative mt-6 w-[190px]"
+                className="relative mt-6 w-[220px]"
               >
                 <div className="absolute left-1/2 top-[-105px] h-[108px] w-[3px] -translate-x-1/2 bg-gradient-to-b from-black via-black to-[#171717]" />
                 <div className="absolute left-1/2 top-[-9px] h-5 w-5 -translate-x-1/2 rounded-full border border-white/15 bg-[#090909] shadow-[0_0_12px_rgba(0,0,0,0.8)]" />
@@ -85,7 +85,7 @@ export default function About() {
                       src="/about-profile.png"
                       alt={profile.name}
                       fill
-                      sizes="190px"
+                      sizes="220px"
                       className="object-contain object-bottom"
                     />
 
