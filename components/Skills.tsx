@@ -61,7 +61,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: Math.min(index * 0.025, 0.2) }}
-              className="group flex min-h-[76px] items-center gap-3 rounded-xl border border-base-500/80 bg-base-800/55 px-3.5 py-3 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
+              className="group flex min-h-[68px] items-center gap-3 rounded-xl border border-base-500/80 bg-base-800/55 px-3 py-2.5 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 text-violet-300 transition-colors group-hover:border-violet-400/30">
                 <Icon size={16} aria-hidden="true" />
