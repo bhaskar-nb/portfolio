@@ -7,7 +7,6 @@ const sections = [
   {
     id: "sql",
     title: "SQL",
-    icon: Database,
     skills: [
       { name: "SQL", image: "https://img.icons8.com/color/96/sql.png" },
       { name: "MySQL", image: "https://img.icons8.com/color/96/mysql-logo.png" },
@@ -16,7 +15,6 @@ const sections = [
   {
     id: "bi",
     title: "BI & Reporting",
-    icon: BarChart3,
     skills: [
       { name: "Tableau", image: "https://img.icons8.com/color/96/tableau-software.png" },
       { name: "Power BI", image: "https://img.icons8.com/color/96/power-bi.png" },
@@ -27,7 +25,6 @@ const sections = [
   {
     id: "python",
     title: "Python & Data Analysis",
-    icon: Code2,
     skills: [
       { name: "Python", image: "https://img.icons8.com/color/96/python--v1.png" },
       { name: "Pandas", image: "https://img.icons8.com/color/96/pandas.png" },
@@ -39,7 +36,6 @@ const sections = [
   {
     id: "workflow",
     title: "Tools & Workflow",
-    icon: GitBranch,
     skills: [
       { name: "Git", image: "https://img.icons8.com/color/96/git.png" },
       { name: "GitHub", image: "https://img.icons8.com/ios-glyphs/96/github.png" },
