@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart3, Braces, Code2, Database, FileSpreadsheet, Gauge, GitBranch, Github, LayoutDashboard, Monitor, Search, Sigma, TableProperties } from "lucide-react";
+import Image from "next/image";
 
 const sections = [
   {
@@ -9,8 +9,8 @@ const sections = [
     title: "SQL",
     icon: Database,
     skills: [
-      { name: "SQL", icon: Database },
-      { name: "MySQL", icon: TableProperties },
+      { name: "SQL", image: "https://img.icons8.com/color/96/sql.png" },
+      { name: "MySQL", image: "https://img.icons8.com/color/96/mysql-logo.png" },
     ],
   },
   {
@@ -18,10 +18,10 @@ const sections = [
     title: "BI & Reporting",
     icon: BarChart3,
     skills: [
-      { name: "Tableau", icon: BarChart3 },
-      { name: "Power BI", icon: Gauge },
-      { name: "Microsoft Excel", icon: FileSpreadsheet },
-      { name: "Dashboard Development", icon: LayoutDashboard },
+      { name: "Tableau", image: "https://img.icons8.com/color/96/tableau-software.png" },
+      { name: "Power BI", image: "https://img.icons8.com/color/96/power-bi.png" },
+      { name: "Microsoft Excel", image: "https://img.icons8.com/color/96/microsoft-excel-2019.png" },
+      { name: "Dashboard Development", image: "https://img.icons8.com/color/96/dashboard-layout.png" },
     ],
   },
   {
@@ -29,11 +29,11 @@ const sections = [
     title: "Python & Data Analysis",
     icon: Code2,
     skills: [
-      { name: "Python", icon: Code2 },
-      { name: "Pandas", icon: Braces },
-      { name: "NumPy", icon: Sigma },
-      { name: "Data Cleaning", icon: Search },
-      { name: "Exploratory Data Analysis", icon: TableProperties },
+      { name: "Python", image: "https://img.icons8.com/color/96/python--v1.png" },
+      { name: "Pandas", image: "https://img.icons8.com/color/96/pandas.png" },
+      { name: "NumPy", image: "https://img.icons8.com/color/96/numpy.png" },
+      { name: "Data Cleaning", image: "https://img.icons8.com/color/96/broom.png" },
+      { name: "Exploratory Data Analysis", image: "https://img.icons8.com/color/96/combo-chart--v1.png" },
     ],
   },
   {
@@ -41,10 +41,10 @@ const sections = [
     title: "Tools & Workflow",
     icon: GitBranch,
     skills: [
-      { name: "Git", icon: GitBranch },
-      { name: "GitHub", icon: Github },
-      { name: "VS Code", icon: Code2 },
-      { name: "Streamlit", icon: Monitor },
+      { name: "Git", image: "https://img.icons8.com/color/96/git.png" },
+      { name: "GitHub", image: "https://img.icons8.com/ios-glyphs/96/github.png" },
+      { name: "VS Code", image: "https://img.icons8.com/color/96/visual-studio-code-2019.png" },
+      { name: "Streamlit", image: "https://img.icons8.com/color/96/streamlit.png" },
     ],
   },
 ];
@@ -53,7 +53,7 @@ const skills = sections.flatMap((section) =>
   section.skills.map((item) => ({
     skill: item.name,
     category: section.title,
-    icon: item.icon,
+    image: item.image,
   }))
 );
 
@@ -73,7 +73,7 @@ export default function Skills() {
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {skills.map(({ skill, category, icon: Icon }, index) => (
+          {skills.map(({ skill, category, image }, index) => (
             <motion.div
               key={skill}
               initial={{ opacity: 0, y: 14 }}
@@ -82,8 +82,8 @@ export default function Skills() {
               transition={{ duration: 0.4, delay: Math.min(index * 0.025, 0.2) }}
               className="group flex min-h-[68px] items-center gap-3 rounded-xl border border-base-500/80 bg-base-800/55 px-3 py-2.5 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 text-violet-300 transition-colors group-hover:border-violet-400/30">
-                <Icon size={16} aria-hidden="true" />
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
+                <Image src={image} alt="" width={28} height={28} className="h-7 w-7 object-contain" unoptimized />
               </span>
 
               <div className="min-w-0">
