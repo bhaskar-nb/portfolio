@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Image from "next/image";
 
 const sections = [
@@ -57,7 +58,7 @@ const rows = Array.from({ length: Math.ceil(skills.length / 4) }, (_, rowIndex) 
   skills.slice(rowIndex * 4, rowIndex * 4 + 4)
 );
 
-const rowVariants = {
+const rowVariants: Variants = {
   hidden: { opacity: 0, y: 10 },
   show: (index: number) => ({
     opacity: 1,
@@ -65,7 +66,7 @@ const rowVariants = {
     transition: {
       duration: 1.8,
       delay: index * 0.28,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   }),
 };
