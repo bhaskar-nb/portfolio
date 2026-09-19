@@ -29,7 +29,7 @@ export default function Hero() {
 
     window.addEventListener("portfolio-loader-complete", startHeroAnimation);
     return () => window.removeEventListener("portfolio-loader-complete", startHeroAnimation);
-  }, [cardControls, contentControls]);
+  }, [contentControls]);
 
   return (
     <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-base-900">
