@@ -80,8 +80,8 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.18, margin: "-20px" }}
               transition={{
-                duration: 1.15,
-                delay: rowIndex * 0.18,
+                duration: 1.8,
+                delay: rowIndex * 0.28,
                 ease: [0.22, 1, 0.36, 1],
               }}
               className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
