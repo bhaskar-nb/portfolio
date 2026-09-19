@@ -66,7 +66,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="hidden bg-violet-400/20 lg:block" />
+            <div className="hidden h-[70%] self-center bg-violet-400/20 lg:block" />
 
             <div className="relative flex items-center justify-center px-8 pb-12 pt-20 sm:px-10 lg:pb-10">
               <motion.div
