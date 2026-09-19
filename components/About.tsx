@@ -29,7 +29,7 @@ export default function About() {
           <div className="relative grid min-h-[500px] lg:grid-cols-[minmax(0,1fr)_1px_340px]">
             <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10">
               <div className="max-w-2xl">
-                <h2 className="font-display text-[1.55rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[1.7rem]">
+                <h2 className="font-display text-[2rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[2.25rem]">
                   About Me
                 </h2>
 
