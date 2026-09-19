@@ -26,7 +26,7 @@ export default function About() {
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(139,92,246,0.06),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(139,92,246,0.04),transparent_30%)]" />
 
-          <div className="relative grid min-h-[500px] lg:grid-cols-[minmax(0,1fr)_1px_340px]">
+          <div className="relative grid min-h-[470px] lg:grid-cols-[minmax(0,1fr)_1px_340px]">
             <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10">
               <div className="max-w-2xl">
                 <h2 className="font-display text-[2rem] font-semibold leading-none tracking-[-0.045em] text-white sm:text-[2.25rem]">
@@ -47,7 +47,7 @@ export default function About() {
               </div>
 
               <div className="mt-12 pt-4">
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-5 sm:gap-6">
                   {metrics.map((metric) => (
                     <div key={metric.label}>
                       <p className="font-display text-xl font-semibold leading-none tracking-[-0.04em] text-white sm:text-2xl">
@@ -60,7 +60,7 @@ export default function About() {
                   ))}
                 </div>
 
-                <p className="mt-6 text-[11px] font-medium tracking-[-0.01em] text-ink-500 sm:text-xs">
+                <p className="mt-5 text-[11px] font-medium tracking-[-0.01em] text-ink-500 sm:text-xs">
                   Turning data into clear, practical decisions.
                 </p>
               </div>
