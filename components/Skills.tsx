@@ -60,15 +60,23 @@ const rows = Array.from({ length: Math.ceil(skills.length / 4) }, (_, rowIndex) 
 
 const rowVariants: Variants = {
   hidden: { opacity: 0, y: 10 },
-  show: (index: number) => ({
+  show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 1.8,
-      delay: index * 0.28,
       ease: [0.22, 1, 0.36, 1] as const,
     },
-  }),
+  },
+};
+
+const rowsContainerVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.28,
+    },
+  },
 };
 
 export default function Skills() {
@@ -86,15 +94,17 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="mt-8 space-y-4">
+        <motion.div
+          className="mt-8 space-y-4"
+          variants={rowsContainerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.18, margin: "-20px" }}
+        >
           {rows.map((row, rowIndex) => (
             <motion.div
               key={rowIndex}
-              custom={rowIndex}
               variants={rowVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.18, margin: "-20px" }}
               className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
             >
               {row.map(({ skill, category, image }) => (
@@ -118,7 +128,7 @@ export default function Skills() {
               ))}
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
