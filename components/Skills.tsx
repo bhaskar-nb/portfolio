@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { BarChart3, Code2, Database, GitBranch } from "lucide-react";
-import { skillGroups } from "@/lib/data";
 
 const sections = [
   {
