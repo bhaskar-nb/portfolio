@@ -33,7 +33,7 @@ export default function About() {
                   About Me
                 </h2>
 
-                <div className="mt-6 max-w-[680px] space-y-5 text-sm leading-[1.85] text-ink-300 sm:text-base sm:leading-[1.9]">
+                <div className="mt-6 max-w-[680px] space-y-5 text-[13px] leading-[1.8] text-ink-300 sm:text-sm sm:leading-[1.85]">
                   <p>{profile.summary}</p>
 
                   <p>
@@ -50,17 +50,17 @@ export default function About() {
                 <div className="grid grid-cols-3 gap-6">
                   {metrics.map((metric) => (
                     <div key={metric.label}>
-                      <p className="font-display text-2xl font-semibold leading-none tracking-[-0.04em] text-white sm:text-3xl">
+                      <p className="font-display text-xl font-semibold leading-none tracking-[-0.04em] text-white sm:text-2xl">
                         {metric.value}
                       </p>
-                      <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.14em] text-ink-500 sm:text-[9px]">
+                      <p className="mt-1.5 font-mono text-[7px] uppercase tracking-[0.14em] text-ink-500 sm:text-[8px]">
                         {metric.label}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                <p className="mt-7 text-xs font-medium tracking-[-0.01em] text-ink-500 sm:text-sm">
+                <p className="mt-6 text-[11px] font-medium tracking-[-0.01em] text-ink-500 sm:text-xs">
                   Turning data into clear, practical decisions.
                 </p>
               </div>
