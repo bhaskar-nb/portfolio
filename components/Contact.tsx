@@ -2,34 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  Linkedin,
-  BarChart3,
-  Send,
-  Check,
-  ArrowUpRight,
-  Download,
-  FileText,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, BarChart3, Send, Check } from "lucide-react";
 import { profile } from "@/lib/data";
-import SectionHeading from "@/components/SectionHeading";
-import MagneticButton from "@/components/MagneticButton";
-
-const contactItems = [
-  { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-  { icon: Phone, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s+/g, "")}` },
-  { icon: MapPin, label: "Location", value: profile.location, href: undefined },
-];
-
-const socials = [
-  { icon: Github, label: "GitHub", href: profile.links.github },
-  { icon: Linkedin, label: "LinkedIn", href: profile.links.linkedin },
-  { icon: BarChart3, label: "Tableau", href: profile.links.tableau },
-];
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -37,189 +11,177 @@ export default function Contact() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Data Analyst opportunity — ${form.name || "portfolio visitor"}`);
+    const subject = encodeURIComponent(`Portfolio contact — ${form.name || "visitor"}`);
     const body = encodeURIComponent(`Hi Bhaskar,\n\n${form.message}\n\n— ${form.name} (${form.email})`);
     window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
     setSent(true);
     setTimeout(() => setSent(false), 3000);
   }
 
+  const contactItems = [
+    { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
+    { icon: Phone, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s+/g, "")}` },
+    { icon: MapPin, label: "Location", value: profile.location },
+  ];
+
+  const socials = [
+    { icon: Github, label: "GitHub", href: profile.links.github },
+    { icon: Linkedin, label: "LinkedIn", href: profile.links.linkedin },
+    { icon: BarChart3, label: "Tableau", href: profile.links.tableau },
+  ];
+
   return (
-    <section id="contact" className="relative overflow-hidden py-28">
-      <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-10 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
-      <div className="pointer-events-none absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-500/10 blur-3xl" />
+    <section id="contact" className="relative overflow-hidden py-28 sm:py-32">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-center font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"
+        >
+          Contact &amp; Connect
+        </motion.h2>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="-- contact / open channel"
-          title="Let&apos;s talk about the work."
-          description="Hiring for a Data Analyst, BI Analyst, Business Analyst, or Reporting Analyst role? Send the role or context and I&apos;ll take it from there."
-        />
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.15 }}
+          className="mb-10 mt-2 text-center text-base leading-7 text-white/50"
+        >
+          Get in touch with me about opportunities, projects, or collaboration
+        </motion.p>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="flex flex-col gap-8 md:flex-row">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-[2rem] border border-violet-500/30 bg-gradient-to-br from-[#15131d] via-[#171717] to-[#0d0d0d] p-7 shadow-[0_0_35px_rgba(139,92,246,0.07)] sm:p-9"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="flex-1 rounded-md bg-zinc-800 p-6"
           >
-            <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-gold/5 blur-3xl" />
-            <div className="relative flex h-full flex-col justify-between">
-              <div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-violet-300">01 / recruiter route</span>
-                <h3 className="mt-7 max-w-md font-display text-3xl leading-tight text-ink-100 sm:text-4xl">Review the work. Then let&apos;s talk.</h3>
-                <p className="mt-5 max-w-md text-sm leading-7 text-ink-400">
-                  I&apos;m actively targeting entry-level Data Analyst and BI opportunities. If the work looks relevant to your team, the résumé, LinkedIn, and direct contact options are below.
-                </p>
+            <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-6 shadow-lg">
+              <h3 className="mb-6 text-center text-2xl font-bold text-white">
+                💬 Let&apos;s Connect
+              </h3>
+
+              <div className="space-y-3">
+                {contactItems.map((item) => {
+                  const Icon = item.icon;
+                  const content = (
+                    <>
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800 text-violet-300">
+                        <Icon size={16} aria-hidden="true" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block font-mono text-[9px] uppercase tracking-[0.15em] text-zinc-500">{item.label}</span>
+                        <span className="mt-1 block truncate text-sm text-white">{item.value}</span>
+                      </span>
+                    </>
+                  );
+
+                  return item.href ? (
+                    <a key={item.label} href={item.href} className="flex items-center gap-3 rounded-lg border border-zinc-700 bg-zinc-800 p-3 transition-colors hover:border-violet-400/50">
+                      {content}
+                    </a>
+                  ) : (
+                    <div key={item.label} className="flex items-center gap-3 rounded-lg border border-zinc-700 bg-zinc-800 p-3">
+                      {content}
+                    </div>
+                  );
+                })}
               </div>
 
-              <div className="mt-10 space-y-2.5">
-                {contactItems.map((item, i) => (
-                  <motion.a
-                    key={item.label}
-                    href={item.href}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: i * 0.07 }}
-                    className="group flex min-h-14 items-center gap-3 rounded-xl border border-base-500/70 bg-base-700/30 p-3.5 transition-all hover:border-violet-400/40 hover:bg-base-700/60"
-                  >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-800 text-gold">
-                      <item.icon size={15} />
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block font-mono text-[8px] uppercase tracking-[0.16em] text-ink-600">{item.label}</span>
-                      <span className="mt-1 block truncate text-sm text-ink-200">{item.value}</span>
-                    </span>
-                    {item.href && (
-                      <ArrowUpRight size={14} className="text-ink-600 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold" />
-                    )}
-                  </motion.a>
-                ))}
-              </div>
-
-              <div className="mt-6 border-t border-base-500/70 pt-5">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-600">profiles / proof</span>
-                  <div className="flex gap-2">
-                    {socials.map((s) => (
+              <div className="mt-6 border-t border-zinc-700 pt-5">
+                <p className="mb-3 text-center text-xs text-zinc-500">Find me online</p>
+                <div className="flex justify-center gap-2">
+                  {socials.map((social) => {
+                    const Icon = social.icon;
+                    return (
                       <a
-                        key={s.label}
-                        href={s.href}
+                        key={social.label}
+                        href={social.href}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label={s.label}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-violet-400/60 hover:text-violet-300"
+                        aria-label={social.label}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 text-zinc-400 transition hover:border-violet-400/60 hover:text-violet-300"
                       >
-                        <s.icon size={15} />
+                        <Icon size={15} aria-hidden="true" />
                       </a>
-                    ))}
-                  </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </motion.div>
 
-          <motion.form
-            onSubmit={handleSubmit}
-            aria-label="Contact form"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.55 }}
-            className="relative overflow-hidden rounded-[2rem] border border-violet-500/30 bg-gradient-to-br from-[#15131d] via-[#171717] to-[#0d0d0d] p-7 shadow-[0_0_35px_rgba(139,92,246,0.07)] sm:p-9"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="flex-1"
           >
-            <div className="absolute bottom-0 right-0 h-44 w-44 rounded-full bg-gold/5 blur-3xl" />
-            <div className="relative">
-              <div className="flex items-center justify-between border-b border-base-500/70 pb-5">
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-gold">02 / message</span>
-                  <h3 className="mt-2 font-display text-2xl text-ink-100">Tell me what you&apos;re hiring for.</h3>
-                </div>
-                <span className="hidden rounded-full border border-base-500 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider text-ink-500 sm:block">mailto</span>
-              </div>
-
-              <div className="mt-7 space-y-5">
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block font-mono text-[9px] uppercase tracking-[0.16em] text-ink-500" htmlFor="name">Name</label>
-                    <input
-                      id="name"
-                      name="name"
-                      autoComplete="name"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="min-h-12 w-full rounded-xl border border-base-500 bg-base-900/40 px-4 py-3 text-sm text-ink-100 outline-none transition-all placeholder:text-ink-600 focus:border-violet-400 focus:bg-base-800"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-2 block font-mono text-[9px] uppercase tracking-[0.16em] text-ink-500" htmlFor="email">Email</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      inputMode="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="min-h-12 w-full rounded-xl border border-base-500 bg-base-900/40 px-4 py-3 text-sm text-ink-100 outline-none transition-all placeholder:text-ink-600 focus:border-gold focus:bg-base-800"
-                      placeholder="you@company.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="mb-2 block font-mono text-[9px] uppercase tracking-[0.16em] text-ink-500" htmlFor="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    autoComplete="off"
+            <form
+              onSubmit={handleSubmit}
+              className="w-full rounded-md bg-zinc-800 p-7 sm:p-10"
+              autoComplete="off"
+            >
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="name" className="font-semibold text-white">Full Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="Name"
+                    placeholder="Input Name..."
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="rounded-md border border-zinc-500 bg-zinc-900 px-3 py-2 text-white outline-none placeholder:text-zinc-500 focus:border-violet-400"
                     required
-                    rows={8}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full resize-none rounded-xl border border-base-500 bg-base-900/40 px-4 py-3 text-sm leading-6 text-ink-100 outline-none transition-all placeholder:text-ink-600 focus:border-gold focus:bg-base-800"
-                    placeholder="Role title, team, location, or question..."
                   />
                 </div>
 
-                <div className="flex flex-col gap-4 border-t border-base-500/70 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="max-w-xs text-xs leading-5 text-ink-600" aria-live="polite">
-                    This form opens your email app with the message prepared. Nothing is stored or sent through the site.
-                  </p>
-                  <MagneticButton type="submit" className="btn-primary min-h-11 justify-center">
-                    {sent ? <Check size={15} /> : <Send size={15} />}
-                    {sent ? "Email draft opened" : "Contact me"}
-                  </MagneticButton>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="email" className="font-semibold text-white">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="Email"
+                    placeholder="Input Email..."
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="rounded-md border border-zinc-500 bg-zinc-900 px-3 py-2 text-white outline-none placeholder:text-zinc-500 focus:border-violet-400"
+                    required
+                  />
                 </div>
-              </div>
-            </div>
-          </motion.form>
-        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, delay: 0.15 }}
-          className="mt-5 flex flex-col gap-4 rounded-2xl border border-violet-400/20 bg-violet-500/[0.04] p-5 sm:flex-row sm:items-center sm:justify-between"
-        >
-          <div>
-            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-gold">recruiter quick view</span>
-            <p className="mt-1 text-xs leading-5 text-ink-400">Short on time? Open the résumé for the fastest overview of skills, experience, and projects.</p>
-          </div>
-          <a
-            href="/Resume.pdf"
-            download
-            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-violet-400/30 bg-gold/5 px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-200 transition-all hover:border-violet-400/70 hover:text-violet-300"
-          >
-            <FileText size={14} /> Résumé <Download size={13} />
-          </a>
-        </motion.div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="message" className="font-semibold text-white">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={7}
+                    placeholder="Message..."
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    className="resize-none rounded-md border border-zinc-500 bg-zinc-900 px-3 py-2 text-white outline-none placeholder:text-zinc-500 focus:border-violet-400"
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-violet-600 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-violet-500"
+                >
+                  {sent ? <Check size={17} /> : <Send size={17} />}
+                  {sent ? "Email draft opened" : "Send Message"}
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
