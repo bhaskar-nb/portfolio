@@ -20,23 +20,10 @@ const contentItemVariants = {
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 520, scale: 0.98 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 export default function Hero() {
   const contentControls = useAnimation();
-  const cardControls = useAnimation();
-
   useEffect(() => {
     const startHeroAnimation = () => {
-      void cardControls.start("show");
       void contentControls.start("show");
     };
 
@@ -98,12 +85,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          variants={cardVariants}
-          initial="hidden"
-          animate={cardControls}
-          className="relative mx-auto w-full max-w-[410px] lg:mr-4"
-        >
+        <div className="relative mx-auto w-full max-w-[410px] lg:mr-4">
           <ProfileCard
             avatarUrl="/DP image.png"
             name={profile.name}
@@ -112,7 +94,7 @@ export default function Hero() {
             status="Online"
             contactText="Contact Me"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
