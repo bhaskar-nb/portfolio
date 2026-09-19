@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { profile } from "@/lib/data";
 
+const metrics = [
+  { value: "8+", label: "Analytics Projects" },
+  { value: "3", label: "Target Roles" },
+  { value: "2026", label: "Graduation" },
+];
+
 export default function About() {
   return (
     <section id="about" className="relative overflow-hidden border-t border-base-500/60 py-24 sm:py-28">
@@ -32,7 +38,22 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="mt-10 h-px w-full bg-white/[0.06]" />
+              <div className="mt-10">
+                <div className="h-px w-full bg-white/[0.06]" />
+
+                <div className="grid grid-cols-3 divide-x divide-white/[0.07] pt-6">
+                  {metrics.map((metric) => (
+                    <div key={metric.label} className="px-3 first:pl-0 last:pr-0 sm:px-5">
+                      <p className="font-display text-2xl font-semibold leading-none tracking-[-0.04em] text-white sm:text-3xl">
+                        {metric.value}
+                      </p>
+                      <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.14em] text-ink-500 sm:text-[9px]">
+                        {metric.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="hidden bg-white/[0.07] lg:block" />
