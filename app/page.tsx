@@ -11,6 +11,7 @@ import Certifications from "@/components/Certifications";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SectionReveal from "@/components/SectionReveal";
 
 export default function Home() {
   return (
@@ -19,15 +20,15 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-        <Skills />
-        <Achievements />
-        <Certifications />
-        <Education />
-        <Contact />
+        <SectionReveal><Hero /></SectionReveal>
+        <SectionReveal><About /></SectionReveal>
+        <SectionReveal><Projects /></SectionReveal>
+        <SectionReveal><Experience /></SectionReveal>
+        <SectionReveal><Skills /></SectionReveal>
+        <SectionReveal><Achievements /></SectionReveal>
+        <SectionReveal><Certifications /></SectionReveal>
+        <SectionReveal><Education /></SectionReveal>
+        <SectionReveal><Contact /></SectionReveal>
       </main>
       <Footer />
     </>
