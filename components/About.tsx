@@ -33,7 +33,7 @@ export default function About() {
                   About Me
                 </h2>
 
-                <div className="mt-5 max-w-[680px] space-y-4 text-sm leading-[1.8] text-ink-300 sm:text-base sm:leading-[1.85]">
+                <div className="mt-6 max-w-[680px] space-y-5 text-sm leading-[1.85] text-ink-300 sm:text-base sm:leading-[1.9]">
                   <p>{profile.summary}</p>
 
                   <p>
@@ -46,7 +46,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="mt-10 pt-4">
+              <div className="mt-12 pt-4">
                 <div className="grid grid-cols-3 gap-6">
                   {metrics.map((metric) => (
                     <div key={metric.label}>
