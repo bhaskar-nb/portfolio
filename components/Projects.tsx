@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { projects, additionalProjects } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
+import ChromaGrid from "@/components/ChromaGrid";
+import "@/components/ChromaGrid.css";
 
 const additionalMeta: Record<string, { signal: string; icon: typeof Database }> = {
   "hospital-emergency-dashboard": { signal: "Operational analytics", icon: FileSpreadsheet },
@@ -80,50 +82,59 @@ export default function Projects() {
           description="A recruiter-focused view of my analytics work: what I investigated, the scale of the data, and the result delivered through a dashboard or application."
         />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
-            <motion.button
-              key={p.id}
-              type="button"
-              onClick={() => setActive(p)}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-70px" }}
-              transition={{ duration: 0.7, delay: i * 0.08 }}
-              whileHover={{ y: -5 }}
-              className="group flex min-h-[300px] w-full flex-col overflow-hidden rounded-2xl border border-base-500/80 bg-base-800/45 text-left transition-all duration-300 hover:border-violet-400/40 hover:bg-base-700/55"
-            >
-              <div className="relative flex h-36 items-center justify-center overflow-hidden border-b border-base-500/70 bg-base-900/70">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(139,92,246,0.16),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <span className="relative font-mono text-[10px] uppercase tracking-[0.18em] text-ink-600">
-                  Project 0{i + 1}
-                </span>
-              </div>
-
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-violet-400">
-                  {p.stack.join(" · ")}
-                </span>
-                <h3 className="mt-3 font-display text-xl tracking-tight text-ink-100 transition-colors duration-300 group-hover:text-white">
-                  {p.title}
-                </h3>
-                <p className="mt-3 line-clamp-3 text-sm leading-6 text-ink-400">
-                  {p.summary}
-                </p>
-
-                <div className="mt-auto flex items-center justify-between border-t border-base-500/70 pt-4">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-ink-600">
-                    View project
-                  </span>
-                  <ArrowUpRight
-                    size={16}
-                    className="text-ink-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-violet-400"
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
-            </motion.button>
-          ))}
+        <div className="mt-14">
+          <ChromaGrid
+            items={[
+              {
+                id: projects[0].id,
+                title: projects[0].title,
+                subtitle: projects[0].stack.join(" · "),
+                handle: "Flagship analytics case study",
+                location: "Tableau · Sales Analytics",
+                borderColor: "#22d3ee",
+                gradient: "linear-gradient(145deg,#17162f 0%,#20244b 48%,#101522 100%)",
+                visual: "sales",
+                metric: "$164.42M sales",
+              },
+              {
+                id: projects[1].id,
+                title: projects[1].title,
+                subtitle: projects[1].stack.join(" · "),
+                handle: "Selected analytics project",
+                location: "Tableau · Global Analysis",
+                borderColor: "#a78bfa",
+                gradient: "linear-gradient(145deg,#1b1834 0%,#292653 48%,#11111f 100%)",
+                visual: "disaster",
+                metric: "15,090 events",
+              },
+              {
+                id: projects[2].id,
+                title: projects[2].title,
+                subtitle: projects[2].stack.join(" · "),
+                handle: "Selected analytics project",
+                location: "Tableau · HR Analytics",
+                borderColor: "#c4b5fd",
+                gradient: "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)",
+                visual: "hr",
+                metric: "Synthetic dataset",
+              },
+              {
+                id: projects[3].id,
+                title: projects[3].title,
+                subtitle: projects[3].stack.join(" · "),
+                handle: "Selected analytics project",
+                location: "Tableau · EV Analytics",
+                borderColor: "#22d3ee",
+                gradient: "linear-gradient(145deg,#13232b 0%,#1e3650 48%,#101820 100%)",
+                visual: "ev",
+                metric: "150,413 records",
+              },
+            ]}
+            onItemClick={(item) => {
+              const selected = projects.find((project) => project.id === item.id);
+              if (selected) setActive(selected);
+            }}
+          />
         </div>
 
         <div className="mt-24">
