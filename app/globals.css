@@ -47,3 +47,52 @@
     scroll-behavior: auto !important;
   }
 }
+
+
+.reference-aurora {
+  position: absolute;
+  width: 70vw;
+  height: 34vh;
+  top: -12vh;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.34;
+  transform: translate3d(0, 0, 0);
+  animation: reference-aurora-drift 14s ease-in-out infinite alternate;
+}
+
+.reference-aurora-one {
+  left: -12vw;
+  background: #577870;
+}
+
+.reference-aurora-two {
+  left: 24vw;
+  width: 58vw;
+  opacity: 0.26;
+  background: #1f97a6;
+  animation-duration: 18s;
+  animation-delay: -4s;
+}
+
+.reference-aurora-three {
+  right: -12vw;
+  background: #127b99;
+  animation-duration: 16s;
+  animation-delay: -8s;
+}
+
+@keyframes reference-aurora-drift {
+  0% {
+    transform: translate3d(-3%, 0, 0) scale(0.96);
+  }
+  100% {
+    transform: translate3d(4%, 5%, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reference-aurora {
+    animation: none;
+  }
+}
