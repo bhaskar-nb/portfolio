@@ -72,25 +72,25 @@ export default function Skills() {
           {skills.map(({ skill, category, image }, index) => (
             <motion.div
               key={skill}
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 4 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-70px" }}
+              viewport={{ once: true, amount: 0.28, margin: "-40px" }}
               transition={{
-                duration: 0.65,
-                delay: Math.min(index * 0.035, 0.28),
-                ease: [0.22, 1, 0.36, 1],
+                duration: 1.2,
+                delay: Math.min(index * 0.06, 0.55),
+                ease: [0.16, 1, 0.3, 1],
               }}
-              className="group flex min-h-[88px] items-center gap-3.5 rounded-xl border border-base-500/80 bg-base-800/55 px-4 py-3 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
+              className="group flex min-h-[104px] items-center gap-4 rounded-xl border border-base-500/80 bg-base-800/55 px-5 py-4 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
-                <Image src={image} alt="" width={30} height={30} className="h-7.5 w-7.5 object-contain" unoptimized />
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
+                <Image src={image} alt="" width={32} height={32} className="h-8 w-8 object-contain" unoptimized />
               </span>
 
               <div className="min-w-0">
-                <p className="truncate text-sm font-medium text-ink-100">
+                <p className="truncate text-[0.95rem] font-medium text-ink-100">
                   {skill}
                 </p>
-                <p className="mt-0.5 truncate font-mono text-[8px] uppercase tracking-[0.12em] text-ink-600">
+                <p className="mt-1 truncate font-mono text-[8px] uppercase tracking-[0.12em] text-ink-600">
                   {category}
                 </p>
               </div>
