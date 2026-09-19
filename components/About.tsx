@@ -59,6 +59,10 @@ export default function About() {
                     </div>
                   ))}
                 </div>
+
+                <p className="mt-7 text-xs font-medium tracking-[-0.01em] text-ink-500 sm:text-sm">
+                  Turning data into clear, practical decisions.
+                </p>
               </div>
             </div>
 
