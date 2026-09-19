@@ -72,13 +72,13 @@ export default function Skills() {
           {skills.map(({ skill, category, image }, index) => (
             <motion.div
               key={skill}
-              initial={{ opacity: 0, y: 4 }}
+              initial={{ opacity: 0, y: 2 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.28, margin: "-40px" }}
+              viewport={{ once: true, amount: 0.22, margin: "-20px" }}
               transition={{
-                duration: 1.2,
-                delay: Math.min(index * 0.06, 0.55),
-                ease: [0.16, 1, 0.3, 1],
+                duration: 1.6,
+                delay: Math.min(index * 0.14, 1.8),
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="group flex min-h-[104px] items-center gap-4 rounded-xl border border-base-500/80 bg-base-800/55 px-5 py-4 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
             >
