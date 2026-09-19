@@ -78,7 +78,7 @@ export default function About() {
                 <div className="relative overflow-hidden rounded-[18px] border-2 border-violet-300/80 bg-[#0b0b1d] p-1.5 shadow-[0_0_24px_rgba(139,92,246,0.30),0_16px_40px_rgba(0,0,0,0.45)]">
                   <div className="relative aspect-[0.78] overflow-hidden rounded-[13px] bg-[radial-gradient(circle_at_50%_18%,rgba(99,102,241,0.28),transparent_48%),#070713]">
                     <Image
-                      src="/DP image.png"
+                      src="/about-profile.png"
                       alt={profile.name}
                       fill
                       sizes="190px"
