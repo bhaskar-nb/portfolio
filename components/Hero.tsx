@@ -83,7 +83,7 @@ export default function Hero() {
             className="mb-7 inline-flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.04] px-3.5 py-2.5 backdrop-blur-xl"
           >
             <div className="relative h-7 w-7 overflow-hidden rounded-full border border-white/10 bg-base-700">
-              <Image src="/DP image.png" alt="" fill sizes="28px" className="object-cover object-top" />
+              <Image src="/DP image.png" alt="" fill sizes="28px" className="object-cover object-top" unoptimized />
             </div>
             <span className="text-xs font-medium tracking-wide text-ink-300 sm:text-sm">
               “Turning data into clear insights.”
@@ -137,7 +137,7 @@ export default function Hero() {
             <div className="relative rounded-[28px] bg-gradient-to-br from-cyan-300 via-violet-500 to-violet-700 p-[1.5px] shadow-[0_28px_80px_rgba(0,0,0,0.50),0_0_45px_rgba(139,92,246,0.16)]">
               <div className="relative aspect-[0.76] overflow-hidden rounded-[26px] bg-[radial-gradient(circle_at_50%_22%,rgba(99,102,241,0.30),transparent_46%),linear-gradient(145deg,#17162f_0%,#292653_48%,#11111f_100%)]">
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(167,139,250,0.15),transparent_34%,transparent_66%,rgba(56,189,248,0.08))]" />
-                <Image src="/DP image.png" alt={profile.name + " — Data Analyst"} fill sizes="410px" className="object-contain object-bottom scale-[1.05]" priority />
+                <Image src="/DP image.png" alt={profile.name + " — Data Analyst"} fill sizes="410px" className="object-contain object-bottom scale-[1.05]" priority unoptimized />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#211c48]/20 via-transparent to-[#07070b]/25" />
 
                 <div className="absolute left-0 right-0 top-0 z-10 px-5 pt-6 text-center">
@@ -148,7 +148,7 @@ export default function Hero() {
                 <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between gap-3 rounded-xl border border-white/[0.10] bg-slate-950/55 px-3.5 py-2.5 backdrop-blur-xl">
                   <div className="flex min-w-0 items-center gap-2.5">
                     <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-white/[0.12]">
-                      <Image src="/DP image.png" alt="" fill sizes="32px" className="object-cover object-top" />
+                      <Image src="/DP image.png" alt="" fill sizes="32px" className="object-cover object-top" unoptimized />
                     </div>
                     <div className="min-w-0">
                       <p className="truncate text-xs font-semibold text-white">@{profile.githubUsername}</p>
