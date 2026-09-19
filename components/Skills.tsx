@@ -57,6 +57,19 @@ const rows = Array.from({ length: Math.ceil(skills.length / 4) }, (_, rowIndex) 
   skills.slice(rowIndex * 4, rowIndex * 4 + 4)
 );
 
+const rowVariants = {
+  hidden: { opacity: 0, y: 10 },
+  show: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.8,
+      delay: index * 0.28,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
 export default function Skills() {
   return (
     <section id="skills" className="relative overflow-hidden py-24 sm:py-28">
@@ -76,14 +89,11 @@ export default function Skills() {
           {rows.map((row, rowIndex) => (
             <motion.div
               key={rowIndex}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              custom={rowIndex}
+              variants={rowVariants}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true, amount: 0.18, margin: "-20px" }}
-              transition={{
-                duration: 1.8,
-                delay: rowIndex * 0.28,
-                ease: [0.22, 1, 0.36, 1],
-              }}
               className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
             >
               {row.map(({ skill, category, image }) => (
