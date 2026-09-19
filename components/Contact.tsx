@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden py-28">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-10 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
-      <div className="pointer-events-none absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-gold/5 blur-3xl" />
+      <div className="pointer-events-none absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-500/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -62,12 +62,12 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-3xl border border-base-500/80 bg-base-800/60 p-7 sm:p-8"
+            className="relative overflow-hidden rounded-[2rem] border border-violet-500/30 bg-gradient-to-br from-[#15131d] via-[#171717] to-[#0d0d0d] p-7 shadow-[0_0_35px_rgba(139,92,246,0.07)] sm:p-9"
           >
             <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-gold/5 blur-3xl" />
             <div className="relative flex h-full flex-col justify-between">
               <div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">01 / recruiter route</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-violet-300">01 / recruiter route</span>
                 <h3 className="mt-7 max-w-md font-display text-3xl leading-tight text-ink-100 sm:text-4xl">Review the work. Then let&apos;s talk.</h3>
                 <p className="mt-5 max-w-md text-sm leading-7 text-ink-400">
                   I&apos;m actively targeting entry-level Data Analyst and BI opportunities. If the work looks relevant to your team, the résumé, LinkedIn, and direct contact options are below.
@@ -83,7 +83,7 @@ export default function Contact() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.35, delay: i * 0.07 }}
-                    className="group flex min-h-14 items-center gap-3 rounded-xl border border-base-500/70 bg-base-700/30 p-3.5 transition-all hover:border-gold/40 hover:bg-base-700/60"
+                    className="group flex min-h-14 items-center gap-3 rounded-xl border border-base-500/70 bg-base-700/30 p-3.5 transition-all hover:border-violet-400/40 hover:bg-base-700/60"
                   >
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-800 text-gold">
                       <item.icon size={15} />
@@ -110,7 +110,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={s.label}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-base-500 text-ink-400 transition-all hover:-translate-y-0.5 hover:border-violet-400/60 hover:text-violet-300"
                       >
                         <s.icon size={15} />
                       </a>
@@ -128,7 +128,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.55 }}
-            className="relative overflow-hidden rounded-3xl border border-base-500/80 bg-base-800/70 p-7 sm:p-9"
+            className="relative overflow-hidden rounded-[2rem] border border-violet-500/30 bg-gradient-to-br from-[#15131d] via-[#171717] to-[#0d0d0d] p-7 shadow-[0_0_35px_rgba(139,92,246,0.07)] sm:p-9"
           >
             <div className="absolute bottom-0 right-0 h-44 w-44 rounded-full bg-gold/5 blur-3xl" />
             <div className="relative">
@@ -151,7 +151,7 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="min-h-12 w-full rounded-xl border border-base-500 bg-base-900/40 px-4 py-3 text-sm text-ink-100 outline-none transition-all placeholder:text-ink-600 focus:border-gold focus:bg-base-800"
+                      className="min-h-12 w-full rounded-xl border border-base-500 bg-base-900/40 px-4 py-3 text-sm text-ink-100 outline-none transition-all placeholder:text-ink-600 focus:border-violet-400 focus:bg-base-800"
                       placeholder="Your name"
                     />
                   </div>
@@ -206,7 +206,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, delay: 0.15 }}
-          className="mt-5 flex flex-col gap-4 rounded-2xl border border-gold/20 bg-gold/[0.03] p-5 sm:flex-row sm:items-center sm:justify-between"
+          className="mt-5 flex flex-col gap-4 rounded-2xl border border-violet-400/20 bg-violet-500/[0.04] p-5 sm:flex-row sm:items-center sm:justify-between"
         >
           <div>
             <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-gold">recruiter quick view</span>
@@ -215,7 +215,7 @@ export default function Contact() {
           <a
             href="/Resume.pdf"
             download
-            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-200 transition-all hover:border-gold/70 hover:text-gold"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-violet-400/30 bg-gold/5 px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-200 transition-all hover:border-violet-400/70 hover:text-violet-300"
           >
             <FileText size={14} /> Résumé <Download size={13} />
           </a>
