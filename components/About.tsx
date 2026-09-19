@@ -74,7 +74,7 @@ export default function About() {
                 whileInView={{ y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="relative mt-10 w-[220px]"
+                className="relative mt-10 w-[205px]"
               >
                 <div className="absolute left-1/2 top-[-105px] h-[108px] w-[3px] -translate-x-1/2 bg-gradient-to-b from-black via-black to-[#171717]" />
                 <div className="absolute left-1/2 top-[-9px] h-5 w-5 -translate-x-1/2 rounded-full border border-white/15 bg-[#090909] shadow-[0_0_12px_rgba(0,0,0,0.8)]" />
@@ -85,7 +85,7 @@ export default function About() {
                       src="/about-profile.png"
                       alt={profile.name}
                       fill
-                      sizes="220px"
+                      sizes="205px"
                       className="object-contain object-bottom"
                     />
 
