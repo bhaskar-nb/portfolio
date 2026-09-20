@@ -93,7 +93,7 @@ export default function About() {
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="flex h-full min-h-[390px] items-center justify-center overflow-hidden"
             >
-              <div className="relative mt-16 w-[205px]">
+              <div className="relative mt-16 w-[175px]">
                 <div className="absolute left-1/2 top-[-108px] h-[112px] w-[3px] -translate-x-1/2 bg-gradient-to-b from-black via-black to-[#171717]" />
                 <div className="absolute left-1/2 top-[-11px] h-5 w-5 -translate-x-1/2 rounded-full border border-white/15 bg-[#090909] shadow-[0_0_12px_rgba(0,0,0,0.8)]" />
 
@@ -103,7 +103,7 @@ export default function About() {
                       src="/about-profile.png"
                       alt={profile.name}
                       fill
-                      sizes="205px"
+                      sizes="175px"
                       className="object-contain object-bottom"
                     />
                     <div className="absolute bottom-2.5 left-2.5 right-2.5 rounded-md bg-violet-600/75 px-2 py-0.5 text-center text-[9px] font-semibold text-white shadow-[0_0_12px_rgba(139,92,246,0.35)]">
