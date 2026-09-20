@@ -3,12 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowUpRight,
   BarChart3,
-  BrainCircuit,
-  Database,
   ExternalLink,
-  FileSpreadsheet,
   Github,
   ListChecks,
   Lightbulb,
@@ -19,31 +15,6 @@ import {
 import { projects, additionalProjects } from "@/lib/data";
 import ChromaGrid from "@/components/ChromaGrid";
 import "@/components/ChromaGrid.css";
-
-const additionalMeta: Record<string, { signal: string; icon: typeof Database }> = {
-  "hospital-emergency-dashboard": { signal: "Operational analytics", icon: FileSpreadsheet },
-  "decodelabs-internship": { signal: "End-to-end workflow", icon: Workflow },
-  "house-price-prediction": { signal: "Applied machine learning", icon: BrainCircuit },
-  "amazon-prime-content-intelligence": { signal: "Visual analytics", icon: BarChart3 },
-};
-
-const featuredEvidence: Record<string, { scale: string; label: string; focus: string }> = {
-  "global-disaster-analysis": {
-    scale: "15,090",
-    label: "disaster events",
-    focus: "Frequency, severity, geography, human impact, and economic damage",
-  },
-  "hr-analytics-dashboard": {
-    scale: "Synthetic",
-    label: "employee dataset",
-    focus: "Workforce composition, hiring, attrition, compensation, and performance",
-  },
-  "ev-adoption-dashboard": {
-    scale: "150,413",
-    label: "EV records",
-    focus: "Geography, manufacturers, vehicle types, models, and eligibility",
-  },
-};
 
 export default function Projects() {
   const [active, setActive] = useState<(typeof projects)[number] | null>(null);
@@ -137,50 +108,65 @@ export default function Projects() {
         </div>
 
         <div className="mt-24">
-          <div className="grid gap-4 md:grid-cols-2">
-            {additionalProjects.map((p, i) => {
-              const meta = additionalMeta[p.id];
-              const Icon = meta?.icon ?? Database;
+          <div className="mb-8 sm:mb-9">
+            <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+              Additional Projects
+            </h2>
+          </div>
 
-              return (
-                <motion.button
-                  key={p.id}
-                  type="button"
-                  onClick={() => setActiveAdditional(p)}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: i * 0.06 }}
-                  whileHover={{ y: -4 }}
-                  className="group relative overflow-hidden rounded-2xl border border-base-500/80 bg-base-800/45 p-6 text-left transition-colors duration-300 hover:border-gold/35 sm:p-7"
-                >
-                  <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-gold/[0.035] blur-2xl" />
-                  <div className="relative">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-base-500 bg-base-700/60 text-gold">
-                          <Icon size={17} aria-hidden="true" />
-                        </span>
-                        <div>
-                          <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-gold">0{i + 1} / {p.category}</span>
-                          <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.13em] text-ink-600">{meta?.signal}</span>
-                        </div>
-                      </div>
-                      <ArrowUpRight size={17} className="mt-1 text-ink-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" aria-hidden="true" />
-                    </div>
-                    <h3 className="mt-8 font-display text-2xl tracking-tight text-ink-100">{p.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-ink-400">{p.summary}</p>
-                    <div className="mt-6 border-t border-base-500/70 pt-5">
-                      <div className="flex flex-wrap gap-1.5">
-                        {p.stack.map((s) => (
-                          <span key={s} className="rounded-full border border-base-500 bg-base-900/35 px-2.5 py-1 font-mono text-[9px] text-ink-400">{s}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.button>
-              );
-            })}
+          <div className="mt-8">
+            <ChromaGrid
+              items={[
+                {
+                  id: additionalProjects[0].id,
+                  title: additionalProjects[0].title,
+                  subtitle: additionalProjects[0].stack.join(" · "),
+                  handle: "Operational analytics",
+                  location: "Dashboard · Emergency Care",
+                  borderColor: "#22d3ee",
+                  gradient: "linear-gradient(145deg,#13232b 0%,#1e3650 48%,#101820 100%)",
+                  visual: "ev",
+                  metric: "Emergency analytics",
+                },
+                {
+                  id: additionalProjects[1].id,
+                  title: additionalProjects[1].title,
+                  subtitle: additionalProjects[1].stack.join(" · "),
+                  handle: "End-to-end workflow",
+                  location: "Data Analytics · Internship",
+                  borderColor: "#a78bfa",
+                  gradient: "linear-gradient(145deg,#1b1834 0%,#292653 48%,#11111f 100%)",
+                  visual: "disaster",
+                  metric: "Internship project",
+                },
+                {
+                  id: additionalProjects[2].id,
+                  title: additionalProjects[2].title,
+                  subtitle: additionalProjects[2].stack.join(" · "),
+                  handle: "Applied machine learning",
+                  location: "Python · Machine Learning",
+                  borderColor: "#c4b5fd",
+                  gradient: "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)",
+                  visual: "hr",
+                  metric: "Prediction model",
+                },
+                {
+                  id: additionalProjects[3].id,
+                  title: additionalProjects[3].title,
+                  subtitle: additionalProjects[3].stack.join(" · "),
+                  handle: "Visual analytics",
+                  location: "Tableau · Content Analysis",
+                  borderColor: "#22d3ee",
+                  gradient: "linear-gradient(145deg,#17162f 0%,#20244b 48%,#101522 100%)",
+                  visual: "sales",
+                  metric: "Content insights",
+                },
+              ]}
+              onItemClick={(item) => {
+                const selected = additionalProjects.find((project) => project.id === item.id);
+                if (selected) setActiveAdditional(selected);
+              }}
+            />
           </div>
         </div>
       </div>
@@ -222,7 +208,7 @@ export default function Projects() {
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(167,139,250,0.28),transparent_42%),radial-gradient(circle_at_20%_85%,rgba(34,211,238,0.16),transparent_38%)]" />
                 <div className="relative z-10">
                   <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-violet-200/80">
-                    {active ? "Selected analytics project" : "Supporting project"}
+                    {active ? "Selected analytics project" : "Additional project"}
                   </span>
                   <div className="mt-2 flex flex-wrap items-end gap-3">
                     <h2 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
