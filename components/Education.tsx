@@ -6,7 +6,7 @@ import { education } from "@/lib/data";
 
 export default function Education() {
   return (
-    <section id="education" className="relative overflow-hidden py-24 sm:py-28">
+    <section id="education" className="relative overflow-hidden py-20 sm:py-24">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/[0.05] blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
