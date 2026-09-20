@@ -42,7 +42,7 @@ export default function Projects() {
   }, [active, activeAdditional]);
 
   return (
-    <section id="projects" className="relative overflow-hidden py-28 sm:py-32">
+    <section id="projects" className="relative overflow-hidden py-24 sm:py-28">
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-20 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
