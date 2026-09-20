@@ -32,21 +32,21 @@ export default function Certifications() {
                 <div className="flex flex-col gap-3 border-b border-zinc-800/80 pb-7 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-3">
-                      <span className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-violet-300">
-                        <Award size={13} aria-hidden="true" />
+                      <span className="flex items-center gap-2 font-mono text-[8px] uppercase tracking-[0.14em] text-violet-300">
+                        <Award size={12} aria-hidden="true" />
                         Certificate
                       </span>
                       <span className="h-1 w-1 rounded-full bg-zinc-700" />
-                      <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-500">
+                      <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-zinc-500">
                         {c.year}
                       </span>
                     </div>
 
-                    <h3 className="mt-3 font-display text-xl leading-snug text-white sm:text-2xl">
+                    <h3 className="mt-2 font-display text-lg leading-snug text-white sm:text-xl">
                       {c.title}
                     </h3>
 
-                    <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-500">
+                    <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.12em] text-zinc-500">
                       {c.issuer}
                     </p>
                   </div>
@@ -57,13 +57,13 @@ export default function Certifications() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${c.title} credential`}
-                      className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-300 transition-all hover:border-violet-400/50 hover:text-violet-300"
+                      className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-zinc-700 bg-zinc-900/60 px-3.5 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-zinc-300 transition-all hover:border-violet-400/50 hover:text-violet-300"
                     >
-                      View credential <ExternalLink size={12} aria-hidden="true" />
+                      View credential <ExternalLink size={11} aria-hidden="true" />
                     </a>
                   ) : (
                     <ArrowUpRight
-                      size={18}
+                      size={17}
                       className="mt-1 shrink-0 text-zinc-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-violet-300"
                       aria-hidden="true"
                     />
