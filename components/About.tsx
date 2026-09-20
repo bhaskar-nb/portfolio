@@ -18,7 +18,7 @@ export default function About() {
       <div className="pointer-events-none absolute left-[5%] top-20 h-72 w-72 rounded-full bg-violet-500/[0.07] blur-[120px]" />
       <div className="pointer-events-none absolute right-[4%] bottom-0 h-80 w-80 rounded-full bg-violet-500/[0.05] blur-[130px]" />
 
-      <div className="relative mx-auto w-full max-w-[1600px] rounded-[2rem] border-[5px] border-violet-500/40 bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6 shadow-[0_0_30px_rgba(168,85,247,0.22)] sm:p-7 lg:p-8">
+      <div className="relative mx-auto w-full max-w-[1400px] rounded-[2rem] border-[5px] border-violet-500/40 bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-5 shadow-[0_0_30px_rgba(168,85,247,0.22)] sm:p-6 lg:p-7">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
