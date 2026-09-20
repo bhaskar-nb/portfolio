@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Award, ExternalLink, ArrowUpRight } from "lucide-react";
 import { certifications } from "@/lib/data";
-import SectionHeading from "@/components/SectionHeading";
 
 export default function Certifications() {
   return (
@@ -11,11 +10,9 @@ export default function Certifications() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/[0.05] blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-        <SectionHeading
-          eyebrow="-- certifications"
-          title="Certifications"
-          description="Credentials supporting my practical work across analytics, SQL, visualization, and business-focused data analysis."
-        />
+        <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+          Certificates
+        </h2>
 
         <div className="relative mt-12">
           <div className="absolute bottom-3 left-[17px] top-3 hidden w-px bg-gradient-to-b from-violet-400/50 via-violet-400/20 to-transparent sm:block" />
@@ -37,7 +34,7 @@ export default function Certifications() {
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-violet-300">
                         <Award size={13} aria-hidden="true" />
-                        Certification
+                        Certificate
                       </span>
                       <span className="h-1 w-1 rounded-full bg-zinc-700" />
                       <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-500">
