@@ -211,7 +211,7 @@ export default function Projects() {
                     {active ? "Selected analytics project" : "Additional project"}
                   </span>
                   <div className="mt-2 flex flex-wrap items-end gap-3">
-                    <h2 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                    <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
                       {active?.title ?? activeAdditional?.title}
                     </h2>
                     {active && (
