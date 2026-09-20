@@ -63,7 +63,8 @@ export default function Hero() {
             variants={contentItemVariants}
             className="max-w-[560px] font-display text-[clamp(3.2rem,5vw,5.1rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-ink-400"
           >
-            <ShinyText text={`Hi I'm ${profile.name}`} speed={3} />
+            <span className="text-ink-300">Hi I&apos;m </span>
+            <span className="text-white">{profile.name}</span>
           </motion.h1>
 
           <motion.div variants={contentItemVariants} className="mt-7 max-w-[610px] text-[0.98rem] leading-7 text-ink-200 sm:text-[1.05rem] sm:leading-7">
