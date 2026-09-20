@@ -17,7 +17,6 @@ import {
   X,
 } from "lucide-react";
 import { projects, additionalProjects } from "@/lib/data";
-import SectionHeading from "@/components/SectionHeading";
 import ChromaGrid from "@/components/ChromaGrid";
 import "@/components/ChromaGrid.css";
 
@@ -76,13 +75,13 @@ export default function Projects() {
       <div className="pointer-events-none absolute inset-0 bg-grid-fine opacity-20 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <SectionHeading
-          eyebrow="-- selected work"
-          title="Projects built around the question"
-          description="A recruiter-focused view of my analytics work: what I investigated, the scale of the data, and the result delivered through a dashboard or application."
-        />
+        <div className="mb-8 sm:mb-9">
+          <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+            Projects
+          </h2>
+        </div>
 
-        <div className="mt-14">
+        <div className="mt-8">
           <ChromaGrid
             items={[
               {
@@ -138,13 +137,7 @@ export default function Projects() {
         </div>
 
         <div className="mt-24">
-          <SectionHeading
-            eyebrow="-- supporting work"
-            title="More projects, different signals"
-            description="A compact set of supporting projects showing operational reporting, end-to-end analytics, machine learning, and visual storytelling."
-          />
-
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             {additionalProjects.map((p, i) => {
               const meta = additionalMeta[p.id];
               const Icon = meta?.icon ?? Database;
