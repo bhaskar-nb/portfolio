@@ -49,12 +49,6 @@ export default function Certifications() {
                     <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-500">
                       {c.issuer}
                     </p>
-
-                    {c.bullets?.length ? (
-                      <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-400">
-                        {c.bullets.join(" · ")}
-                      </p>
-                    ) : null}
                   </div>
 
                   {c.link && c.link !== "#" ? (
