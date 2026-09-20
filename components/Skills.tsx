@@ -107,7 +107,7 @@ export default function Skills() {
               {row.map(({ skill, category, image }) => (
                 <div
                   key={skill}
-                  className="group flex min-h-[104px] items-center gap-4 rounded-xl border border-base-500/80 bg-base-800/55 px-5 py-4 transition-all duration-200 hover:border-violet-400/35 hover:bg-base-700/55"
+                  className="group flex min-h-[104px] items-center gap-4 rounded-xl border border-violet-400/30 bg-base-800/55 px-5 py-4 shadow-[0_0_18px_rgba(139,92,246,0.16)] transition-all duration-200 hover:border-violet-300/55 hover:bg-base-700/55 hover:shadow-[0_0_28px_rgba(139,92,246,0.30)]"
                 >
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-base-500 bg-base-700/70 p-1.5 transition-colors group-hover:border-violet-400/30">
                     <Image src={image} alt="" width={32} height={32} className="h-8 w-8 object-contain" unoptimized />
