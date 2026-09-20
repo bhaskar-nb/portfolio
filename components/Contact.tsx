@@ -31,7 +31,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 sm:py-32">
+    <section id="contact" className="relative overflow-hidden py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 18 }}
