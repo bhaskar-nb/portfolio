@@ -22,14 +22,16 @@ const contentItemVariants = {
 
 export default function Hero() {
   const contentControls = useAnimation();
+  const cardControls = useAnimation();
   useEffect(() => {
     const startHeroAnimation = () => {
       void contentControls.start("show");
+      void cardControls.start("show");
     };
 
     window.addEventListener("portfolio-loader-complete", startHeroAnimation);
     return () => window.removeEventListener("portfolio-loader-complete", startHeroAnimation);
-  }, [contentControls]);
+  }, [cardControls, contentControls]);
 
   return (
     <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-base-900">
@@ -85,7 +87,20 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <div className="relative mx-auto w-full max-w-[410px] lg:mr-4">
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 520, scale: 0.98 },
+            show: {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] as const },
+            },
+          }}
+          initial="hidden"
+          animate={cardControls}
+          className="relative mx-auto w-full max-w-[410px] lg:mr-4"
+        >
           <ProfileCard
             avatarUrl="/DP image.png"
             name={profile.name}
@@ -94,7 +109,7 @@ export default function Hero() {
             status="Online"
             contactText="Contact Me"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
