@@ -89,9 +89,6 @@ export default function Skills() {
           <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
             Skills &amp; Technologies
           </h2>
-          <p className="mt-1.5 text-xs text-ink-500 sm:text-sm">
-            My Professional Skills
-          </p>
         </div>
 
         <motion.div
