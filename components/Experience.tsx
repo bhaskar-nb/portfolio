@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { BriefcaseBusiness, CalendarDays } from "lucide-react";
 
 const experience = {
-  company: "EduExpose",
+  company: "DecodeLabs",
   role: "Data Analyst Intern",
   period: "Feb 2026 – Apr 2026",
   type: "Internship",
