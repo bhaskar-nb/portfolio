@@ -46,10 +46,10 @@
   background-blend-mode: color,hard-light;
   background-size: 500% 500%,300% 300%,200% 200%;
   mix-blend-mode: color-dodge;
-  opacity:.3;
+  opacity:0;
   pointer-events:none;
 }
-.pc-glare { z-index:4; background:radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),hsl(248,25%,80%) 12%,hsla(207,40%,30%,.8) 90%); mix-blend-mode:overlay; filter:brightness(.8) contrast(1.2); pointer-events:none; }
+.pc-glare { z-index:4; background:radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),hsl(248,25%,80%) 12%,hsla(207,40%,30%,.8) 90%); mix-blend-mode:overlay; filter:brightness(.8) contrast(1.2); opacity:0; pointer-events:none; }
 .pc-avatar-content { mix-blend-mode:screen; overflow:hidden; }
 .pc-avatar { width:100%; position:absolute; left:50%; bottom:2px; transform:translateX(-50%); opacity:calc(1.75 - var(--pointer-from-center)); }
 .pc-avatar-content::before { content:""; position:absolute; inset:0; z-index:1; backdrop-filter:blur(30px); mask:linear-gradient(to bottom,transparent 0%,transparent 60%,#000 90%,#000 100%); }
