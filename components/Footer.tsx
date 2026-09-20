@@ -17,7 +17,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 mt-32 pb-8">
+    <footer className="relative z-10 mt-20 pb-8">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-5 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
         <h2 className="order-1 font-display text-2xl font-bold tracking-tight text-white md:order-none">
           Portfolio
