@@ -1,82 +1,69 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin, CalendarDays, ArrowUpRight } from "lucide-react";
+import { GraduationCap, MapPin, CalendarDays } from "lucide-react";
 import { education } from "@/lib/data";
-import SectionHeading from "@/components/SectionHeading";
 
 export default function Education() {
   return (
-    <section id="education" className="relative overflow-hidden py-28">
-      <div className="pointer-events-none absolute right-[-8%] top-1/3 h-80 w-80 rounded-full bg-violet-500/10 blur-3xl" />
+    <section id="education" className="relative overflow-hidden py-24 sm:py-28">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/[0.05] blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <SectionHeading
-          eyebrow="-- education"
-          title="Education"
-          description="My Computer Science and Engineering foundation supporting a career focused on data analytics and business intelligence."
-        />
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+        <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+          Education
+        </h2>
 
-        <div className="mt-14">
-          {education.map((e, index) => (
-            <motion.article
-              key={e.school}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-70px" }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -4 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-violet-500/30 bg-gradient-to-br from-[#15131d] via-[#171717] to-[#0d0d0d] p-7 shadow-[0_0_35px_rgba(139,92,246,0.06)] sm:p-9 lg:p-10"
-            >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(139,92,246,0.14),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(34,211,238,0.07),transparent_30%)]" />
+        <div className="relative mt-12">
+          <div className="absolute bottom-3 left-[17px] top-3 hidden w-px bg-gradient-to-b from-violet-400/50 via-violet-400/20 to-transparent sm:block" />
 
-              <div className="relative grid gap-9 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-10">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-violet-400/25 bg-violet-400/5 text-violet-300 transition-transform duration-500 group-hover:scale-105">
-                  <GraduationCap size={27} aria-hidden="true" />
+          <div className="space-y-8">
+            {education.map((e, index) => (
+              <motion.article
+                key={e.school}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative pl-0 sm:pl-12"
+              >
+                <div className="absolute left-2 top-2 hidden h-4 w-4 items-center justify-center rounded-full border-2 border-violet-400/60 bg-[#101010] shadow-[0_0_14px_rgba(139,92,246,0.25)] sm:flex">
+                  <GraduationCap size={8} className="text-violet-300" aria-hidden="true" />
                 </div>
 
-                <div className="min-w-0">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-violet-300">
-                    academic background
-                  </span>
-                  <h3 className="mt-3 font-display text-2xl leading-tight text-white sm:text-3xl">
-                    {e.school}
-                  </h3>
-                  <p className="mt-3 text-sm text-zinc-300 sm:text-base">
-                    {e.degree}
-                  </p>
+                <div className="flex flex-col gap-4 border-b border-zinc-800/80 pb-7 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+                  <div className="min-w-0">
+                    <h3 className="font-display text-lg leading-snug text-white sm:text-xl">
+                      {e.school}
+                    </h3>
 
-                  <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-500">
-                    <span className="flex items-center gap-2">
-                      <MapPin size={13} className="text-violet-300" aria-hidden="true" />
-                      {e.location}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <CalendarDays size={13} className="text-violet-300" aria-hidden="true" />
-                      {e.period}
-                    </span>
+                    <p className="mt-2 text-sm text-zinc-300">
+                      {e.degree}
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3 font-mono text-[8px] uppercase tracking-[0.14em] text-zinc-500">
+                      <span className="flex items-center gap-2">
+                        <MapPin size={12} className="text-violet-300" aria-hidden="true" />
+                        {e.location}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <CalendarDays size={12} className="text-violet-300" aria-hidden="true" />
+                        {e.period}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="border-t border-zinc-700/70 pt-6 lg:w-48 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-                  <span className="block font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-600">
-                    degree
+                  <span className="shrink-0 font-mono text-[8px] uppercase tracking-[0.14em] text-zinc-600">
+                    Academic Background
                   </span>
-                  <span className="mt-2 block font-display text-2xl text-violet-300">
-                    B.Tech
-                  </span>
-                  <span className="mt-1 block text-xs leading-5 text-zinc-500">
-                    Computer Science & Engineering
-                  </span>
-                  <ArrowUpRight
-                    size={17}
-                    className="mt-5 text-zinc-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-violet-300"
-                    aria-hidden="true"
-                  />
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
