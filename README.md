@@ -1,74 +1,219 @@
 # Bhaskar Nakka — Data Analyst Portfolio
 
-A personal portfolio built to showcase how I use **SQL, Python, Tableau, Power BI, and business-focused analysis** to turn data into clear, decision-ready insights.
+Source code for my personal **Data Analyst portfolio website**, built with Next.js and designed to present analytics projects, SQL work, technical skills, experience, certifications, and contact information in one place.
 
-The site brings together my analytics projects, technical skills, experience, resume, and professional links in one place.
+Live portfolio: **https://bhaskar-nb-portfolio.vercel.app/**
 
-## What You'll Find
+## What This Portfolio Showcases
 
-- **Data Analytics & BI** — analysis centered on business questions, KPIs, trends, and performance
-- **Dashboard Projects** — interactive Tableau and Power BI work designed for practical decision support
-- **SQL & Python** — querying, cleaning, transforming, exploring, and analyzing data
-- **Business Problem Solving** — moving from raw datasets to findings that are useful to stakeholders
-- **Professional Profile** — internship experience, education, resume, and career-focused work
+- **Data Analytics** — SQL, Python, Excel, Tableau, and Power BI
+- **Business Intelligence** — KPI reporting, dashboard development, and data visualization
+- **SQL Evidence** — practical business-question analysis and dedicated SQL project work
+- **Analytics Projects** — sales, HR, disaster, EV, healthcare, and other data-analysis projects
+- **Professional Profile** — experience, education, certifications, resume, GitHub, LinkedIn, and Tableau Public
 
-## Featured Projects
+The portfolio is positioned around a **Junior Data Analyst** profile and emphasizes practical project evidence rather than generic skill lists.
 
-- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — explores sales, profit, quantity, year-over-year performance, and product profitability; analysis identified 20.6% year-over-year sales growth and 43.7% profit growth.
-- [Global Disaster Analysis](https://github.com/bhaskar-nb/disaster-dashboard) — analyzes 15,090 disaster events across disaster types, countries, time, human impact, and economic damage.
-- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — analyzes workforce, hiring, terminations, compensation, performance, and demographics using explicitly synthetic employee data.
-- [EV Adoption Dashboard](https://github.com/bhaskar-nb/ev-dashboard) — explores 150,413 electric vehicle records across model years, states, manufacturers, vehicle types, models, and eligibility categories.
+## Featured Work
+
+The site currently highlights projects such as:
+
+- [SQL Data Warehouse Project](https://github.com/bhaskar-nb/sql-data-warehouse-project) — SQL Server data warehouse using Bronze, Silver, and Gold layers, ETL, data-quality checks, and dimensional modeling.
+- [SQL Exploratory Data Analysis Project](https://github.com/bhaskar-nb/sql-exploratory-data-analysis-project) — business-focused sales, customer, product, segmentation, ranking, time-series, and reusable reporting analysis.
+- [DecodeLabs Data Analytics Internship](https://github.com/bhaskar-nb/DecodeLabs-Internship) — end-to-end data cleaning, EDA, SQL analysis, and Tableau reporting.
+- [Sales Performance Dashboard](https://github.com/bhaskar-nb/sales-dashboard) — sales, profit, quantity, product performance, and year-over-year analysis.
+- [HR Analytics Dashboard](https://github.com/bhaskar-nb/hr-dashboard) — workforce analysis using explicitly synthetic employee data.
 
 ## Tech Stack
 
-- **Analytics:** SQL · Python · Pandas · Tableau · Power BI · Excel
-- **Frontend:** Next.js · React · TypeScript
-- **Styling & Motion:** Tailwind CSS · Framer Motion
-- **Developer Tools:** Git · GitHub · VS Code
+### Frontend
 
-## Run Locally
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
 
-```bash
-npm install
-npm run dev
-```
+### Analytics & Portfolio Content
 
-Open `http://localhost:3000`.
+- SQL
+- Python
+- Pandas
+- NumPy
+- Microsoft Excel
+- Tableau
+- Power BI
+
+### Development
+
+- Git
+- GitHub
+- VS Code
+- Vercel
 
 ## Project Structure
 
 ```text
-app/           Next.js routes, metadata, robots, sitemap, and global styles
-components/    Portfolio UI components
-lib/data.ts    Single source of truth for profile, skills, projects, and links
-lib/utils.ts   Shared utility helpers
-public/        Static assets such as resume and favicon
+portfolio/
+│
+├── app/
+│   ├── page.tsx
+│   ├── layout.tsx
+│   ├── globals.css
+│   ├── manifest.ts
+│   ├── robots.ts
+│   └── sitemap.ts
+│
+├── components/
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── Skills.tsx
+│   ├── Experience.tsx
+│   ├── Projects.tsx
+│   ├── SQLProof.tsx
+│   ├── RecruiterProof.tsx
+│   ├── Certifications.tsx
+│   ├── Education.tsx
+│   ├── Contact.tsx
+│   └── ...
+│
+├── lib/
+│   ├── data.ts
+│   └── utils.ts
+│
+├── public/
+│   ├── Resume.pdf
+│   ├── certificates
+│   └── static assets
+│
+├── .github/workflows/
+├── package.json
+├── package-lock.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── next.config.mjs
 ```
 
-## Resume
+`lib/data.ts` acts as the main content source for profile details, skills, projects, certifications, education, and navigation data.
 
-The latest resume is available directly from the portfolio website through the **Download résumé** buttons in the Hero, Navbar, and recruiter contact area.
+## Run Locally
 
-If you are running the project locally, keep the current resume in `public/` using the filename referenced by the portfolio code.
+### Prerequisites
 
-## Deployment
+- Node.js
+- npm
 
-The portfolio is deployed with Vercel from the `main` branch.
+### Install dependencies
 
-Production metadata and crawl configuration are maintained in:
+```bash
+npm install
+```
 
-- `app/layout.tsx` — site title, description, canonical URL, Open Graph/Twitter metadata, and structured data
-- `app/robots.ts` — crawler rules and sitemap reference
-- `app/sitemap.ts` — sitemap generation
+### Start the development server
 
-Keep `public/Resume.pdf` available so the résumé download actions continue to work.
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+### Production build
+
+```bash
+npm run build
+npm run start
+```
+
+## Resume & Certificates
+
+The portfolio stores resume and certificate assets in `public/` so they can be served directly by the Next.js application.
+
+Important assets currently include:
+
+- `public/Resume.pdf`
+- Deloitte Data Analytics Job Simulation certificate
+- Tata Data Visualisation job simulation certificate
+- Data Analytics Essentials certificate
+- SQL certificate
+
+Keep filenames synchronized with the paths referenced by the portfolio components before deploying.
+
+## SEO & Deployment
+
+The application includes:
+
+- Page metadata and canonical URL
+- Open Graph metadata
+- Twitter metadata
+- Structured profile information
+- `robots.txt` generation
+- Sitemap generation
+
+Relevant files:
+
+- `app/layout.tsx`
+- `app/robots.ts`
+- `app/sitemap.ts`
+
+The portfolio is deployed on **Vercel** from the `main` branch.
+
+## Data & Content Architecture
+
+Most visible portfolio content is centralized in:
+
+```text
+lib/data.ts
+```
+
+This includes:
+
+- Profile information
+- Skills
+- Projects
+- Certifications
+- Education
+- Timeline
+- Achievements
+- Navigation
+
+This keeps the presentation components separate from the portfolio content and makes future content updates easier.
+
+## Current Portfolio Positioning
+
+The portfolio is designed around:
+
+```text
+Business Question
+      ↓
+Data Cleaning / Preparation
+      ↓
+SQL / Python Analysis
+      ↓
+KPI & Insight Development
+      ↓
+Dashboard / Reporting
+      ↓
+Clear Business Communication
+```
+
+The primary career target is **Junior Data Analyst / Data Analyst**, with emphasis on SQL, Python, Excel, Tableau, Power BI, and practical analytics projects.
 
 ## Contact
 
-**Bhaskar Nakka**  
-Data Analyst | SQL · Python · Tableau · Power BI
+**Bhaskar Nakka**
+
+Data Analyst
 
 - GitHub: https://github.com/bhaskar-nb
 - LinkedIn: https://www.linkedin.com/in/bhaskar-nakka/
 - Tableau Public: https://public.tableau.com/app/profile/bhaskar.nakka4980
 - Email: bn7740401@gmail.com
+
+## Notes
+
+This repository contains the source code for the portfolio website. For the analytics work itself, the individual GitHub project repositories linked above provide the underlying SQL, Python, Excel, and dashboard evidence.
