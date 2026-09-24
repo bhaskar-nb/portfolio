@@ -99,6 +99,17 @@ export default function Projects() {
                 visual: "ev",
                 metric: "150,413 records",
               },
+              {
+                id: projects[4].id,
+                title: projects[4].title,
+                subtitle: projects[4].stack.join(" · "),
+                handle: "End-to-end SQL analytics",
+                location: "SQL Server · Data Warehouse",
+                borderColor: "#c4b5fd",
+                gradient: "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)",
+                visual: "hr",
+                metric: "SQL Server",
+              },
             ]}
             onItemClick={(item) => {
               const selected = projects.find((project) => project.id === item.id);
@@ -160,7 +171,18 @@ export default function Projects() {
                   gradient: "linear-gradient(145deg,#17162f 0%,#20244b 48%,#101522 100%)",
                   visual: "sales",
                   metric: "Content insights",
-                },
+              },
+              {
+                id: additionalProjects[4].id,
+                title: additionalProjects[4].title,
+                subtitle: additionalProjects[4].stack.join(" · "),
+                handle: "SQL exploratory analysis",
+                location: "SQL Server · Business Analysis",
+                borderColor: "#22d3ee",
+                gradient: "linear-gradient(145deg,#13232b 0%,#1e3650 48%,#101820 100%)",
+                visual: "ev",
+                metric: "SQL EDA",
+              },
               ]}
               onItemClick={(item) => {
                 const selected = additionalProjects.find((project) => project.id === item.id);
