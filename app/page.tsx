@@ -4,6 +4,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import OnlineProfiles from "@/components/OnlineProfiles";
 import Skills from "@/components/Skills";
 import Certifications from "@/components/Certifications";
 import Education from "@/components/Education";
@@ -24,6 +25,7 @@ export default function Home() {
         <SectionReveal><About /></SectionReveal>
         <Skills />
         <SectionReveal><Projects /></SectionReveal>
+        <SectionReveal><OnlineProfiles /></SectionReveal>
         <SectionReveal><Certifications /></SectionReveal>
         <SectionReveal><Education /></SectionReveal>
         <SectionReveal><Contact /></SectionReveal>
