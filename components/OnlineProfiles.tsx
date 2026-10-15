@@ -1,6 +1,16 @@
 "use client";
 
-import { BarChart3, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  BarChart3,
+  BookOpen,
+  BrainCircuit,
+  Code2,
+  Database,
+  Github,
+  Linkedin,
+  Trophy,
+} from "lucide-react";
 import { profile } from "@/lib/data";
 
 const onlineProfiles = [
@@ -28,6 +38,46 @@ const onlineProfiles = [
     icon: BarChart3,
     accent: "group-hover:text-cyan-300",
   },
+  {
+    name: "LeetCode",
+    description: "SQL challenges and coding practice",
+    href: "https://leetcode.com/u/bhaskar_nakka/",
+    label: "View coding profile",
+    icon: Code2,
+    accent: "group-hover:text-amber-300",
+  },
+  {
+    name: "HackerRank",
+    description: "Technical skills and coding challenges",
+    href: "https://www.hackerrank.com/profile/bn7740401",
+    label: "View skills profile",
+    icon: Trophy,
+    accent: "group-hover:text-emerald-300",
+  },
+  {
+    name: "StrataScratch",
+    description: "Real-world SQL and data interview practice",
+    href: "https://platform.stratascratch.com/user/Bhaskarnb",
+    label: "Explore SQL practice",
+    icon: Database,
+    accent: "group-hover:text-cyan-300",
+  },
+  {
+    name: "Medium",
+    description: "Articles, ideas, and technical writing",
+    href: "https://medium.com/@bhaskar-nakka",
+    label: "Read my articles",
+    icon: BookOpen,
+    accent: "group-hover:text-zinc-100",
+  },
+  {
+    name: "DataLemur",
+    description: "SQL interview questions and data analytics practice",
+    href: "https://datalemur.com/profile",
+    label: "Practice SQL",
+    icon: BrainCircuit,
+    accent: "group-hover:text-fuchsia-300",
+  },
 ];
 
 export default function OnlineProfiles() {
@@ -43,7 +93,7 @@ export default function OnlineProfiles() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">
-          {onlineProfiles.map((item, index) => {
+          {onlineProfiles.map((item) => {
             const Icon = item.icon;
             return (
               <a
