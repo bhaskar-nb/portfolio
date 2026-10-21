@@ -289,18 +289,20 @@ export default function Projects() {
                     <p className="mt-3 text-sm leading-6 text-zinc-300">{active.evidence}</p>
                   </div>
 
-                  <div>
-                    <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
-                      <ListChecks size={16} className="text-violet-300" aria-hidden="true" /> What the analysis covers
+                  {active.features && active.features.length > 0 && (
+                    <div>
+                      <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                        <ListChecks size={16} className="text-violet-300" aria-hidden="true" /> What the analysis covers
+                      </div>
+                      <ul className="grid gap-2 sm:grid-cols-2">
+                        {active.features.map((feature) => (
+                          <li key={feature} className="rounded-lg border border-zinc-700/70 bg-zinc-800/35 px-3 py-2.5 text-sm leading-5 text-zinc-400">
+                            <span className="mr-2 text-violet-300" aria-hidden="true">▸</span>{feature}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <ul className="grid gap-2 sm:grid-cols-2">
-                      {active.features.map((feature) => (
-                        <li key={feature} className="rounded-lg border border-zinc-700/70 bg-zinc-800/35 px-3 py-2.5 text-sm leading-5 text-zinc-400">
-                          <span className="mr-2 text-violet-300" aria-hidden="true">▸</span>{feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  )}
 
                   <div>
                     <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-white">
