@@ -210,10 +210,10 @@ export default function Projects() {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               onClick={(event) => event.stopPropagation()}
-              className="w-full max-w-5xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#090a12]/95 shadow-[0_30px_120px_-30px_rgba(139,92,246,0.3)] backdrop-blur-2xl"
+              className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#090a12]/95 shadow-[0_30px_100px_-30px_rgba(139,92,246,0.28)] backdrop-blur-2xl"
             >
               <div
-                className="relative flex min-h-56 items-end overflow-hidden border-b border-white/10 p-6 sm:min-h-64 sm:p-10"
+                className="relative flex min-h-44 items-end overflow-hidden border-b border-white/10 p-5 sm:min-h-48 sm:p-8"
                 style={{
                   background:
                     active?.id === "sql-data-warehouse-project"
@@ -256,11 +256,11 @@ export default function Projects() {
               </div>
 
               {active ? (
-                <div className="max-h-[62vh] overflow-y-auto px-6 py-7 sm:px-10 sm:py-10">
-                  <section className="grid gap-8 pb-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(230px,0.65fr)] lg:gap-12">
+                <div className="max-h-[68vh] overflow-y-auto px-5 py-6 sm:px-8 sm:py-8">
+                  <section className="grid gap-6 pb-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(210px,0.65fr)] lg:gap-9">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / 01</div>
-                      <p className="mt-4 max-w-3xl text-base leading-8 text-zinc-200 sm:text-lg sm:leading-9">
+                      <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-200 sm:text-base sm:leading-7">
                         {active.summary}
                       </p>
                     </div>
@@ -278,24 +278,24 @@ export default function Projects() {
                     </aside>
                   </section>
 
-                  <section className="grid gap-8 py-8 lg:grid-cols-2 lg:gap-12">
+                  <section className="grid gap-6 py-6 lg:grid-cols-2 lg:gap-9">
                     <div>
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs text-cyan-200/70">02</span>
                         <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">The question</h3>
                       </div>
-                      <p className="mt-4 text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">{active.challenges}</p>
+                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.challenges}</p>
                     </div>
                     <div>
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs text-violet-200/70">03</span>
                         <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">The approach</h3>
                       </div>
-                      <p className="mt-4 text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">{active.approach}</p>
+                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.approach}</p>
                     </div>
                   </section>
 
-                  <section className="relative overflow-hidden py-8 sm:py-10">
+                  <section className="relative overflow-hidden py-6 sm:py-7">
                     <div className="pointer-events-none absolute -right-10 top-6 h-36 w-36 rounded-full bg-cyan-400/[0.08] blur-3xl" />
                     <div className="relative grid gap-4 sm:grid-cols-[110px_minmax(0,1fr)] sm:gap-7">
                       <div>
@@ -304,19 +304,19 @@ export default function Projects() {
                       </div>
                       <div>
                         <h3 className="font-display text-2xl tracking-tight text-white sm:text-3xl">What the data shows</h3>
-                        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-200 sm:text-base sm:leading-8">{active.evidence}</p>
+                        <p className="mt-3 max-w-4xl text-sm leading-6 text-zinc-200">{active.evidence}</p>
                       </div>
                     </div>
                   </section>
 
                   {active.features && active.features.length > 0 && (
-                    <section className="py-8">
+                    <section className="py-6">
                       <div className="mb-5 flex items-center gap-3">
                         <span className="font-mono text-xs text-violet-200/70">05</span>
                         <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">Inside the analysis</h3>
                       </div>
                       <ul className="grid gap-x-8 sm:grid-cols-2">
-                        {active.features.map((feature, index) => (
+                        {active.features.slice(0, 4).map((feature, index) => (
                           <li key={feature} className="flex gap-4 border-t border-white/[0.09] py-4 text-sm leading-6 text-zinc-300">
                             <span className="shrink-0 font-mono text-[10px] text-violet-200/70">{String(index + 1).padStart(2, "0")}</span>
                             <span>{feature}</span>
@@ -332,14 +332,14 @@ export default function Projects() {
                         <Lightbulb size={17} className="text-violet-200" aria-hidden="true" />
                         <h3 className="font-display text-xl tracking-tight text-white">What I learned</h3>
                       </div>
-                      <p className="mt-4 text-sm leading-7 text-zinc-300">{active.learnings}</p>
+                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.learnings}</p>
                     </div>
                     <div className="lg:pl-2">
                       <div className="flex items-center gap-3">
                         <Target size={17} className="text-cyan-200" aria-hidden="true" />
                         <h3 className="font-display text-xl tracking-tight text-white">Why it matters</h3>
                       </div>
-                      <p className="mt-4 text-sm leading-7 text-zinc-300">{active.recommendation}</p>
+                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.recommendation}</p>
                     </div>
                   </section>
 
@@ -356,8 +356,8 @@ export default function Projects() {
                   </div>
                 </div>
               ) : (
-                <div className="max-h-[62vh] overflow-y-auto px-6 py-7 sm:px-10 sm:py-10">
-                  <section className="grid gap-8 pb-8 sm:grid-cols-[minmax(0,1fr)_220px] sm:gap-12">
+                <div className="max-h-[68vh] overflow-y-auto px-5 py-6 sm:px-8 sm:py-8">
+                  <section className="grid gap-6 pb-6 sm:grid-cols-[minmax(0,1fr)_200px] sm:gap-9">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / Supporting work</div>
                       <p className="mt-4 text-base leading-8 text-zinc-200">{activeAdditional?.summary}</p>
