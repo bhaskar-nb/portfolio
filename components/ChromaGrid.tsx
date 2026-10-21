@@ -20,123 +20,98 @@ type ChromaGridProps = {
   radius?: number;
 };
 
-export default function ChromaGrid({ items, onItemClick, radius = 260 }: ChromaGridProps) {
+export default function ChromaGrid({ items, onItemClick }: ChromaGridProps) {
   const rootRef = useRef<HTMLDivElement>(null);
-  const fadeRef = useRef<HTMLDivElement>(null);
-  const target = useRef({ x: 0, y: 0 });
-  const current = useRef({ x: 0, y: 0 });
-  const frame = useRef<number | null>(null);
 
   useEffect(() => {
     const el = rootRef.current;
     if (!el) return;
 
-    const rect = el.getBoundingClientRect();
-    target.current = { x: rect.width / 2, y: rect.height / 2 };
-    current.current = { ...target.current };
-
-    const animate = () => {
-      current.current.x += (target.current.x - current.current.x) * 0.12;
-      current.current.y += (target.current.y - current.current.y) * 0.12;
-      el.style.setProperty("--x", `${current.current.x}px`);
-      el.style.setProperty("--y", `${current.current.y}px`);
-      frame.current = requestAnimationFrame(animate);
+    let frame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    const onMove = (event: PointerEvent) => {
+      const rect = el.getBoundingClientRect();
+      pointerX = event.clientX - rect.left;
+      pointerY = event.clientY - rect.top;
+      el.style.setProperty("--pointer-x", `${pointerX}px`);
+      el.style.setProperty("--pointer-y", `${pointerY}px`);
     };
-
-    frame.current = requestAnimationFrame(animate);
+    el.addEventListener("pointermove", onMove);
+    const animate = () => {
+      el.style.setProperty("--drift", `${Math.sin(Date.now() / 1800) * 5}px`);
+      frame = requestAnimationFrame(animate);
+    };
+    frame = requestAnimationFrame(animate);
     return () => {
-      if (frame.current) cancelAnimationFrame(frame.current);
+      el.removeEventListener("pointermove", onMove);
+      cancelAnimationFrame(frame);
     };
   }, []);
 
-  const handleMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    target.current = {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    };
-    if (fadeRef.current) fadeRef.current.style.opacity = "0";
-  };
-
-  const handleLeave = () => {
-    if (fadeRef.current) fadeRef.current.style.opacity = "1";
-  };
-
-  const handleCardMove = (event: React.PointerEvent<HTMLElement>) => {
-    const card = event.currentTarget;
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
-    card.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
-  };
-
   return (
-    <div
-      ref={rootRef}
-      className="chroma-grid"
-      style={{ "--r": `${radius}px` } as React.CSSProperties}
-      onPointerMove={handleMove}
-      onPointerLeave={handleLeave}
-    >
+    <div ref={rootRef} className="project-universe" aria-label="Interactive project universe">
+      <div className="universe-orbit universe-orbit-one" />
+      <div className="universe-orbit universe-orbit-two" />
+      <div className="universe-core" aria-hidden="true">
+        <span className="universe-core-kicker">EXPLORE THE</span>
+        <span className="universe-core-title">PROJECT<br />UNIVERSE</span>
+        <span className="universe-core-caption">Ideas · Data · Decisions</span>
+        <span className="universe-core-pulse" />
+      </div>
+
       {items.map((item, index) => (
         <button
           key={item.id}
           type="button"
-          className="chroma-card"
-          onPointerMove={handleCardMove}
+          className="universe-node"
           onClick={() => onItemClick(item)}
-          style={
-            {
-              "--card-border": item.borderColor,
-              "--card-gradient": item.gradient,
-            } as React.CSSProperties
-          }
+          style={{
+            "--node-color": item.borderColor,
+            "--node-gradient": item.gradient,
+            "--node-index": index,
+          } as React.CSSProperties}
+          aria-label={`Open case study: ${item.title}`}
         >
-          <div className="chroma-visual">
-            <div className="chroma-visual-grid" />
-            <div className={`chroma-visual-art chroma-visual-${item.visual}`}>
+          <span className="universe-node-orbit" aria-hidden="true" />
+          <span className="universe-sphere" aria-hidden="true">
+            <span className="universe-sphere-grid" />
+            <span className={`universe-art universe-art-${item.visual}`}>
               {item.visual === "sales" && (
                 <>
-                  <div className="mini-bars"><i /><i /><i /><i /><i /></div>
-                  <span className="mini-line" />
+                  <span className="universe-bars"><i /><i /><i /><i /><i /></span>
+                  <span className="universe-trend" />
                 </>
               )}
               {item.visual === "disaster" && (
                 <>
-                  <div className="mini-globe"><span /></div>
-                  <div className="mini-points"><i /><i /><i /><i /></div>
+                  <span className="universe-globe"><i /></span>
+                  <span className="universe-stars"><i /><i /><i /><i /></span>
                 </>
               )}
               {item.visual === "hr" && (
                 <>
-                  <div className="mini-donut" />
-                  <div className="mini-bars"><i /><i /><i /><i /></div>
+                  <span className="universe-donut" />
+                  <span className="universe-bars universe-bars-small"><i /><i /><i /><i /></span>
                 </>
               )}
               {item.visual === "ev" && (
                 <>
-                  <div className="mini-route"><span /><span /><span /></div>
-                  <div className="mini-bars"><i /><i /><i /></div>
+                  <span className="universe-route"><i /><i /><i /></span>
+                  <span className="universe-bars universe-bars-small"><i /><i /><i /></span>
                 </>
               )}
-            </div>
-            <span className="chroma-index">0{index + 1}</span>
-            <span className="chroma-metric">{item.metric}</span>
-          </div>
-
-          <div className="chroma-info">
-            <div>
-              <h3>{item.title}</h3>
-              {item.handle && <span className="chroma-handle">{item.handle}</span>}
-              <p>{item.subtitle}</p>
-              {item.location && <span className="chroma-location">{item.location}</span>}
-            </div>
-            <span className="chroma-arrow">↗</span>
-          </div>
+            </span>
+            <span className="universe-node-number">0{index + 1}</span>
+          </span>
+          <span className="universe-node-copy">
+            <span className="universe-node-title">{item.title}</span>
+            <span className="universe-node-metric">{item.metric}</span>
+            <span className="universe-node-stack">{item.location ?? item.subtitle}</span>
+          </span>
+          <span className="universe-node-hint">EXPLORE ↗</span>
         </button>
       ))}
-
-      <div className="chroma-overlay" />
-      <div ref={fadeRef} className="chroma-fade" />
     </div>
   );
 }
