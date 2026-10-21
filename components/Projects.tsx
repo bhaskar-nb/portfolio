@@ -227,7 +227,8 @@ export default function Projects() {
                             : "linear-gradient(145deg,#17162f 0%,#262040 48%,#101018 100%)",
                 }}
               >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_15%,rgba(167,139,250,0.34),transparent_38%),radial-gradient(ellipse_at_15%_90%,rgba(34,211,238,0.2),transparent_42%)]" />\n                <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:34px_34px] [mask-image:linear-gradient(to_top,black,transparent)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_15%,rgba(167,139,250,0.34),transparent_38%),radial-gradient(ellipse_at_15%_90%,rgba(34,211,238,0.2),transparent_42%)]" />
+                <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:34px_34px] [mask-image:linear-gradient(to_top,black,transparent)]" />
                 <div className="relative z-10 max-w-3xl">
                   <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.24em] text-violet-200/80">
                     {active ? "Case study / Featured project" : "Case study / Additional project"}
