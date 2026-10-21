@@ -86,7 +86,7 @@ export default function Projects() {
                 borderColor: "#c4b5fd",
                 gradient: "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)",
                 visual: "hr",
-                metric: "Synthetic dataset",
+                metric: "$164.42M sales",
               },
               {
                 id: projects[3].id,
