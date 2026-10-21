@@ -156,14 +156,16 @@ export default function CaseStudyOverlay() {
                     <p className="mt-3 text-sm leading-6 text-ink-200 sm:text-base">{active.evidence}</p>
                   </section>
 
-                  <section>
-                    <div className="mb-3 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-ink-300"><Layers3 size={14} className="text-gold" aria-hidden="true" /> Analysis coverage</div>
-                    <ul className="grid gap-2 sm:grid-cols-2">
-                      {active.features.map((feature) => (
-                        <li key={feature} className="rounded-xl border border-base-500/60 bg-base-900/25 px-4 py-3 text-sm leading-5 text-ink-400"><span className="mr-2 text-gold">▸</span>{feature}</li>
-                      ))}
-                    </ul>
-                  </section>
+                  {active.features && active.features.length > 0 && (
+                    <section>
+                      <div className="mb-3 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-ink-300"><Layers3 size={14} className="text-gold" aria-hidden="true" /> Analysis coverage</div>
+                      <ul className="grid gap-2 sm:grid-cols-2">
+                        {active.features.map((feature) => (
+                          <li key={feature} className="rounded-xl border border-base-500/60 bg-base-900/25 px-4 py-3 text-sm leading-5 text-ink-400"><span className="mr-2 text-gold">▸</span>{feature}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-2xl border border-base-500/70 bg-base-900/35 p-5">
