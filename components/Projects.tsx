@@ -210,7 +210,7 @@ export default function Projects() {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               onClick={(event) => event.stopPropagation()}
-              className="w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-[#090a12]/95 shadow-[0_30px_120px_-30px_rgba(139,92,246,0.45)] backdrop-blur-2xl"
+              className="w-full max-w-5xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#090a12]/95 shadow-[0_30px_120px_-30px_rgba(139,92,246,0.3)] backdrop-blur-2xl"
             >
               <div
                 className="relative flex min-h-56 items-end overflow-hidden border-b border-white/10 p-6 sm:min-h-64 sm:p-10"
@@ -229,7 +229,7 @@ export default function Projects() {
               >
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_15%,rgba(167,139,250,0.34),transparent_38%),radial-gradient(ellipse_at_15%_90%,rgba(34,211,238,0.2),transparent_42%)]" />\n                <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:34px_34px] [mask-image:linear-gradient(to_top,black,transparent)]" />
                 <div className="relative z-10 max-w-3xl">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-violet-100/90">
+                  <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.24em] text-violet-200/80">
                     {active ? "Case study / Featured project" : "Case study / Additional project"}
                   </span>
                   <div className="mt-4 flex flex-wrap items-end gap-3 sm:gap-4">
@@ -237,7 +237,7 @@ export default function Projects() {
                       {active?.title ?? activeAdditional?.title}
                     </h2>
                     {active && (
-                      <span className="rounded-full border border-cyan-200/20 bg-cyan-300/[0.09] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-cyan-100">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-cyan-100/80">
                         {active.id === "sql-data-warehouse-project" ? "Bronze → Silver → Gold" : active.id === "global-startup-analytics" ? "49,438 records" : active.id === "sales-performance-dashboard" ? "$164.42M sales" : active.id === "executive-sales-performance-dashboard" ? "$645.22K revenue" : "2003–2023 World Cups"}
                       </span>
                     )}
@@ -255,19 +255,19 @@ export default function Projects() {
               </div>
 
               {active ? (
-                <div className="max-h-[62vh] overflow-y-auto p-5 sm:p-9">
-                  <section className="grid gap-7 border-b border-white/10 pb-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(230px,0.65fr)] lg:gap-10">
+                <div className="max-h-[62vh] overflow-y-auto px-6 py-7 sm:px-10 sm:py-10">
+                  <section className="grid gap-8 pb-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(230px,0.65fr)] lg:gap-12">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / 01</div>
                       <p className="mt-4 max-w-3xl text-base leading-8 text-zinc-200 sm:text-lg sm:leading-9">
                         {active.summary}
                       </p>
                     </div>
-                    <aside className="self-start border-l border-violet-300/30 pl-5 sm:pl-6">
+                    <aside className="self-start lg:pl-2">
                       <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Built with</div>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {active.stack.map((stack) => (
-                          <span key={stack} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-zinc-300">
+                          <span key={stack} className="text-xs text-zinc-300">
                             {stack}
                           </span>
                         ))}
@@ -277,7 +277,7 @@ export default function Projects() {
                     </aside>
                   </section>
 
-                  <section className="grid gap-7 border-b border-white/10 py-8 lg:grid-cols-2 lg:gap-10">
+                  <section className="grid gap-8 py-8 lg:grid-cols-2 lg:gap-12">
                     <div>
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs text-cyan-200/70">02</span>
@@ -294,7 +294,7 @@ export default function Projects() {
                     </div>
                   </section>
 
-                  <section className="relative overflow-hidden border-b border-white/10 py-8 sm:py-10">
+                  <section className="relative overflow-hidden py-8 sm:py-10">
                     <div className="pointer-events-none absolute -right-10 top-6 h-36 w-36 rounded-full bg-cyan-400/[0.08] blur-3xl" />
                     <div className="relative grid gap-4 sm:grid-cols-[110px_minmax(0,1fr)] sm:gap-7">
                       <div>
@@ -309,7 +309,7 @@ export default function Projects() {
                   </section>
 
                   {active.features && active.features.length > 0 && (
-                    <section className="border-b border-white/10 py-8">
+                    <section className="py-8">
                       <div className="mb-5 flex items-center gap-3">
                         <span className="font-mono text-xs text-violet-200/70">05</span>
                         <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">Inside the analysis</h3>
@@ -333,7 +333,7 @@ export default function Projects() {
                       </div>
                       <p className="mt-4 text-sm leading-7 text-zinc-300">{active.learnings}</p>
                     </div>
-                    <div className="border-l border-cyan-200/25 pl-5 sm:pl-6">
+                    <div className="lg:pl-2">
                       <div className="flex items-center gap-3">
                         <Target size={17} className="text-cyan-200" aria-hidden="true" />
                         <h3 className="font-display text-xl tracking-tight text-white">Why it matters</h3>
@@ -342,7 +342,7 @@ export default function Projects() {
                     </div>
                   </section>
 
-                  <div className="flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
+                  <div className="flex flex-wrap items-center gap-3 pt-6">
                     <a href={active.github} target="_blank" rel="noreferrer" className="btn-secondary">
                       <Github size={15} aria-hidden="true" /> View source
                     </a>
@@ -355,17 +355,17 @@ export default function Projects() {
                   </div>
                 </div>
               ) : (
-                <div className="max-h-[62vh] overflow-y-auto p-5 sm:p-9">
-                  <section className="grid gap-7 border-b border-white/10 pb-8 sm:grid-cols-[minmax(0,1fr)_220px] sm:gap-10">
+                <div className="max-h-[62vh] overflow-y-auto px-6 py-7 sm:px-10 sm:py-10">
+                  <section className="grid gap-8 pb-8 sm:grid-cols-[minmax(0,1fr)_220px] sm:gap-12">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / Supporting work</div>
                       <p className="mt-4 text-base leading-8 text-zinc-200">{activeAdditional?.summary}</p>
                     </div>
-                    <aside className="border-l border-violet-300/30 pl-5">
+                    <aside className="sm:pl-2">
                       <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Technology</div>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {activeAdditional?.stack.map((stack) => (
-                          <span key={stack} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-zinc-300">{stack}</span>
+                          <span key={stack} className="text-xs text-zinc-300">{stack}</span>
                         ))}
                       </div>
                       {activeAdditional?.category && (
