@@ -60,29 +60,29 @@ export default function Projects() {
                 title: projects[0].title,
                 subtitle: projects[0].stack.join(" · "),
                 handle: "Flagship analytics case study",
-                location: "Tableau · Sales Analytics",
+                location: "SQL Server · Data Warehouse",
                 borderColor: "#22d3ee",
                 gradient: "linear-gradient(145deg,#17162f 0%,#20244b 48%,#101522 100%)",
                 visual: "sales",
-                metric: "$164.42M sales",
+                metric: "Bronze → Silver → Gold",
               },
               {
                 id: projects[1].id,
                 title: projects[1].title,
                 subtitle: projects[1].stack.join(" · "),
                 handle: "Selected analytics project",
-                location: "Tableau · Global Analysis",
+                location: "Python · Startup Funding",
                 borderColor: "#a78bfa",
                 gradient: "linear-gradient(145deg,#1b1834 0%,#292653 48%,#11111f 100%)",
                 visual: "disaster",
-                metric: "15,090 events",
+                metric: "49,438 records",
               },
               {
                 id: projects[2].id,
                 title: projects[2].title,
                 subtitle: projects[2].stack.join(" · "),
                 handle: "Selected analytics project",
-                location: "Tableau · HR Analytics",
+                location: "Tableau · Sales Analytics",
                 borderColor: "#c4b5fd",
                 gradient: "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)",
                 visual: "hr",
@@ -93,22 +93,22 @@ export default function Projects() {
                 title: projects[3].title,
                 subtitle: projects[3].stack.join(" · "),
                 handle: "Selected analytics project",
-                location: "Tableau · EV Analytics",
+                location: "Power BI · Sales Performance",
                 borderColor: "#22d3ee",
                 gradient: "linear-gradient(145deg,#13232b 0%,#1e3650 48%,#101820 100%)",
                 visual: "ev",
-                metric: "150,413 records",
+                metric: "$645.22K revenue",
               },
               {
                 id: projects[4].id,
                 title: projects[4].title,
                 subtitle: projects[4].stack.join(" · "),
                 handle: "End-to-end SQL analytics",
-                location: "SQL Server · Data Warehouse",
+                location: "Power BI · Cricket Analytics",
                 borderColor: "#c4b5fd",
                 gradient: "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)",
                 visual: "hr",
-                metric: "SQL Server",
+                metric: "2003–2023 World Cups",
               },
             ]}
             onItemClick={(item) => {
@@ -133,55 +133,55 @@ export default function Projects() {
                   title: additionalProjects[0].title,
                   subtitle: additionalProjects[0].stack.join(" · "),
                   handle: "Operational analytics",
-                  location: "Dashboard · Emergency Care",
+                  location: "SQL Server · Business Analysis",
                   borderColor: "#22d3ee",
                   gradient: "linear-gradient(145deg,#13232b 0%,#1e3650 48%,#101820 100%)",
                   visual: "ev",
-                  metric: "Emergency analytics",
+                  metric: "SQL EDA",
                 },
                 {
                   id: additionalProjects[1].id,
                   title: additionalProjects[1].title,
                   subtitle: additionalProjects[1].stack.join(" · "),
                   handle: "End-to-end workflow",
-                  location: "Data Analytics · Internship",
+                  location: "Excel · Healthcare Analytics",
                   borderColor: "#a78bfa",
                   gradient: "linear-gradient(145deg,#1b1834 0%,#292653 48%,#11111f 100%)",
                   visual: "disaster",
-                  metric: "Internship project",
+                  metric: "Emergency analytics",
                 },
                 {
                   id: additionalProjects[2].id,
                   title: additionalProjects[2].title,
                   subtitle: additionalProjects[2].stack.join(" · "),
                   handle: "Applied machine learning",
-                  location: "Python · Machine Learning",
+                  location: "Tableau · HR Analytics",
                   borderColor: "#c4b5fd",
                   gradient: "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)",
                   visual: "hr",
-                  metric: "Prediction model",
+                  metric: "Synthetic dataset",
                 },
                 {
                   id: additionalProjects[3].id,
                   title: additionalProjects[3].title,
                   subtitle: additionalProjects[3].stack.join(" · "),
                   handle: "Visual analytics",
-                  location: "Tableau · Content Analysis",
+                  location: "Tableau · EV Analytics",
                   borderColor: "#22d3ee",
                   gradient: "linear-gradient(145deg,#17162f 0%,#20244b 48%,#101522 100%)",
                   visual: "sales",
-                  metric: "Content insights",
+                  metric: "150,413 records",
               },
               {
                 id: additionalProjects[4].id,
                 title: additionalProjects[4].title,
                 subtitle: additionalProjects[4].stack.join(" · "),
                 handle: "SQL exploratory analysis",
-                location: "SQL Server · Business Analysis",
+                location: "Tableau · Disaster Analytics",
                 borderColor: "#22d3ee",
                 gradient: "linear-gradient(145deg,#13232b 0%,#1e3650 48%,#101820 100%)",
                 visual: "ev",
-                metric: "SQL EDA",
+                metric: "15,090 events",
               },
               ]}
               onItemClick={(item) => {
@@ -216,13 +216,13 @@ export default function Projects() {
                 className="relative flex h-48 items-end overflow-hidden border-b border-violet-500/20 p-6 sm:h-56 sm:p-8"
                 style={{
                   background:
-                    active?.id === "sales-performance-dashboard"
+                    active?.id === "sql-data-warehouse-project"
                       ? "linear-gradient(145deg,#17162f 0%,#20244b 48%,#101522 100%)"
-                      : active?.id === "global-disaster-analysis"
+                      : active?.id === "global-startup-analytics"
                         ? "linear-gradient(145deg,#1b1834 0%,#292653 48%,#11111f 100%)"
-                        : active?.id === "hr-analytics-dashboard"
+                        : active?.id === "sales-performance-dashboard"
                           ? "linear-gradient(145deg,#20172f 0%,#32224a 48%,#11111f 100%)"
-                          : active?.id === "ev-adoption-dashboard"
+                          : active?.id === "executive-sales-performance-dashboard"
                             ? "linear-gradient(145deg,#13232b 0%,#1e3650 48%,#101820 100%)"
                             : "linear-gradient(145deg,#17162f 0%,#262040 48%,#101018 100%)",
                 }}
@@ -238,7 +238,7 @@ export default function Projects() {
                     </h2>
                     {active && (
                       <span className="rounded-full border border-white/15 bg-black/20 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-white/70">
-                        {active.id === "sales-performance-dashboard" ? "$164.42M sales" : active.id === "global-disaster-analysis" ? "15,090 events" : active.id === "hr-analytics-dashboard" ? "Synthetic data" : "150,413 records"}
+                        {active.id === "sql-data-warehouse-project" ? "Bronze → Silver → Gold" : active.id === "global-startup-analytics" ? "49,438 records" : active.id === "sales-performance-dashboard" ? "$164.42M sales" : active.id === "executive-sales-performance-dashboard" ? "$645.22K revenue" : "2003–2023 World Cups"}
                       </span>
                     )}
                   </div>
