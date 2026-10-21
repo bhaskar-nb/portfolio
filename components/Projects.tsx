@@ -210,10 +210,10 @@ export default function Projects() {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               onClick={(event) => event.stopPropagation()}
-              className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#090a12]/95 shadow-[0_30px_100px_-30px_rgba(139,92,246,0.28)] backdrop-blur-2xl"
+              className="w-full max-w-3xl overflow-hidden rounded-2xl border border-white/[0.08] bg-[#090a12]/95 shadow-[0_30px_90px_-30px_rgba(139,92,246,0.25)] backdrop-blur-2xl"
             >
               <div
-                className="relative flex min-h-44 items-end overflow-hidden border-b border-white/10 p-5 sm:min-h-48 sm:p-8"
+                className="relative flex min-h-32 items-end overflow-hidden border-b border-white/10 p-4 sm:min-h-36 sm:p-6"
                 style={{
                   background:
                     active?.id === "sql-data-warehouse-project"
@@ -256,11 +256,11 @@ export default function Projects() {
               </div>
 
               {active ? (
-                <div className="max-h-[68vh] overflow-y-auto px-5 py-6 sm:px-8 sm:py-8">
+                <div className="max-h-[58vh] overflow-y-auto px-4 py-5 sm:px-6 sm:py-6">
                   <section className="grid gap-6 pb-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(210px,0.65fr)] lg:gap-9">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / 01</div>
-                      <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-200 sm:text-base sm:leading-7">
+                      <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-200">
                         {active.summary}
                       </p>
                     </div>
@@ -304,7 +304,7 @@ export default function Projects() {
                       </div>
                       <div>
                         <h3 className="font-display text-2xl tracking-tight text-white sm:text-3xl">What the data shows</h3>
-                        <p className="mt-3 max-w-4xl text-sm leading-6 text-zinc-200">{active.evidence}</p>
+                        <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-200">{active.evidence}</p>
                       </div>
                     </div>
                   </section>
@@ -356,7 +356,7 @@ export default function Projects() {
                   </div>
                 </div>
               ) : (
-                <div className="max-h-[68vh] overflow-y-auto px-5 py-6 sm:px-8 sm:py-8">
+                <div className="max-h-[58vh] overflow-y-auto px-4 py-5 sm:px-6 sm:py-6">
                   <section className="grid gap-6 pb-6 sm:grid-cols-[minmax(0,1fr)_200px] sm:gap-9">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / Supporting work</div>
