@@ -47,7 +47,7 @@ export default function Projects() {
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mb-8 sm:mb-9">
-          <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+          <h2 className="font-display text-3xl font-semibold leading-tight tracking-[-0.045em] text-white sm:text-4xl">
             Projects
           </h2>
         </div>
@@ -199,7 +199,7 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 p-4 transition-opacity duration-300"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-black/80 p-3 backdrop-blur-md transition-opacity duration-300 sm:p-6"
             onClick={() => { setActive(null); setActiveAdditional(null); }}
             role="dialog"
             aria-modal="true"
@@ -210,10 +210,10 @@ export default function Projects() {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               onClick={(event) => event.stopPropagation()}
-              className="w-full max-w-3xl overflow-hidden rounded-2xl border border-violet-500/50 bg-zinc-900 shadow-2xl shadow-violet-500/20"
+              className="w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-[#090a12]/95 shadow-[0_30px_120px_-30px_rgba(139,92,246,0.45)] backdrop-blur-2xl"
             >
               <div
-                className="relative flex h-48 items-end overflow-hidden border-b border-violet-500/20 p-6 sm:h-56 sm:p-8"
+                className="relative flex min-h-56 items-end overflow-hidden border-b border-white/10 p-6 sm:min-h-64 sm:p-10"
                 style={{
                   background:
                     active?.id === "sql-data-warehouse-project"
@@ -227,17 +227,17 @@ export default function Projects() {
                             : "linear-gradient(145deg,#17162f 0%,#262040 48%,#101018 100%)",
                 }}
               >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(167,139,250,0.28),transparent_42%),radial-gradient(circle_at_20%_85%,rgba(34,211,238,0.16),transparent_38%)]" />
-                <div className="relative z-10">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-violet-200/80">
-                    {active ? "Selected analytics project" : "Additional project"}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_15%,rgba(167,139,250,0.34),transparent_38%),radial-gradient(ellipse_at_15%_90%,rgba(34,211,238,0.2),transparent_42%)]" />\n                <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:34px_34px] [mask-image:linear-gradient(to_top,black,transparent)]" />
+                <div className="relative z-10 max-w-3xl">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-violet-100/90">
+                    {active ? "Case study / Featured project" : "Case study / Additional project"}
                   </span>
-                  <div className="mt-2 flex flex-wrap items-end gap-3">
+                  <div className="mt-4 flex flex-wrap items-end gap-3 sm:gap-4">
                     <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
                       {active?.title ?? activeAdditional?.title}
                     </h2>
                     {active && (
-                      <span className="rounded-full border border-white/15 bg-black/20 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-white/70">
+                      <span className="rounded-full border border-cyan-200/20 bg-cyan-300/[0.09] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-cyan-100">
                         {active.id === "sql-data-warehouse-project" ? "Bronze → Silver → Gold" : active.id === "global-startup-analytics" ? "49,438 records" : active.id === "sales-performance-dashboard" ? "$164.42M sales" : active.id === "executive-sales-performance-dashboard" ? "$645.22K revenue" : "2003–2023 World Cups"}
                       </span>
                     )}
@@ -255,24 +255,24 @@ export default function Projects() {
               </div>
 
               {active ? (
-                <div className="flex max-h-[58vh] flex-col gap-6 overflow-y-auto p-6 sm:p-8">
+                <div className="flex max-h-[62vh] flex-col gap-7 overflow-y-auto p-5 sm:gap-8 sm:p-9">
                   <div>
-                    <div className="flex flex-wrap items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em]">
+                    <div className="flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em]">
                       <span className="text-violet-300">{active.stack.join(" · ")}</span>
                       <span className="text-zinc-600">/</span>
                       <span className="text-zinc-500">case study</span>
                     </div>
-                    <p className="mt-4 max-w-3xl text-sm leading-6 text-zinc-300 sm:text-base">
+                    <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">
                       {active.summary}
                     </p>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-xl border border-zinc-700/80 bg-zinc-800/45 p-5">
-                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white">
+                  <div className="grid gap-4 lg:grid-cols-2">
+                    <div className="group rounded-2xl border border-white/[0.09] bg-white/[0.035] p-5 transition-colors hover:border-violet-300/25 hover:bg-white/[0.055] sm:p-6">
+                      <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
                         <Target size={15} className="text-violet-300" aria-hidden="true" /> Question
                       </div>
-                      <p className="mt-3 text-sm leading-6 text-zinc-400">{active.challenges}</p>
+                      <p className="mt-3 text-sm leading-7 text-zinc-300">{active.challenges}</p>
                     </div>
                     <div className="rounded-xl border border-zinc-700/80 bg-zinc-800/45 p-5">
                       <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white">
@@ -282,21 +282,21 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-violet-500/25 bg-violet-500/[0.05] p-5">
+                  <div className="relative overflow-hidden rounded-2xl border border-violet-400/25 bg-gradient-to-br from-violet-500/[0.12] via-indigo-500/[0.06] to-cyan-400/[0.04] p-5 sm:p-6">
                     <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white">
                       <BarChart3 size={15} className="text-violet-300" aria-hidden="true" /> Evidence
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-zinc-300">{active.evidence}</p>
+                    <p className="mt-3 text-sm leading-7 text-zinc-200">{active.evidence}</p>
                   </div>
 
                   {active.features && active.features.length > 0 && (
                     <div>
-                      <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                      <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
                         <ListChecks size={16} className="text-violet-300" aria-hidden="true" /> What the analysis covers
                       </div>
-                      <ul className="grid gap-2 sm:grid-cols-2">
+                      <ul className="grid gap-3 sm:grid-cols-2">
                         {active.features.map((feature) => (
-                          <li key={feature} className="rounded-lg border border-zinc-700/70 bg-zinc-800/35 px-3 py-2.5 text-sm leading-5 text-zinc-400">
+                          <li key={feature} className="flex items-start rounded-xl border border-white/[0.07] bg-white/[0.025] px-4 py-3 text-sm leading-6 text-zinc-300 transition-colors hover:border-violet-300/20 hover:bg-white/[0.045]">
                             <span className="mr-2 text-violet-300" aria-hidden="true">▸</span>{feature}
                           </li>
                         ))}
@@ -305,13 +305,13 @@ export default function Projects() {
                   )}
 
                   <div>
-                    <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-white">
+                    <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
                       <Lightbulb size={16} className="text-violet-300" aria-hidden="true" /> Takeaway
                     </div>
-                    <p className="text-sm leading-6 text-zinc-400">{active.learnings}</p>
+                    <p className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-5 text-sm leading-7 text-zinc-300 sm:p-6">{active.learnings}</p>
                   </div>
 
-                  <div className="flex flex-wrap gap-3 border-t border-zinc-700/80 pt-5">
+                  <div className="flex flex-wrap gap-3 border-t border-white/10 pt-6">
                     <a href={active.github} target="_blank" rel="noreferrer" className="btn-secondary">
                       <Github size={15} aria-hidden="true" /> GitHub
                     </a>
@@ -323,7 +323,7 @@ export default function Projects() {
                   </div>
                 </div>
               ) : (
-                <div className="flex max-h-[58vh] flex-col gap-6 overflow-y-auto p-6 sm:p-8">
+                <div className="flex max-h-[62vh] flex-col gap-7 overflow-y-auto p-5 sm:gap-8 sm:p-9">
                   <div>
                     <div className="flex flex-wrap gap-2">
                       {activeAdditional?.stack.map((stack) => (
