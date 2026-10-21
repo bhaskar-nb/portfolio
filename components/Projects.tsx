@@ -255,101 +255,141 @@ export default function Projects() {
               </div>
 
               {active ? (
-                <div className="flex max-h-[62vh] flex-col gap-7 overflow-y-auto p-5 sm:gap-8 sm:p-9">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em]">
-                      <span className="text-violet-300">{active.stack.join(" · ")}</span>
-                      <span className="text-zinc-600">/</span>
-                      <span className="text-zinc-500">case study</span>
+                <div className="max-h-[62vh] overflow-y-auto p-5 sm:p-9">
+                  <section className="grid gap-7 border-b border-white/10 pb-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(230px,0.65fr)] lg:gap-10">
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / 01</div>
+                      <p className="mt-4 max-w-3xl text-base leading-8 text-zinc-200 sm:text-lg sm:leading-9">
+                        {active.summary}
+                      </p>
                     </div>
-                    <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">
-                      {active.summary}
-                    </p>
-                  </div>
-
-                  <div className="grid gap-4 lg:grid-cols-2">
-                    <div className="group rounded-2xl border border-white/[0.09] bg-white/[0.035] p-5 transition-colors hover:border-violet-300/25 hover:bg-white/[0.055] sm:p-6">
-                      <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
-                        <Target size={15} className="text-violet-300" aria-hidden="true" /> Question
+                    <aside className="self-start border-l border-violet-300/30 pl-5 sm:pl-6">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Built with</div>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {active.stack.map((stack) => (
+                          <span key={stack} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-zinc-300">
+                            {stack}
+                          </span>
+                        ))}
                       </div>
-                      <p className="mt-3 text-sm leading-7 text-zinc-300">{active.challenges}</p>
-                    </div>
-                    <div className="rounded-xl border border-zinc-700/80 bg-zinc-800/45 p-5">
-                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white">
-                        <Workflow size={15} className="text-violet-300" aria-hidden="true" /> Approach
-                      </div>
-                      <p className="mt-3 text-sm leading-6 text-zinc-400">{active.approach}</p>
-                    </div>
-                  </div>
+                      <div className="mt-6 font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Dataset</div>
+                      <p className="mt-2 text-sm leading-6 text-zinc-400">{active.dataset}</p>
+                    </aside>
+                  </section>
 
-                  <div className="relative overflow-hidden rounded-2xl border border-violet-400/25 bg-gradient-to-br from-violet-500/[0.12] via-indigo-500/[0.06] to-cyan-400/[0.04] p-5 sm:p-6">
-                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white">
-                      <BarChart3 size={15} className="text-violet-300" aria-hidden="true" /> Evidence
+                  <section className="grid gap-7 border-b border-white/10 py-8 lg:grid-cols-2 lg:gap-10">
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-xs text-cyan-200/70">02</span>
+                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">The question</h3>
+                      </div>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">{active.challenges}</p>
                     </div>
-                    <p className="mt-3 text-sm leading-7 text-zinc-200">{active.evidence}</p>
-                  </div>
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-xs text-violet-200/70">03</span>
+                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">The approach</h3>
+                      </div>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">{active.approach}</p>
+                    </div>
+                  </section>
+
+                  <section className="relative overflow-hidden border-b border-white/10 py-8 sm:py-10">
+                    <div className="pointer-events-none absolute -right-10 top-6 h-36 w-36 rounded-full bg-cyan-400/[0.08] blur-3xl" />
+                    <div className="relative grid gap-4 sm:grid-cols-[110px_minmax(0,1fr)] sm:gap-7">
+                      <div>
+                        <span className="font-mono text-xs text-cyan-200/70">04 / EVIDENCE</span>
+                        <BarChart3 size={22} className="mt-4 text-cyan-200" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-2xl tracking-tight text-white sm:text-3xl">What the data shows</h3>
+                        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-200 sm:text-base sm:leading-8">{active.evidence}</p>
+                      </div>
+                    </div>
+                  </section>
 
                   {active.features && active.features.length > 0 && (
-                    <div>
-                      <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
-                        <ListChecks size={16} className="text-violet-300" aria-hidden="true" /> What the analysis covers
+                    <section className="border-b border-white/10 py-8">
+                      <div className="mb-5 flex items-center gap-3">
+                        <span className="font-mono text-xs text-violet-200/70">05</span>
+                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">Inside the analysis</h3>
                       </div>
-                      <ul className="grid gap-3 sm:grid-cols-2">
-                        {active.features.map((feature) => (
-                          <li key={feature} className="flex items-start rounded-xl border border-white/[0.07] bg-white/[0.025] px-4 py-3 text-sm leading-6 text-zinc-300 transition-colors hover:border-violet-300/20 hover:bg-white/[0.045]">
-                            <span className="mr-2 text-violet-300" aria-hidden="true">▸</span>{feature}
+                      <ul className="grid gap-x-8 sm:grid-cols-2">
+                        {active.features.map((feature, index) => (
+                          <li key={feature} className="flex gap-4 border-t border-white/[0.09] py-4 text-sm leading-6 text-zinc-300">
+                            <span className="shrink-0 font-mono text-[10px] text-violet-200/70">{String(index + 1).padStart(2, "0")}</span>
+                            <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
-                    </div>
+                    </section>
                   )}
 
-                  <div>
-                    <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
-                      <Lightbulb size={16} className="text-violet-300" aria-hidden="true" /> Takeaway
+                  <section className="grid gap-7 py-8 lg:grid-cols-2 lg:gap-10">
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <Lightbulb size={17} className="text-violet-200" aria-hidden="true" />
+                        <h3 className="font-display text-xl tracking-tight text-white">What I learned</h3>
+                      </div>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300">{active.learnings}</p>
                     </div>
-                    <p className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-5 text-sm leading-7 text-zinc-300 sm:p-6">{active.learnings}</p>
-                  </div>
+                    <div className="border-l border-cyan-200/25 pl-5 sm:pl-6">
+                      <div className="flex items-center gap-3">
+                        <Target size={17} className="text-cyan-200" aria-hidden="true" />
+                        <h3 className="font-display text-xl tracking-tight text-white">Why it matters</h3>
+                      </div>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300">{active.recommendation}</p>
+                    </div>
+                  </section>
 
-                  <div className="flex flex-wrap gap-3 border-t border-white/10 pt-6">
+                  <div className="flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
                     <a href={active.github} target="_blank" rel="noreferrer" className="btn-secondary">
-                      <Github size={15} aria-hidden="true" /> GitHub
+                      <Github size={15} aria-hidden="true" /> View source
                     </a>
                     {active.demo && (
                       <a href={active.demo} target="_blank" rel="noreferrer" className="btn-primary">
-                        <ExternalLink size={15} aria-hidden="true" /> Live dashboard
+                        <ExternalLink size={15} aria-hidden="true" /> Explore live project
                       </a>
                     )}
+                    <span className="ml-auto hidden font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600 sm:block">End of case study</span>
                   </div>
                 </div>
               ) : (
-                <div className="flex max-h-[62vh] flex-col gap-7 overflow-y-auto p-5 sm:gap-8 sm:p-9">
-                  <div>
-                    <div className="flex flex-wrap gap-2">
-                      {activeAdditional?.stack.map((stack) => (
-                        <span key={stack} className="rounded-full border border-zinc-700 bg-zinc-800/60 px-3 py-1 font-mono text-[9px] text-zinc-400">
-                          {stack}
-                        </span>
-                      ))}
+                <div className="max-h-[62vh] overflow-y-auto p-5 sm:p-9">
+                  <section className="grid gap-7 border-b border-white/10 pb-8 sm:grid-cols-[minmax(0,1fr)_220px] sm:gap-10">
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / Supporting work</div>
+                      <p className="mt-4 text-base leading-8 text-zinc-200">{activeAdditional?.summary}</p>
                     </div>
-                    <p className="mt-5 text-sm leading-6 text-zinc-300 sm:text-base">{activeAdditional?.summary}</p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-3 border-t border-zinc-700/80 pt-5">
+                    <aside className="border-l border-violet-300/30 pl-5">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Technology</div>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {activeAdditional?.stack.map((stack) => (
+                          <span key={stack} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-zinc-300">{stack}</span>
+                        ))}
+                      </div>
+                      {activeAdditional?.category && (
+                        <>
+                          <div className="mt-6 font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Category</div>
+                          <p className="mt-2 text-sm leading-6 text-zinc-400">{activeAdditional.category}</p>
+                        </>
+                      )}
+                    </aside>
+                  </section>
+                  <div className="flex flex-wrap items-center gap-3 pt-6">
                     {activeAdditional?.github && (
                       <a href={activeAdditional.github} target="_blank" rel="noreferrer" className="btn-secondary">
-                        <Github size={15} aria-hidden="true" /> GitHub
+                        <Github size={15} aria-hidden="true" /> View source
                       </a>
                     )}
                     {activeAdditional?.demo && (
                       <a href={activeAdditional.demo} target="_blank" rel="noreferrer" className="btn-primary">
-                        <ExternalLink size={15} aria-hidden="true" /> View dashboard
+                        <ExternalLink size={15} aria-hidden="true" /> Explore live project
                       </a>
                     )}
                   </div>
                 </div>
               )}
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
