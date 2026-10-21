@@ -260,7 +260,7 @@ export default function Projects() {
                   <section className="grid gap-6 pb-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(210px,0.65fr)] lg:gap-9">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / 01</div>
-                      <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-200">
+                      <p className="mt-3 max-w-3xl text-xs leading-5 text-zinc-200">
                         {active.summary}
                       </p>
                     </div>
@@ -274,7 +274,7 @@ export default function Projects() {
                         ))}
                       </div>
                       <div className="mt-6 font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Dataset</div>
-                      <p className="mt-2 text-sm leading-6 text-zinc-400">{active.dataset}</p>
+                      <p className="mt-2 text-xs leading-5 text-zinc-400">{active.dataset}</p>
                     </aside>
                   </section>
 
@@ -282,16 +282,16 @@ export default function Projects() {
                     <div>
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs text-cyan-200/70">02</span>
-                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">The question</h3>
+                        <h3 className="font-display text-lg tracking-tight text-white sm:text-xl">The question</h3>
                       </div>
-                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.challenges}</p>
+                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.challenges}</p>
                     </div>
                     <div>
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs text-violet-200/70">03</span>
-                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">The approach</h3>
+                        <h3 className="font-display text-lg tracking-tight text-white sm:text-xl">The approach</h3>
                       </div>
-                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.approach}</p>
+                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.approach}</p>
                     </div>
                   </section>
 
@@ -303,8 +303,8 @@ export default function Projects() {
                         <BarChart3 size={22} className="mt-4 text-cyan-200" aria-hidden="true" />
                       </div>
                       <div>
-                        <h3 className="font-display text-2xl tracking-tight text-white sm:text-3xl">What the data shows</h3>
-                        <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-200">{active.evidence}</p>
+                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">What the data shows</h3>
+                        <p className="mt-3 max-w-3xl text-xs leading-5 text-zinc-200">{active.evidence}</p>
                       </div>
                     </div>
                   </section>
@@ -313,11 +313,11 @@ export default function Projects() {
                     <section className="py-6">
                       <div className="mb-5 flex items-center gap-3">
                         <span className="font-mono text-xs text-violet-200/70">05</span>
-                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">Inside the analysis</h3>
+                        <h3 className="font-display text-lg tracking-tight text-white sm:text-xl">Inside the analysis</h3>
                       </div>
                       <ul className="grid gap-x-8 sm:grid-cols-2">
                         {active.features.slice(0, 4).map((feature, index) => (
-                          <li key={feature} className="flex gap-4 border-t border-white/[0.09] py-4 text-sm leading-6 text-zinc-300">
+                          <li key={feature} className="flex gap-3 border-t border-white/[0.09] py-3 text-xs leading-5 text-zinc-300">
                             <span className="shrink-0 font-mono text-[10px] text-violet-200/70">{String(index + 1).padStart(2, "0")}</span>
                             <span>{feature}</span>
                           </li>
@@ -332,14 +332,14 @@ export default function Projects() {
                         <Lightbulb size={17} className="text-violet-200" aria-hidden="true" />
                         <h3 className="font-display text-xl tracking-tight text-white">What I learned</h3>
                       </div>
-                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.learnings}</p>
+                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.learnings}</p>
                     </div>
                     <div className="lg:pl-2">
                       <div className="flex items-center gap-3">
                         <Target size={17} className="text-cyan-200" aria-hidden="true" />
                         <h3 className="font-display text-xl tracking-tight text-white">Why it matters</h3>
                       </div>
-                      <p className="mt-3 text-sm leading-6 text-zinc-300">{active.recommendation}</p>
+                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.recommendation}</p>
                     </div>
                   </section>
 
@@ -360,7 +360,7 @@ export default function Projects() {
                   <section className="grid gap-6 pb-6 sm:grid-cols-[minmax(0,1fr)_200px] sm:gap-9">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / Supporting work</div>
-                      <p className="mt-4 text-base leading-8 text-zinc-200">{activeAdditional?.summary}</p>
+                      <p className="mt-3 text-sm leading-6 text-zinc-200">{activeAdditional?.summary}</p>
                     </div>
                     <aside className="sm:pl-2">
                       <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Technology</div>
@@ -372,7 +372,7 @@ export default function Projects() {
                       {activeAdditional?.category && (
                         <>
                           <div className="mt-6 font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Category</div>
-                          <p className="mt-2 text-sm leading-6 text-zinc-400">{activeAdditional.category}</p>
+                          <p className="mt-2 text-xs leading-5 text-zinc-400">{activeAdditional.category}</p>
                         </>
                       )}
                     </aside>
