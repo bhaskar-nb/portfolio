@@ -257,93 +257,66 @@ export default function Projects() {
 
               {active ? (
                 <div className="max-h-[58vh] overflow-y-auto px-4 py-5 sm:px-6 sm:py-6">
-                  <section className="grid gap-6 pb-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(210px,0.65fr)] lg:gap-9">
-                    <div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Project brief / 01</div>
-                      <p className="mt-3 max-w-3xl text-xs leading-5 text-zinc-200">
-                        {active.summary}
-                      </p>
+                  <section className="pb-6">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200/75">Overview</div>
+                    <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-200">{active.summary}</p>
+                    <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-zinc-400">
+                      <span><span className="text-zinc-500">Dataset</span> · {active.dataset}</span>
+                      <span><span className="text-zinc-500">Stack</span> · {active.stack.join(" · ")}</span>
                     </div>
-                    <aside className="self-start lg:pl-2">
-                      <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Built with</div>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {active.stack.map((stack) => (
-                          <span key={stack} className="text-xs text-zinc-300">
-                            {stack}
-                          </span>
-                        ))}
+                  </section>
+
+                  <section className="grid gap-8 pt-5 sm:grid-cols-[minmax(0,1fr)_minmax(170px,0.72fr)] sm:gap-10">
+                    <div className="space-y-6">
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-200/75">01 / The question</div>
+                        <p className="mt-2 text-sm leading-6 text-zinc-300">{active.challenges}</p>
                       </div>
-                      <div className="mt-6 font-mono text-[9px] uppercase tracking-[0.2em] text-violet-200/75">Dataset</div>
-                      <p className="mt-2 text-xs leading-5 text-zinc-400">{active.dataset}</p>
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-violet-200/75">02 / The approach</div>
+                        <p className="mt-2 text-sm leading-6 text-zinc-300">{active.approach}</p>
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <BarChart3 size={15} className="text-cyan-200" aria-hidden="true" />
+                          <h3 className="font-display text-base tracking-tight text-white">What the data shows</h3>
+                        </div>
+                        <p className="mt-2 text-sm leading-6 text-zinc-300">{active.evidence}</p>
+                      </div>
+                      {active.features && active.features.length > 0 && (
+                        <div>
+                          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-violet-200/75">03 / Analysis highlights</div>
+                          <ul className="mt-2 space-y-2">
+                            {active.features.slice(0, 4).map((feature, index) => (
+                              <li key={feature} className="flex gap-3 text-sm leading-5 text-zinc-300">
+                                <span className="shrink-0 font-mono text-[10px] text-violet-200/70">{String(index + 1).padStart(2, "0")}</span>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+
+                    <aside className="space-y-6 sm:pl-5 sm:border-l sm:border-white/10">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <Lightbulb size={15} className="text-violet-200" aria-hidden="true" />
+                          <h3 className="font-display text-base tracking-tight text-white">Key learning</h3>
+                        </div>
+                        <p className="mt-2 text-sm leading-6 text-zinc-400">{active.learnings}</p>
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <Target size={15} className="text-cyan-200" aria-hidden="true" />
+                          <h3 className="font-display text-base tracking-tight text-white">Why it matters</h3>
+                        </div>
+                        <p className="mt-2 text-sm leading-6 text-zinc-400">{active.recommendation}</p>
+                      </div>
                     </aside>
                   </section>
 
-                  <section className="grid gap-6 py-6 lg:grid-cols-2 lg:gap-9">
-                    <div>
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs text-cyan-200/70">02</span>
-                        <h3 className="font-display text-lg tracking-tight text-white sm:text-xl">The question</h3>
-                      </div>
-                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.challenges}</p>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs text-violet-200/70">03</span>
-                        <h3 className="font-display text-lg tracking-tight text-white sm:text-xl">The approach</h3>
-                      </div>
-                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.approach}</p>
-                    </div>
-                  </section>
-
-                  <section className="relative overflow-hidden py-6 sm:py-7">
-                    <div className="pointer-events-none absolute -right-10 top-6 h-36 w-36 rounded-full bg-cyan-400/[0.08] blur-3xl" />
-                    <div className="relative grid gap-4 sm:grid-cols-[110px_minmax(0,1fr)] sm:gap-7">
-                      <div>
-                        <span className="font-mono text-xs text-cyan-200/70">04 / EVIDENCE</span>
-                        <BarChart3 size={22} className="mt-4 text-cyan-200" aria-hidden="true" />
-                      </div>
-                      <div>
-                        <h3 className="font-display text-xl tracking-tight text-white sm:text-2xl">What the data shows</h3>
-                        <p className="mt-3 max-w-3xl text-xs leading-5 text-zinc-200">{active.evidence}</p>
-                      </div>
-                    </div>
-                  </section>
-
-                  {active.features && active.features.length > 0 && (
-                    <section className="py-6">
-                      <div className="mb-5 flex items-center gap-3">
-                        <span className="font-mono text-xs text-violet-200/70">05</span>
-                        <h3 className="font-display text-lg tracking-tight text-white sm:text-xl">Inside the analysis</h3>
-                      </div>
-                      <ul className="grid gap-x-8 sm:grid-cols-2">
-                        {active.features.slice(0, 4).map((feature, index) => (
-                          <li key={feature} className="flex gap-3 border-t border-white/[0.09] py-3 text-xs leading-5 text-zinc-300">
-                            <span className="shrink-0 font-mono text-[10px] text-violet-200/70">{String(index + 1).padStart(2, "0")}</span>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </section>
-                  )}
-
-                  <section className="grid gap-7 py-8 lg:grid-cols-2 lg:gap-10">
-                    <div>
-                      <div className="flex items-center gap-3">
-                        <Lightbulb size={17} className="text-violet-200" aria-hidden="true" />
-                        <h3 className="font-display text-xl tracking-tight text-white">What I learned</h3>
-                      </div>
-                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.learnings}</p>
-                    </div>
-                    <div className="lg:pl-2">
-                      <div className="flex items-center gap-3">
-                        <Target size={17} className="text-cyan-200" aria-hidden="true" />
-                        <h3 className="font-display text-xl tracking-tight text-white">Why it matters</h3>
-                      </div>
-                      <p className="mt-3 text-xs leading-5 text-zinc-300">{active.recommendation}</p>
-                    </div>
-                  </section>
-
-                  <div className="flex flex-wrap items-center gap-3 pt-6">
+                  <div className="mt-6 flex flex-wrap items-center gap-3 pt-4">
                     <a href={active.github} target="_blank" rel="noreferrer" className="btn-secondary">
                       <Github size={15} aria-hidden="true" /> View source
                     </a>
@@ -352,7 +325,6 @@ export default function Projects() {
                         <ExternalLink size={15} aria-hidden="true" /> Explore live project
                       </a>
                     )}
-                    <span className="ml-auto hidden font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600 sm:block">End of case study</span>
                   </div>
                 </div>
               ) : (
